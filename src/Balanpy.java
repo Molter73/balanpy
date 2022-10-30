@@ -4,11 +4,6 @@ import java.util.stream.DoubleStream;
 import javax.swing.JOptionPane;
 
 public class Balanpy {
-
-
-
-    
-
     static int MAX=4;
     int tempSup=38;     
     int tempSup2=35;
