@@ -1,0 +1,1 @@
+Balanpy es un dispositivo inteligente que mide la temperatura y las pulsaciones de tu mascota brindandote la tranquilidad de tener a tu mascota siempre controlada y evitando sorpresas a nivel de salud.
