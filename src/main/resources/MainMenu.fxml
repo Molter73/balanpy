@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Label?>
+
+<GridPane xmlns="http://javafx.com/javafx/8"
+	xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.balanpy.Balanpy"
+	alignment="center" hgap="10" vgap="10">
+	<Label text="Temperatura Máxima: " GridPane.rowIndex="0"
+		GridPane.columnIndex="0" />
+	<Label fx:id="temperaturaMaxima" GridPane.rowIndex="0"
+		GridPane.columnIndex="1" />
+
+	<Label text="Temperaturas inferiores a 35º: "
+		GridPane.rowIndex="1" GridPane.columnIndex="0" />
+	<Label fx:id="temperaturaBaja" GridPane.rowIndex="1"
+		GridPane.columnIndex="1" />
+
+	<Label text="Temperaturas superiores a 38º: "
+		GridPane.rowIndex="2" GridPane.columnIndex="0" />
+	<Label fx:id="temperaturaAlta" GridPane.rowIndex="2"
+		GridPane.columnIndex="1" />
+
+	<Label text="Temperatura media: " GridPane.rowIndex="3"
+		GridPane.columnIndex="0" />
+	<Label fx:id="temperaturaMedia" GridPane.rowIndex="3"
+		GridPane.columnIndex="1" />
+</GridPane>
+
