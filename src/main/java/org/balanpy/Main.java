@@ -64,7 +64,8 @@ public class Main extends Application {
 	private Scene LoadScene(Stage stage, String sceneName) throws IOException {
 		Parent root = FXMLLoader.load(getClass().getResource(sceneName));
 
-		Scene scene = new Scene(root, 300, 275);
+		// Scene scene = new Scene(root, 300, 275);
+		Scene scene = new Scene(root);
 
 		stage.setScene(scene);
 		stage.setTitle("Balanpy");

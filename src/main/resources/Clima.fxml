@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<VBox alignment="CENTER" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19" fx:controller="org.balanpy.ClimaController">
+<VBox alignment="CENTER" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="org.balanpy.ClimaController">
    <children>
       <Label fx:id="avisoPaseo" alignment="CENTER" contentDisplay="CENTER" text="Aviso paseo" textAlignment="CENTER" wrapText="true">
          <font>
@@ -24,6 +27,18 @@
             <Font size="24.0" />
          </font>
       </Label>
+      <Separator prefHeight="20.0" prefWidth="500.0" />
+      <LineChart fx:id="tempChart">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+         <VBox.margin>
+            <Insets top="5.0" />
+         </VBox.margin>
+      </LineChart>
    </children>
    <padding>
       <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
