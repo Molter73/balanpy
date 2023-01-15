@@ -23,7 +23,7 @@ public class Main extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		LoadScene(primaryStage, "/Temperaturas.fxml");
+		LoadScene(primaryStage, "/Clima.fxml");
 	}
 
 	//-----------------------------------------------------------------------------------------
