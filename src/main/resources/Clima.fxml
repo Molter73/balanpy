@@ -22,7 +22,7 @@
             <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
          </padding>
       </Label>
-      <Label fx:id="temperatura" alignment="CENTER" text="Temperatura externa actual" textOverrun="CENTER_ELLIPSIS">
+      <Label fx:id="temperaturaActual" alignment="CENTER" text="Temperatura externa actual" textOverrun="CENTER_ELLIPSIS">
          <font>
             <Font size="24.0" />
          </font>

@@ -15,7 +15,7 @@ public class ClimaController {
 	Label avisoPaseo;
 
 	@FXML
-	Label temperatura;
+	Label temperaturaActual;
 
 	@FXML
 	LineChart<String, Double> tempChart;
@@ -26,14 +26,14 @@ public class ClimaController {
 	@FXML
 	public void initialize() throws UnsupportedOperationException, IOException {
 		ClimaClient clima = new ClimaClient();
+		Double temp = clima.getTemperaturaActual();
 
-		setAvisoPaseo(clima.getTemperaturaActual());
+		temperaturaActual.setText(temp + " ºC");
+		setAvisoPaseo(temp);
 		fillTempGraph(clima.getTemperaturasPorHora());
 	}
 
 	private void setAvisoPaseo(Double temp) {
-		temperatura.setText(temp + " ºC");
-
 		if (temp < 15 || temp > 30) {
 			avisoPaseo.setText("Condiciones adversas, permanezca en interiores");
 			avisoPaseo.setTextFill(WARNING);
