@@ -1,4 +1,4 @@
-#usuario {
+.usuario {
 	
 	-fx-border-color: black;
     -fx-border-insets: 5;
@@ -9,7 +9,7 @@
 }
 
 
-#boton_personalizado {
+.boton_personalizado {
 	
 	-fx-font-weight:bold;
 	-fx-font-size:14px;
