@@ -13,12 +13,17 @@
 
 <VBox alignment="TOP_CENTER" prefHeight="800.0" prefWidth="600.0" style="-fx-background-color: #FFF;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.balanpy.Inicio">
    <children>
-            <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="100.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@BORDE%20SUPERIOR%20-%20BALANPY.png" />
+         </image>
+      </ImageView>
+            <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@logo-balanpy.png" />
          </image>
          <VBox.margin>
-            <Insets top="30.0" />
+            <Insets />
          </VBox.margin></ImageView>
             <Label contentDisplay="TOP" text="Bienvenido a Balanpy" textFill="#82d4c9">
                <font>
@@ -39,7 +44,7 @@
                   <Insets />
                </opaqueInsets>
                <VBox.margin>
-                  <Insets bottom="20.0" />
+                  <Insets bottom="10.0" />
                </VBox.margin>
          <padding>
             <Insets bottom="30.0" />
@@ -52,7 +57,7 @@
                   <Image url="@añadir-usuario-balanpy.png" />
                </image>
             </ImageView>
-            <Label text="Añadir Usuario">
+            <Label onMouseClicked="#HandleDone" text="Añadir Usuario">
                <font>
                   <Font name="Poppins Bold" size="14.0" />
                </font>
