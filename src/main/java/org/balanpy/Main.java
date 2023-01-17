@@ -7,16 +7,23 @@ import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 public class Main extends Application {
 	static ArrayList<Integer> temperaturas = new ArrayList<Integer>();
+	private static final double SCREEN_SCALING = 0.6;
+
+	private static final Rectangle2D screenBounds = Screen.getPrimary().getBounds();
+	private static final double WINDOW_WIDTH = screenBounds.getWidth() * SCREEN_SCALING;
+	private static final double WINDOW_HEIGHT = screenBounds.getHeight() * SCREEN_SCALING;
 
 	@FXML
 	private GridPane gridPane;
@@ -63,8 +70,7 @@ public class Main extends Application {
 
 	private Scene LoadScene(Stage stage, String sceneName) throws IOException {
 		Parent root = FXMLLoader.load(getClass().getResource(sceneName));
-
-		Scene scene = new Scene(root, 300, 275);
+		Scene scene = new Scene(root, WINDOW_WIDTH, WINDOW_HEIGHT);
 
 		stage.setScene(scene);
 		stage.setTitle("Balanpy");
