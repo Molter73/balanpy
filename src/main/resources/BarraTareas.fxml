@@ -8,18 +8,18 @@
 
 <HBox alignment="BOTTOM_CENTER" prefHeight="100.0" prefWidth="600.0" style="-fx-background-color: #FFF;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.balanpy.BarraTareas">
    <children>
-      <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#HandleDone" prefHeight="100.0" prefWidth="121.0" styleClass="acceso-personalizado" stylesheets="@usuario.css">
+      <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#HandleDone" prefHeight="100.0" prefWidth="121.0" styleClass="acceso-rapido" stylesheets="@usuario.css">
          <children>
-            <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@pulsaciones-botones-inferiores.png" />
                </image>
             </ImageView>
          </children>
       </VBox>
-      <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#HandleDone" prefHeight="100.0" prefWidth="121.0" styleClass="acceso-personalizado" stylesheets="@usuario.css">
+      <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#HandleDone" prefHeight="100.0" prefWidth="121.0" styleClass="acceso-rapido" stylesheets="@usuario.css">
          <children>
-            <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@temperatura-botones-inferiores.png" />
                </image>
@@ -34,16 +34,16 @@
       </VBox>
       <VBox alignment="CENTER" layoutX="130.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#HandleDone" prefHeight="100.0" prefWidth="120.0" styleClass="boton-inferior-centro" stylesheets="@usuario.css">
          <children>
-            <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@logo-balanpy.png" />
                </image>
             </ImageView>
          </children>
       </VBox>
-      <VBox alignment="CENTER" layoutX="250.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#HandleDone" prefHeight="100.0" prefWidth="121.0" styleClass="acceso-personalizado" stylesheets="@usuario.css">
+      <VBox alignment="CENTER" layoutX="250.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#HandleDone" prefHeight="100.0" prefWidth="121.0" styleClass="acceso-rapido" stylesheets="@usuario.css">
          <children>
-            <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@veterinario-botones-inferiores.png" />
                </image>
@@ -53,9 +53,9 @@
             <Insets left="-1.0" right="-1.0" />
          </HBox.margin>
       </VBox>
-      <VBox alignment="CENTER" layoutX="370.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#HandleDone" prefHeight="100.0" prefWidth="121.0" styleClass="acceso-personalizado" stylesheets="@usuario.css">
+      <VBox alignment="CENTER" layoutX="370.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#HandleDone" prefHeight="100.0" prefWidth="121.0" styleClass="acceso-rapido" stylesheets="@usuario.css">
          <children>
-            <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@usuario-botones-inferiores.png" />
                </image>

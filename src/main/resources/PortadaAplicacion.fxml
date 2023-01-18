@@ -162,67 +162,7 @@
             <Insets top="20.0" />
          </VBox.margin>
       </HBox>
-      <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0">
-         <children>
-            <HBox prefHeight="100.0" prefWidth="600.0">
-               <children>
-                  <VBox alignment="CENTER" onMouseClicked="#HandleDone" prefHeight="80.0" prefWidth="121.0" styleClass="acceso-rapido" stylesheets="@usuario.css">
-                     <children>
-                        <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@pulsaciones-botones-inferiores.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                     <HBox.margin>
-                        <Insets />
-                     </HBox.margin>
-                  </VBox>
-                  <VBox alignment="CENTER" onMouseClicked="#HandleDone" prefHeight="80.0" prefWidth="121.0" styleClass="acceso-rapido" stylesheets="@usuario.css">
-                     <children>
-                        <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@temperatura-botones-inferiores.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                     <HBox.margin>
-                        <Insets left="-1.0" right="-1.0" />
-                     </HBox.margin>
-                  </VBox>
-                  <VBox alignment="CENTER" onMouseClicked="#HandleDone" prefHeight="200.0" prefWidth="120.0" styleClass="bottom-aplication-center" stylesheets="@usuario.css">
-                     <children>
-                        <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@logo-balanpy.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </VBox>
-                  <VBox alignment="CENTER" onMouseClicked="#HandleDone" prefHeight="80.0" prefWidth="121.0" styleClass="acceso-rapido" stylesheets="@usuario.css">
-                     <children>
-                        <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@veterinario-botones-inferiores.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                     <HBox.margin>
-                        <Insets left="-1.0" right="-1.0" />
-                     </HBox.margin>
-                  </VBox>
-                  <VBox alignment="CENTER" onMouseClicked="#HandleDone" prefHeight="80.0" prefWidth="121.0" styleClass="acceso-rapido" stylesheets="@usuario.css">
-                     <children>
-                        <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@usuario-botones-inferiores.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </VBox>
-               </children>
-            </HBox>
-         </children>
-      </VBox>
+      <VBox alignment="BOTTOM_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" />
+      <fx:include source="BarraTareas.fxml" />
    </children>
 </VBox>
