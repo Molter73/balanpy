@@ -166,7 +166,7 @@
          <children>
             <HBox prefHeight="100.0" prefWidth="600.0">
                <children>
-                  <VBox alignment="CENTER" onMouseClicked="#HandleDone" prefHeight="80.0" prefWidth="121.0" styleClass="bottom-aplication-1" stylesheets="@usuario.css">
+                  <VBox alignment="CENTER" onMouseClicked="#HandleDone" prefHeight="80.0" prefWidth="121.0" styleClass="acceso-rapido" stylesheets="@usuario.css">
                      <children>
                         <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -178,7 +178,7 @@
                         <Insets />
                      </HBox.margin>
                   </VBox>
-                  <VBox alignment="CENTER" onMouseClicked="#HandleDone" prefHeight="80.0" prefWidth="121.0" styleClass="bottom-aplication-1" stylesheets="@usuario.css">
+                  <VBox alignment="CENTER" onMouseClicked="#HandleDone" prefHeight="80.0" prefWidth="121.0" styleClass="acceso-rapido" stylesheets="@usuario.css">
                      <children>
                         <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -199,7 +199,7 @@
                         </ImageView>
                      </children>
                   </VBox>
-                  <VBox alignment="CENTER" onMouseClicked="#HandleDone" prefHeight="80.0" prefWidth="121.0" styleClass="bottom-aplication-1" stylesheets="@usuario.css">
+                  <VBox alignment="CENTER" onMouseClicked="#HandleDone" prefHeight="80.0" prefWidth="121.0" styleClass="acceso-rapido" stylesheets="@usuario.css">
                      <children>
                         <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -211,7 +211,7 @@
                         <Insets left="-1.0" right="-1.0" />
                      </HBox.margin>
                   </VBox>
-                  <VBox alignment="CENTER" onMouseClicked="#HandleDone" prefHeight="80.0" prefWidth="121.0" styleClass="bottom-aplication-1" stylesheets="@usuario.css">
+                  <VBox alignment="CENTER" onMouseClicked="#HandleDone" prefHeight="80.0" prefWidth="121.0" styleClass="acceso-rapido" stylesheets="@usuario.css">
                      <children>
                         <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
                            <image>
