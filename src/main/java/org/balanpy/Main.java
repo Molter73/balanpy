@@ -30,7 +30,7 @@ public class Main extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		LoadScene(primaryStage, "/PantallaInicio.fxml");
+		LoadScene(primaryStage, "/PortadaAplicacion.fxml");
 	}
 
 	//-----------------------------------------------------------------------------------------
