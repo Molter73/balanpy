@@ -2,6 +2,7 @@ package org.balanpy;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.regex.Pattern;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.core.exc.StreamReadException;
@@ -12,9 +13,17 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  *  UsuarioImpl es un singleton para evitar tener que copiar el
  *  objeto cada vez que se cambia de pantalla, recargando los
  *  datos desde disco innecesariamente.
+ *
+ *  TODO: Las funciones de validación deberían lanzar una excepción
+ *  para permitir mejor manejo de error.
  */
 public class UsuarioImpl implements Usuario {
-	public static final String USUARIO_PATH = "appdata/usuario.json";
+	private static final String USUARIO_PATH = "appdata/usuario.json";
+	private static final String MASCULINO = "masculino";
+	private static final String FEMENINO = "femenino";
+	private static final Pattern NIE_PATTERN = Pattern.compile("^\\p{Upper}\\d{7}\\p{Upper}$");
+	private static final Pattern DNI_PATTERN = Pattern.compile("^\\d{8}\\p{Upper}$");
+	private static final Pattern EMAIL_PATTERN = Pattern.compile("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$");
 
 	@JsonProperty(value = "DNI")
 	private String dni = "";
@@ -89,12 +98,17 @@ public class UsuarioImpl implements Usuario {
 
 	@Override
 	public void setDNI(String dni) {
-		// TODO Validar formato DNI
+		if (!isValidDNI(dni)) {
+			return;
+		}
 		this.dni = dni;
 	}
 
 	@Override
 	public void setNombre(String nombre) {
+		if (nombre.isEmpty()) {
+			return;
+		}
 		this.nombre = nombre;
 	}
 
@@ -106,13 +120,17 @@ public class UsuarioImpl implements Usuario {
 
 	@Override
 	public void setEmail(String email) {
-		// TODO Validar formato email
+		if (!isValidEmail(email)) {
+			return;
+		}
 		this.email = email;
 	}
 
 	@Override
 	public void setSexo(String sexo) {
-		// TODO Validar sexo
+		if (!isValidSexo(sexo)) {
+			return;
+		}
 		this.sexo = sexo;
 	}
 
@@ -123,11 +141,13 @@ public class UsuarioImpl implements Usuario {
 
 	@Override
 	public void setPathPPP(String pathPPP) {
+		// TODO: Validar que el fichero existe
 		this.pathPPP = pathPPP;
 	}
 
 	@Override
 	public void setPathSeguro(String seguroPath) {
+		// TODO: Validar que el fichero existe
 		this.pathSeguro = seguroPath;
 	}
 
@@ -146,9 +166,25 @@ public class UsuarioImpl implements Usuario {
 		instance = om.readValue(new File(USUARIO_PATH), UsuarioImpl.class);
 	}
 
-	public boolean isEmpty() {
+	public boolean isValid() {
 		// Como el dni es nuestro indicador unico para cada usuario,
 		// si este está vacío asumimos que el usuario no existe.
-		return dni.isEmpty();
+		return isValidDNI(dni) && !nombre.isEmpty() && isValidEmail(email) && isValidSexo(sexo);
+	}
+
+	public static boolean isValidSexo(String sexo) {
+		String sexoCaseInsensitive = sexo.toLowerCase();
+
+		return sexoCaseInsensitive.equals(MASCULINO) || sexoCaseInsensitive.equals(FEMENINO);
+	}
+
+
+	public static boolean isValidDNI(String dni) {
+		return DNI_PATTERN.matcher(dni).matches() || NIE_PATTERN.matcher(dni).matches();
+	}
+
+	public static boolean isValidEmail(String email) {
+		return EMAIL_PATTERN.matcher(email).matches();
 	}
 }
+

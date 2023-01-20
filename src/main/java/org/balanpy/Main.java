@@ -32,7 +32,7 @@ public class Main extends Application {
 	public void start(Stage primaryStage) throws Exception {
 		UsuarioImpl usuario = UsuarioImpl.getInstance();
 
-		if (usuario.isEmpty()) {
+		if (usuario.isValid()) {
 			LoadScene(primaryStage, "/PantallaInicio.fxml");
 		} else {
 			LoadScene(primaryStage, "/PortadaAplicacion.fxml");
