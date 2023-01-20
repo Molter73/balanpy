@@ -118,9 +118,9 @@ public interface Mascota {
 	
 	//******************** Enfermedades ***************************
 
-	public String[] getEnfermedades();		//GETTER
+	public ArrayList<String> getEnfermedades();		//GETTER
 
-	public void setEnfermedades(String [] enfermedades);		//SETTER
+	public void setEnfermedades(ArrayList<String> enfermedades);		//SETTER
 	
 	
 	
