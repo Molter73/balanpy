@@ -63,4 +63,7 @@ public interface Usuario {
 
 	// Helper for reloading the object
 	public void reload() throws StreamReadException, DatabindException, IOException;
+
+	// Checks if the user has valid data
+	public boolean isValid();
 }

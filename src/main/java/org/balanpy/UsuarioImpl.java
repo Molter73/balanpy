@@ -1,7 +1,8 @@
 package org.balanpy;
 
-import java.io.File;
 import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.regex.Pattern;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -18,7 +19,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  *  para permitir mejor manejo de error.
  */
 public class UsuarioImpl implements Usuario {
-	private static final String USUARIO_PATH = "appdata/usuario.json";
+	private static final Path USUARIO_PATH = Paths.get(System.getenv("BALANPY_CONFIG_DIR"), "usuario.json");
 	private static final String MASCULINO = "masculino";
 	private static final String FEMENINO = "femenino";
 	private static final Pattern NIE_PATTERN = Pattern.compile("^\\p{Upper}\\d{7}\\p{Upper}$");
@@ -46,7 +47,7 @@ public class UsuarioImpl implements Usuario {
 	public static UsuarioImpl getInstance() {
 		if (instance == null) {
 			try {
-				instance = om.readValue(new File(USUARIO_PATH), UsuarioImpl.class);
+				instance = om.readValue(USUARIO_PATH.toFile(), UsuarioImpl.class);
 			} catch (IOException e) {
 				System.out.println("Failed to load user data.");
 				instance = new UsuarioImpl();
@@ -154,7 +155,7 @@ public class UsuarioImpl implements Usuario {
 	@Override
 	public void save() throws StreamReadException, DatabindException, IOException {
 		try {
-			om.writeValue(new File(USUARIO_PATH), instance);
+			om.writeValue(USUARIO_PATH.toFile(), instance);
 		} catch (IOException e) {
 			// try to rollback to the saved values
 			reload();
@@ -163,7 +164,7 @@ public class UsuarioImpl implements Usuario {
 
 	@Override
 	public void reload() throws StreamReadException, DatabindException, IOException {
-		instance = om.readValue(new File(USUARIO_PATH), UsuarioImpl.class);
+		instance = om.readValue(USUARIO_PATH.toFile(), UsuarioImpl.class);
 	}
 
 	public boolean isValid() {
