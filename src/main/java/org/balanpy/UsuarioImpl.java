@@ -167,6 +167,7 @@ public class UsuarioImpl implements Usuario {
 		instance = om.readValue(USUARIO_PATH.toFile(), UsuarioImpl.class);
 	}
 
+	@Override
 	public boolean isValid() {
 		// Como el dni es nuestro indicador unico para cada usuario,
 		// si este está vacío asumimos que el usuario no existe.
@@ -179,7 +180,6 @@ public class UsuarioImpl implements Usuario {
 		return sexoCaseInsensitive.equals(MASCULINO) || sexoCaseInsensitive.equals(FEMENINO);
 	}
 
-
 	public static boolean isValidDNI(String dni) {
 		return DNI_PATTERN.matcher(dni).matches() || NIE_PATTERN.matcher(dni).matches();
 	}
@@ -188,4 +188,3 @@ public class UsuarioImpl implements Usuario {
 		return EMAIL_PATTERN.matcher(email).matches();
 	}
 }
-
