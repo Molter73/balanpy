@@ -3,7 +3,7 @@ package org.balanpy;
 import javafx.scene.input.MouseEvent;
 
 public class Inicio {
-	private UsuarioImpl usuario;
+	private Usuario usuario;
 
 	public Inicio() {
 		usuario = UsuarioImpl.getInstance();
