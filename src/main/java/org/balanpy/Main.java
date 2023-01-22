@@ -30,7 +30,13 @@ public class Main extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		LoadScene(primaryStage, "/PortadaAplicacion.fxml");
+		Usuario usuario = UsuarioImpl.getInstance();
+
+		if (usuario.isValid()) {
+			LoadScene(primaryStage, "/PortadaAplicacion.fxml");
+		} else {
+			LoadScene(primaryStage, "/PantallaInicio.fxml");
+		}
 	}
 
 	//-----------------------------------------------------------------------------------------

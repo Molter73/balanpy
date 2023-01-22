@@ -1,5 +1,10 @@
 package org.balanpy;
 
+import java.io.IOException;
+
+import com.fasterxml.jackson.core.exc.StreamReadException;
+import com.fasterxml.jackson.databind.DatabindException;
+
 /*
  * La información del usuario se guardará en un fichero
  * JSON con la siguiente información:
@@ -54,8 +59,11 @@ public interface Usuario {
 	// Special functionality
 
 	// Helper function for persisting user information
-	public void save();
+	public void save() throws StreamReadException, DatabindException, IOException;
 
 	// Helper for reloading the object
-	public void reload();
+	public void reload() throws StreamReadException, DatabindException, IOException;
+
+	// Checks if the user has valid data
+	public boolean isValid();
 }
