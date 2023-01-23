@@ -16,7 +16,7 @@
       <Button layoutX="389.0" layoutY="51.0" mnemonicParsing="false" onMouseClicked="#HandleDone" prefHeight="99.0" prefWidth="91.0" style="-fx-background-color: #87D5CA;" text="Button" />
       <Button layoutX="258.0" layoutY="50.0" mnemonicParsing="false" onMouseClicked="#HandleDone" prefHeight="99.0" prefWidth="91.0" style="-fx-background-color: #87D5CA;" text="Button" />
       <Button layoutX="122.0" layoutY="51.0" mnemonicParsing="false" onMouseClicked="#HandleDone" opacity="0.4" prefHeight="99.0" prefWidth="91.0" style="-fx-background-color: #87D5CA;" text="Button" />
-      <ImageView fitHeight="74.0" fitWidth="71.0" layoutX="130.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="74.0" fitWidth="71.0" layoutX="130.0" layoutY="61.0" onMouseClicked="#HandleDone" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Portada-Bulldog.png" />
          </image>
@@ -26,7 +26,7 @@
             <Font name="Arial Black" size="13.0" />
          </font>
       </Text>
-      <ImageView fitHeight="74.0" fitWidth="71.0" layoutX="268.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="74.0" fitWidth="71.0" layoutX="268.0" layoutY="61.0" onMouseClicked="#HandleDone" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Portada-Carlino.png" />
          </image>
@@ -37,7 +37,7 @@
          </font>
       </Text>
       <Circle fill="WHITE" layoutX="437.0" layoutY="103.0" radius="28.0" stroke="BLACK" strokeType="INSIDE" />
-      <Text layoutX="423.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="+">
+      <Text layoutX="423.0" layoutY="116.0" onMouseClicked="#HandleDone" strokeType="OUTSIDE" strokeWidth="0.0" text="+">
          <font>
             <Font size="48.0" />
          </font>
