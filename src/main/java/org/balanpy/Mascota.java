@@ -1,13 +1,9 @@
 package org.balanpy;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Map;
 import java.util.UUID;
-
-import com.fasterxml.jackson.core.exc.StreamReadException;
-import com.fasterxml.jackson.databind.DatabindException;
 
 public interface Mascota {
 
@@ -55,7 +51,7 @@ public interface Mascota {
 
 	public void setColor(String color);
 
-	public void setGrupoSanguineo(String grupo_sanguineo);
+	public void setGrupoSanguineo(String grupoSanguineo);
 
 	public void setNombre(String nombre);
 
@@ -84,10 +80,4 @@ public interface Mascota {
 	public Map<String, Date> getVacuna(); // GETTER
 
 	public void setVacunas(Map<String, Date> vacunas); // SETTER
-
-	// Helper function for persisting user information
-	public void saveM() throws StreamReadException, DatabindException, IOException;
-
-	// Helper for reloading the object
-	public void reloadM() throws StreamReadException, DatabindException, IOException;
 }

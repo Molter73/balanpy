@@ -1,8 +1,5 @@
 package org.balanpy;
 
-import java.io.IOException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -10,22 +7,10 @@ import java.util.Map;
 import java.util.UUID;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.core.exc.StreamReadException;
-import com.fasterxml.jackson.databind.DatabindException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-/*
- *  MascotaImpl es un singleton para evitar tener que copiar el
- *  objeto cada vez que se cambia de pantalla, recargando los
- *  datos desde disco innecesariamente.
- *
- *  TODO: Las funciones de validación deberían lanzar una excepción
- *  para permitir mejor manejo de error.
- */
+public class MascotaImpl implements Mascota, Higiene {
 
-public class MascotaImpl implements Mascota {
-
-	private static final Path MASCOTA_PATH = Paths.get(System.getenv("BALANPY_CONFIG_DIR"), "mascotas.json");
 	private static final String MACHO = "macho";
 	private static final String HEMBRA = "hembra";
 	private static final String DEA11 = "DEA-1.1.";
@@ -37,6 +22,7 @@ public class MascotaImpl implements Mascota {
 	private static final String DEA7 = "DEA-7.";
 	private static final String DEA8 = "DEA-8.";
 
+	// ------------------------------ MASCOTA -----------------------------------
 	@JsonProperty(value = "UUID")
 	private UUID uuid;
 
@@ -53,7 +39,7 @@ public class MascotaImpl implements Mascota {
 
 	private String color = "";
 
-	private String grupo_sanguineo = "";
+	private String grupoSanguineo = "";
 
 	private String nombre = "";
 
@@ -75,26 +61,24 @@ public class MascotaImpl implements Mascota {
 
 	private Map<String, Date> vacunas = new HashMap<>();
 
-	private static MascotaImpl instance;
 	private static ObjectMapper om = new ObjectMapper();
+
+	// ------------------------------ HIGIENE -----------------------------------
+
+	private ArrayList<Date> banos = new ArrayList();
+
+	private ArrayList<Date> cepillado = new ArrayList();
+
+	private Map<String, Date> desparasitado = new HashMap<>();
+
+	private ArrayList<String> productosNR = new ArrayList();
+
+	// --------------------------------------------------------------------------
 
 	private MascotaImpl() {
 	}
 
-	public static MascotaImpl getInstance() {
-		if (instance == null) {
-			try {
-				instance = om.readValue(MASCOTA_PATH.toFile(), MascotaImpl.class);
-			} catch (IOException e) {
-				System.out.println("Failed to load user data.");
-				instance = new MascotaImpl();
-			}
-		}
-
-		return instance;
-	}
-
-	// GETTERS
+	// --------------- GETTERS MASCOTAS -------------------------------------------
 
 	@Override
 	public UUID getUUID() {
@@ -133,7 +117,7 @@ public class MascotaImpl implements Mascota {
 
 	@Override
 	public String getGrupoSanguineo() {
-		return grupo_sanguineo;
+		return grupoSanguineo;
 	}
 
 	@Override
@@ -176,7 +160,29 @@ public class MascotaImpl implements Mascota {
 		return vacunas;
 	}
 
-	// SETTERS
+	// --------------- GETTERS HIGIENE -------------------------------------------
+
+	@Override
+	public ArrayList<Date> getBanos() {
+		return banos;
+	}
+
+	@Override
+	public ArrayList<Date> getCepillado() {
+		return cepillado;
+	}
+
+	@Override
+	public Map<String, Date> getDesparasitado() {
+		return desparasitado;
+	}
+
+	@Override
+	public ArrayList<String> getProductosNR() {
+		return productosNR;
+	}
+
+	// --------------- SETTERS MASCOTAS -------------------------------------------
 
 	@Override
 	public void setUUID(UUID uuid) {
@@ -217,11 +223,11 @@ public class MascotaImpl implements Mascota {
 	}
 
 	@Override
-	public void setGrupoSanguineo(String grupo_sanguineo) {
-		if (!isValidGrupoSanguineo(grupo_sanguineo)) {
+	public void setGrupoSanguineo(String grupoSanguineo) {
+		if (!isValidGrupoSanguineo(grupoSanguineo)) {
 			return;
 		}
-		this.grupo_sanguineo = grupo_sanguineo;
+		this.grupoSanguineo = grupoSanguineo;
 	}
 
 	@Override
@@ -271,20 +277,29 @@ public class MascotaImpl implements Mascota {
 		this.vacunas = vacunas;
 	}
 
+	// --------------- SETTERS HIGIENE -------------------------------------------
+
 	@Override
-	public void saveM() throws StreamReadException, DatabindException, IOException {
-		try {
-			om.writeValue(MASCOTA_PATH.toFile(), instance);
-		} catch (IOException e) {
-			// try to rollback to the saved values
-			reloadM();
-		}
+	public void setBanos(ArrayList<Date> banos) {
+		this.banos = banos;
 	}
 
 	@Override
-	public void reloadM() throws StreamReadException, DatabindException, IOException {
-		instance = om.readValue(MASCOTA_PATH.toFile(), MascotaImpl.class);
+	public void setCepillado(ArrayList<Date> cepillado) {
+		this.cepillado = cepillado;
 	}
+
+	@Override
+	public void setDesparasitado(Map<String, Date> desparasitado) {
+		this.desparasitado = desparasitado;
+	}
+
+	@Override
+	public void setProductosNR(ArrayList<String> productosNR) {
+		this.productosNR = productosNR;
+	}
+
+	// ----------------------------------------------------------------------------
 
 	public static boolean isValidSexo(String sexo) {
 		String sexoCaseInsensitive = sexo.toLowerCase();
@@ -292,12 +307,10 @@ public class MascotaImpl implements Mascota {
 		return sexoCaseInsensitive.equals(MACHO) || sexoCaseInsensitive.equals(HEMBRA);
 	}
 
-	public static boolean isValidGrupoSanguineo(String grupo_sanguineo) {
-		String grCaseInsensitive = grupo_sanguineo.toLowerCase();
+	public static boolean isValidGrupoSanguineo(String grupoSanguineo) {
 
-		return grCaseInsensitive.equals(DEA11) || grCaseInsensitive.equals(DEA12) || grCaseInsensitive.equals(DEA3)
-				|| grCaseInsensitive.equals(DEA4) || grCaseInsensitive.equals(DEA5) || grCaseInsensitive.equals(DEA6)
-				|| grCaseInsensitive.equals(DEA7) || grCaseInsensitive.equals(DEA8);
+		return grupoSanguineo.equals(DEA11) || grupoSanguineo.equals(DEA12) || grupoSanguineo.equals(DEA3)
+				|| grupoSanguineo.equals(DEA4) || grupoSanguineo.equals(DEA5) || grupoSanguineo.equals(DEA6)
+				|| grupoSanguineo.equals(DEA7) || grupoSanguineo.equals(DEA8);
 	}
-
 }
