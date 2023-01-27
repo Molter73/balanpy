@@ -23,7 +23,7 @@
       </TextArea>
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="58.0" layoutY="190.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../Desktop/Captura%20de%20Pantalla%202023-01-23%20a%20las%203.48.52%20p.%E2%80%AFm..png" />
+            <Image url="@logo-balanpy.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="16.0" fitWidth="16.0" layoutX="131.0" layoutY="237.0" onMouseClicked="#HandleDone" pickOnBounds="true" preserveRatio="true">
@@ -34,7 +34,7 @@
       <DatePicker layoutX="327.0" layoutY="178.0" promptText="Selecciona fecha consulta" style="-fx-background-color: #87D5CA;" />
       <ImageView fitHeight="79.0" fitWidth="80.0" layoutX="492.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../Downloads/logo-balanpy.png" />
+            <Image url="@logo-balanpy.png" />
          </image>
       </ImageView>
       <Button layoutX="329.0" layoutY="266.0" mnemonicParsing="false" onAction="#HandleDone" onMouseClicked="#HandleDone" style="-fx-background-color: #87D5CA;" text="Descarga documentos PDF">
