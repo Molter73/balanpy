@@ -13,14 +13,14 @@ public class MascotaImpl implements Mascota, Higiene {
 
 	private static final String MACHO = "macho";
 	private static final String HEMBRA = "hembra";
-	private static final String DEA11 = "DEA-1.1.";
-	private static final String DEA12 = "DEA-1.2.";
-	private static final String DEA3 = "DEA-3.";
-	private static final String DEA4 = "DEA-4.";
-	private static final String DEA5 = "DEA-5.";
-	private static final String DEA6 = "DEA-6.";
-	private static final String DEA7 = "DEA-7.";
-	private static final String DEA8 = "DEA-8.";
+	private static final String DEA11 = "DEA11";
+	private static final String DEA12 = "DEA12";
+	private static final String DEA3 = "DEA3";
+	private static final String DEA4 = "DEA4";
+	private static final String DEA5 = "DEA5";
+	private static final String DEA6 = "DEA6";
+	private static final String DEA7 = "DEA7";
+	private static final String DEA8 = "DEA8";
 
 	// ------------------------------ MASCOTA -----------------------------------
 	@JsonProperty(value = "UUID")
@@ -224,9 +224,6 @@ public class MascotaImpl implements Mascota, Higiene {
 
 	@Override
 	public void setGrupoSanguineo(String grupoSanguineo) {
-		if (!isValidGrupoSanguineo(grupoSanguineo)) {
-			return;
-		}
 		this.grupoSanguineo = grupoSanguineo;
 	}
 
