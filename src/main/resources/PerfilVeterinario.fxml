@@ -8,9 +8,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
-
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <children>
@@ -59,55 +57,5 @@
             <Insets left="200.0" top="50.0" />
          </VBox.margin>
       </Button>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#87d5ca" height="87.0" stroke="BLACK" strokeType="INSIDE" width="228.0">
-         <VBox.margin>
-            <Insets top="229.0" />
-         </VBox.margin>
-      </Rectangle>
-      <ImageView fitHeight="66.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@pulsaciones-botones-inferiores.png" />
-         </image>
-         <VBox.margin>
-            <Insets left="20.0" top="-80.0" />
-         </VBox.margin>
-      </ImageView>
-      <ImageView fitHeight="61.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@temperatura-botones-inferiores.png" />
-         </image>
-         <VBox.margin>
-            <Insets left="130.0" top="-60.0" />
-         </VBox.margin>
-      </ImageView>
-      <ImageView fitHeight="61.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@logo-balanpy.png" />
-         </image>
-         <VBox.margin>
-            <Insets left="275.0" top="-60.0" />
-         </VBox.margin>
-      </ImageView>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#87d5ca" height="87.0" stroke="BLACK" strokeType="INSIDE" width="228.0">
-         <VBox.margin>
-            <Insets left="373.0" top="-75.0" />
-         </VBox.margin>
-      </Rectangle>
-      <ImageView fitHeight="61.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@veterinario-botones-inferiores.png" />
-         </image>
-         <VBox.margin>
-            <Insets left="400.0" top="-70.0" />
-         </VBox.margin>
-      </ImageView>
-      <ImageView fitHeight="61.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@usuario-botones-inferiores.png" />
-         </image>
-         <VBox.margin>
-            <Insets left="520.0" top="-60.0" />
-         </VBox.margin>
-      </ImageView>
    </children>
 </VBox>
