@@ -9,7 +9,7 @@ import java.util.UUID;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-public class MascotaImpl implements Mascota, Higiene {
+public class MascotaImpl implements Mascota {
 
 	private static final String MACHO = "macho";
 	private static final String HEMBRA = "hembra";
@@ -63,19 +63,14 @@ public class MascotaImpl implements Mascota, Higiene {
 
 	private static ObjectMapper om = new ObjectMapper();
 
-	// ------------------------------ HIGIENE -----------------------------------
+	// -----------------------------------------------------------------------------
 
-	private ArrayList<Date> banos = new ArrayList();
+	HigieneImpl higiene = new HigieneImpl();
 
-	private ArrayList<Date> cepillado = new ArrayList();
-
-	private Map<String, Date> desparasitado = new HashMap<>();
-
-	private ArrayList<String> productosNR = new ArrayList();
-
-	// --------------------------------------------------------------------------
+	// -----------------------------------------------------------------------------
 
 	private MascotaImpl() {
+
 	}
 
 	// --------------- GETTERS MASCOTAS -------------------------------------------
@@ -158,28 +153,6 @@ public class MascotaImpl implements Mascota, Higiene {
 	@Override
 	public Map<String, Date> getVacuna() {
 		return vacunas;
-	}
-
-	// --------------- GETTERS HIGIENE -------------------------------------------
-
-	@Override
-	public ArrayList<Date> getBanos() {
-		return banos;
-	}
-
-	@Override
-	public ArrayList<Date> getCepillado() {
-		return cepillado;
-	}
-
-	@Override
-	public Map<String, Date> getDesparasitado() {
-		return desparasitado;
-	}
-
-	@Override
-	public ArrayList<String> getProductosNR() {
-		return productosNR;
 	}
 
 	// --------------- SETTERS MASCOTAS -------------------------------------------
@@ -274,28 +247,6 @@ public class MascotaImpl implements Mascota, Higiene {
 		this.vacunas = vacunas;
 	}
 
-	// --------------- SETTERS HIGIENE -------------------------------------------
-
-	@Override
-	public void setBanos(ArrayList<Date> banos) {
-		this.banos = banos;
-	}
-
-	@Override
-	public void setCepillado(ArrayList<Date> cepillado) {
-		this.cepillado = cepillado;
-	}
-
-	@Override
-	public void setDesparasitado(Map<String, Date> desparasitado) {
-		this.desparasitado = desparasitado;
-	}
-
-	@Override
-	public void setProductosNR(ArrayList<String> productosNR) {
-		this.productosNR = productosNR;
-	}
-
 	// ----------------------------------------------------------------------------
 
 	public static boolean isValidSexo(String sexo) {
@@ -309,5 +260,65 @@ public class MascotaImpl implements Mascota, Higiene {
 		return grupoSanguineo.equals(DEA11) || grupoSanguineo.equals(DEA12) || grupoSanguineo.equals(DEA3)
 				|| grupoSanguineo.equals(DEA4) || grupoSanguineo.equals(DEA5) || grupoSanguineo.equals(DEA6)
 				|| grupoSanguineo.equals(DEA7) || grupoSanguineo.equals(DEA8);
+	}
+
+	public class HigieneImpl implements Higiene {
+
+		private ArrayList<Date> banos = new ArrayList();
+
+		private ArrayList<Date> cepillado = new ArrayList();
+
+		private Map<String, Date> desparasitado = new HashMap<>();
+
+		private ArrayList<String> productosNR = new ArrayList();
+
+		private HigieneImpl() {
+
+		}
+
+		// --------------- GETTERS HIGIENE -------------------------------------------
+
+		@Override
+		public ArrayList<Date> getBanos() {
+			return banos;
+		}
+
+		@Override
+		public ArrayList<Date> getCepillado() {
+			return cepillado;
+		}
+
+		@Override
+		public Map<String, Date> getDesparasitado() {
+			return desparasitado;
+		}
+
+		@Override
+		public ArrayList<String> getProductosNR() {
+			return productosNR;
+		}
+
+		// --------------- SETTERS HIGIENE -------------------------------------------
+
+		@Override
+		public void setBanos(ArrayList<Date> banos) {
+			this.banos = banos;
+		}
+
+		@Override
+		public void setCepillado(ArrayList<Date> cepillado) {
+			this.cepillado = cepillado;
+		}
+
+		@Override
+		public void setDesparasitado(Map<String, Date> desparasitado) {
+			this.desparasitado = desparasitado;
+		}
+
+		@Override
+		public void setProductosNR(ArrayList<String> productosNR) {
+			this.productosNR = productosNR;
+		}
+
 	}
 }
