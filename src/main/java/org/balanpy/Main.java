@@ -31,7 +31,6 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		Usuario usuario = UsuarioImpl.getInstance();
-
 		if (usuario.isValid()) {
 			LoadScene(primaryStage, "/PortadaAplicacion.fxml");
 		} else {
@@ -39,12 +38,12 @@ public class Main extends Application {
 		}
 	}
 
-	//-----------------------------------------------------------------------------------------
+	// -----------------------------------------------------------------------------------------
 
 	public void HandleDone(ActionEvent event) throws Exception {
 		for (Node node : gridPane.getChildren()) {
 			if (node instanceof TextField) {
-				TextField tf = (TextField)node;
+				TextField tf = (TextField) node;
 				String text = tf.getText();
 
 				if (text.isEmpty()) {
@@ -72,7 +71,7 @@ public class Main extends Application {
 		temperaturaMedia.setText(Balanpy.getTemperaturaMedia(temperaturas).toString());
 	}
 
-	//-----------------------------------------------------------------------------------------
+	// -----------------------------------------------------------------------------------------
 
 	private Scene LoadScene(Stage stage, String sceneName) throws IOException {
 		Parent root = FXMLLoader.load(getClass().getResource(sceneName));
@@ -84,9 +83,9 @@ public class Main extends Application {
 
 		return scene;
 	}
-	//-----------------------------------------------------------------------------------------
-	public static void main(String[] args)
-	{
+
+	// -----------------------------------------------------------------------------------------
+	public static void main(String[] args) {
 		launch();
 	}
 }
