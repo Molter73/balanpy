@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="127.0" fitWidth="136.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@logo-balanpy.png" />
+         </image>
+         <VBox.margin>
+            <Insets left="430.0" top="20.0" />
+         </VBox.margin>
+      </ImageView>
+      <TextArea prefHeight="110.0" prefWidth="270.0" text="Nombre centro:  La Huellita&#10;Veterinario asignado: Juan Pérez&#10;Teléfono: +34 125 15 70 33&#10;Dirección: Calle Falsa 32, Madrid&#10;Horario: L-V 09:00h - 20:30h">
+         <font>
+            <Font name="Arial" size="13.0" />
+         </font>
+         <VBox.margin>
+            <Insets bottom="50.0" left="40.0" right="300.0" top="-100.0" />
+         </VBox.margin>
+      </TextArea>
+      <Label text="¿Dónde estamos?">
+         <font>
+            <Font name="Arial Black" size="13.0" />
+         </font>
+         <VBox.margin>
+            <Insets bottom="10.0" left="80.0" top="-20.0" />
+         </VBox.margin>
+      </Label>
+      <DatePicker promptText="Selecciona fecha consulta" style="-fx-background-color: #87D5CA;">
+         <VBox.margin>
+            <Insets bottom="-90.0" left="350.0" top="80.0" />
+         </VBox.margin>
+      </DatePicker>
+      <ImageView fitHeight="172.0" fitWidth="228.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@location-mad.png" />
+         </image>
+         <VBox.margin>
+            <Insets left="45.0" />
+         </VBox.margin>
+      </ImageView>
+      <Button mnemonicParsing="false" onAction="#HandleDone" onMouseClicked="#HandleDone" style="-fx-background-color: #87D5CA;" text="Descarga documentos PDF">
+         <font>
+            <Font name="Arial Black" size="13.0" />
+         </font>
+         <VBox.margin>
+            <Insets left="200.0" top="50.0" />
+         </VBox.margin>
+      </Button>
+      <VBox alignment="BOTTOM_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" />
+      <fx:include source="BarraTareas.fxml" />
+   </children>
+</VBox>
