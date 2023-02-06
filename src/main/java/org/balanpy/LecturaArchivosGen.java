@@ -1,47 +1,62 @@
 package org.balanpy;
 
-import java.io.FileReader;
+import java.io.File;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
 public class LecturaArchivosGen {
 
-	public static void main(String[] args) {
+	@FXML
+	private Label fileNameLabel;
 
-		Leer_Fichero accediendo = new Leer_Fichero();
+	@FXML
+	private TextArea fileContentTextArea;
 
-		accediendo.leeFichero();
+	public void openFile(File file) throws IOException {
 
-	}
+		// Obtiene el contenido del archivo
+		String content = new String(Files.readAllBytes(Paths.get(file.getAbsolutePath())), StandardCharsets.UTF_8);
 
-}
+		// Carga la vista de archivo
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("file_view.fxml"));
 
-class Leer_Fichero {
+		loader.setController(this);
 
-	public void leeFichero() {
+		AnchorPane root = loader.load();
 
-		try {
+		// Configura la escena y el stage
+		Scene scene = new Scene(root);
+		Stage stage = new Stage();
 
-			FileReader entrada = new FileReader(" ");
+		stage.setScene(scene);
 
-			int c = entrada.read();
+		stage.setTitle("Archivo: " + file.getName());
 
-			while (c != -1) {
+		stage.initModality(Modality.APPLICATION_MODAL);
 
-				c = entrada.read();
+		// Muestra el contenido del archivo
+		fileNameLabel.setText(file.getName());
 
-				char letra = (char) c;
+		fileContentTextArea.setText(content);
 
-				System.out.print(letra);
-
-			}
-
-			entrada.close();
-
-		} catch (IOException e) {
-
-			// TODO Bloque catch generado automáticamente
-
-			System.out.println("No se ha encontrado el archivo.");
-		}
+		stage.showAndWait();
 	}
 }
+
+/*
+ * Como usar la clase
+ *
+ * File file = new File("sample.txt"); LecturaArchivosGen fileOpener = new
+ * LecturaArchivosGen(); fileOpener.openFile(file);
+ */
