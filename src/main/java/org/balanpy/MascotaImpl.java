@@ -65,7 +65,11 @@ public class MascotaImpl implements Mascota {
 
 	// -----------------------------------------------------------------------------
 
-	HigieneImpl higiene = new HigieneImpl();
+	private HigieneImpl higiene = new HigieneImpl();
+
+	public HigieneImpl getHigiene() {
+		return higiene;
+	}
 
 	// -----------------------------------------------------------------------------
 
