@@ -3,21 +3,16 @@ package org.balanpy;
 import java.io.IOException;
 
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Modality;
-import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 public class BalanpyScreen {
-	private static final double SCREEN_SCALING = 0.6;
-
-	private static final Rectangle2D screenBounds = Screen.getPrimary().getBounds();
-	public static final double WINDOW_WIDTH = screenBounds.getWidth() * SCREEN_SCALING;
-	public static final double WINDOW_HEIGHT = screenBounds.getHeight() * SCREEN_SCALING;
+	public static final double WINDOW_WIDTH = 600;
+	public static final double WINDOW_HEIGHT = 800;
 
 	public static Scene loadScene(Stage stage, String sceneName) throws IOException {
 		Parent root = FXMLLoader.load(BalanpyScreen.class.getResource(sceneName));
