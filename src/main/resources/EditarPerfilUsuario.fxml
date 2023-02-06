@@ -29,7 +29,7 @@
             <Insets bottom="20.0" left="200.0" top="-20.0" />
          </VBox.margin>
       </Button>
-      <Button mnemonicParsing="false" onMouseClicked="#HandleDone" style="-fx-background-color: #87D5CA;" text="Guardar" textFill="WHITE">
+      <Button mnemonicParsing="false" onAction="#guardar" style="-fx-background-color: #87D5CA;" text="Guardar" textFill="WHITE">
          <font>
             <Font name="Arial Black" size="13.0" />
          </font>
@@ -53,7 +53,7 @@
             <Insets left="30.0" right="500.0" top="-30.0" />
          </VBox.margin>
       </Text>
-      <TextField opacity="0.4" prefHeight="26.0" prefWidth="208.0" style="-fx-background-color: #87D5CA;">
+      <TextField fx:id="nombre" opacity="0.4" prefHeight="26.0" prefWidth="208.0" style="-fx-background-color: #87D5CA;">
          <VBox.margin>
             <Insets bottom="20.0" left="30.0" right="500.0" />
          </VBox.margin>
@@ -66,7 +66,7 @@
             <Insets left="30.0" right="500.0" />
          </VBox.margin>
       </Text>
-      <TextField opacity="0.4" style="-fx-background-color: #87D5CA;">
+      <TextField fx:id="telefono" opacity="0.4" style="-fx-background-color: #87D5CA;">
          <VBox.margin>
             <Insets bottom="20.0" left="30.0" right="550.0" />
          </VBox.margin>
@@ -79,7 +79,7 @@
             <Insets left="30.0" right="500.0" />
          </VBox.margin>
       </Text>
-      <TextField opacity="0.4" prefHeight="16.0" prefWidth="35.0" style="-fx-background-color: #87D5CA;">
+      <TextField fx:id="edad" opacity="0.4" prefHeight="16.0" prefWidth="35.0" style="-fx-background-color: #87D5CA;">
          <VBox.margin>
             <Insets bottom="20.0" left="30.0" right="700.0" />
          </VBox.margin>
@@ -92,7 +92,7 @@
             <Insets left="30.0" right="500.0" />
          </VBox.margin>
       </Text>
-      <TextField opacity="0.4" prefHeight="26.0" prefWidth="214.0" style="-fx-background-color: #87D5CA;">
+      <TextField fx:id="email" opacity="0.4" prefHeight="26.0" prefWidth="214.0" style="-fx-background-color: #87D5CA;">
          <VBox.margin>
             <Insets bottom="20.0" left="30.0" right="400.0" />
          </VBox.margin>
@@ -105,7 +105,7 @@
             <Insets left="30.0" right="500.0" />
          </VBox.margin>
       </Text>
-      <ChoiceBox fx:id="sexo" onMouseClicked="#HandleDone" opacity="0.4" prefHeight="29.0" prefWidth="51.0" style="-fx-background-color: #87D5CA;">
+      <ChoiceBox fx:id="sexo" opacity="0.4" prefHeight="29.0" prefWidth="51.0" style="-fx-background-color: #87D5CA;">
          <VBox.margin>
             <Insets bottom="20.0" left="30.0" right="500.0" />
          </VBox.margin>
@@ -118,7 +118,7 @@
             <Insets left="30.0" right="500.0" />
          </VBox.margin>
       </Text>
-      <TextField opacity="0.4" prefHeight="50.0" prefWidth="214.0" style="-fx-background-color: #87D5CA;">
+      <TextField fx:id="direccion" opacity="0.4" prefHeight="50.0" prefWidth="214.0" style="-fx-background-color: #87D5CA;">
          <VBox.margin>
             <Insets bottom="20.0" left="30.0" right="200.0" />
          </VBox.margin>

@@ -25,6 +25,8 @@ public interface Usuario {
 	// getters
 	public String getDNI();
 
+	public Integer getEdad();
+
 	public String getNombre();
 
 	public String getTelefono();
@@ -40,15 +42,17 @@ public interface Usuario {
 	public String getPathSeguro();
 
 	// setters
-	public void setDNI(String dni);
+	public void setDNI(String dni) throws UsuarioException;
 
-	public void setNombre(String nombre);
+	public void setEdad(Integer edad);
+
+	public void setNombre(String nombre) throws UsuarioException;
 
 	public void setTelefono(String telefono);
 
-	public void setEmail(String email);
+	public void setEmail(String email) throws UsuarioException;
 
-	public void setSexo(String sexo);
+	public void setSexo(String sexo) throws UsuarioException;
 
 	public void setDireccion(String direccion);
 
@@ -62,7 +66,7 @@ public interface Usuario {
 	public void save() throws StreamReadException, DatabindException, IOException;
 
 	// Helper for reloading the object
-	public void reload() throws StreamReadException, DatabindException, IOException;
+	public Usuario reload() throws StreamReadException, DatabindException, IOException;
 
 	// Checks if the user has valid data
 	public boolean isValid();
