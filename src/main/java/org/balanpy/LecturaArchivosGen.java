@@ -29,7 +29,7 @@ public class LecturaArchivosGen {
 		String content = new String(Files.readAllBytes(Paths.get(file.getAbsolutePath())), StandardCharsets.UTF_8);
 
 		// Carga la vista de archivo
-		FXMLLoader loader = new FXMLLoader(getClass().getResource("file_view.fxml"));
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("FileView.fxml"));
 
 		loader.setController(this);
 
