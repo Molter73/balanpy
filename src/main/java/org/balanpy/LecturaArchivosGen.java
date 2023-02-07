@@ -53,10 +53,3 @@ public class LecturaArchivosGen {
 		stage.showAndWait();
 	}
 }
-
-/*
- * Como usar la clase
- *
- * File file = new File("sample.txt"); LecturaArchivosGen fileOpener = new
- * LecturaArchivosGen(); fileOpener.openFile(file);
- */

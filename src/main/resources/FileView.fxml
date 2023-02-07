@@ -3,6 +3,13 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane xmlns:fx="http://javafx.com/fxml/1">
-	<!-- TODO Add Nodes -->
-</AnchorPane>
 
+<children>
+
+      <Label fx:id="fileNameLabel" layoutX="14.0" layoutY="14.0" text="Label" />
+      
+      <TextArea fx:id="fileContentTextArea" layoutX="14.0" layoutY="41.0" prefHeight="300.0" prefWidth="572.0" />
+   
+</children>
+   
+</AnchorPane>
