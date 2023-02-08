@@ -28,7 +28,7 @@
                <children>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                      <children>
-                        <Button mnemonicParsing="false" onMouseClicked="#HandleDone" style="-fx-background-color: #87D5CA;" text="Atrás" textFill="WHITE">
+                        <Button mnemonicParsing="false" onAction="#atras" onMouseClicked="#HandleDone" style="-fx-background-color: #87D5CA;" text="Atrás" textFill="WHITE">
                            <font>
                               <Font name="Arial Black" size="13.0" />
                            </font>
@@ -69,6 +69,8 @@
                               <Insets />
                            </VBox.margin>
                         </TextField>
+                        <Label text="DNI*" />
+                        <TextField fx:id="dni" opacity="0.4" style="-fx-background-color: #87D5CA;" />
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Teléfono*">
                            <font>
                               <Font name="Arial" size="13.0" />

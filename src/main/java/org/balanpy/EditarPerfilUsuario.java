@@ -21,6 +21,9 @@ public class EditarPerfilUsuario {
 	TextField nombre;
 
 	@FXML
+	TextField dni;
+
+	@FXML
 	TextField telefono;
 
 	@FXML
@@ -43,6 +46,7 @@ public class EditarPerfilUsuario {
 	public void guardar(ActionEvent event) throws StreamReadException, DatabindException, IOException {
 		try {
 			usuario.setNombre(nombre.getText());
+			usuario.setDNI(dni.getText());
 			usuario.setEmail(email.getText());
 			usuario.setSexo(sexo.getValue());
 			usuario.setEdad(Integer.parseInt(edad.getText()));

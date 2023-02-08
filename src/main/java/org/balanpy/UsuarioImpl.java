@@ -5,6 +5,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.regex.Pattern;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.core.exc.StreamReadException;
 import com.fasterxml.jackson.databind.DatabindException;
@@ -50,7 +51,7 @@ public class UsuarioImpl implements Usuario {
 			try {
 				instance = om.readValue(USUARIO_PATH.toFile(), UsuarioImpl.class);
 			} catch (IOException e) {
-				System.out.println("Failed to load user data.");
+				System.out.println("Failed to load user data. " + e.getMessage());
 				instance = new UsuarioImpl();
 			}
 		}
@@ -180,6 +181,7 @@ public class UsuarioImpl implements Usuario {
 	}
 
 	@Override
+	@JsonIgnore
 	public boolean isValid() {
 		// Como el dni es nuestro indicador unico para cada usuario,
 		// si este está vacío asumimos que el usuario no existe.
