@@ -14,6 +14,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 public class EditarPerfilUsuario {
+	private final static String SCREEN = "/EditarPerfilUsuario.fxml";
 	private Usuario usuario = UsuarioImpl.getInstance();
 
 	@FXML
@@ -51,12 +52,17 @@ public class EditarPerfilUsuario {
 			usuario.save();
 
 			Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-			BalanpyScreen.loadScene(stage, "/PortadaAplicacion.fxml");
+			BalanpyScreen.loadScene(stage, "/PortadaAplicacion.fxml", SCREEN);
 		} catch (Exception e) {
 			Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 			BalanpyScreen.quickPopUp(stage, e.getMessage());
 			usuario = usuario.reload();
 		}
+	}
+
+	public void atras(ActionEvent event) throws IOException {
+		Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+		BalanpyScreen.back(stage, SCREEN);
 	}
 
 	public void HandleDone(MouseEvent event) throws Exception {

@@ -13,6 +13,8 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 public class Main extends Application {
+	private final static String FAILSAFE_SCREEN = "/PantallaInicio.fxml";
+
 	static ArrayList<Integer> temperaturas = new ArrayList<Integer>();
 
 	@FXML
@@ -22,9 +24,9 @@ public class Main extends Application {
 	public void start(Stage primaryStage) throws Exception {
 		Usuario usuario = UsuarioImpl.getInstance();
 		if (usuario.isValid()) {
-			BalanpyScreen.loadScene(primaryStage, "/PortadaAplicacion.fxml");
+			BalanpyScreen.loadScene(primaryStage, "/PortadaAplicacion.fxml", FAILSAFE_SCREEN);
 		} else {
-			BalanpyScreen.loadScene(primaryStage, "/PantallaInicio.fxml");
+			BalanpyScreen.loadScene(primaryStage, "/PantallaInicio.fxml", FAILSAFE_SCREEN);
 		}
 	}
 
@@ -46,7 +48,7 @@ public class Main extends Application {
 		}
 
 		Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-		Scene scene = BalanpyScreen.loadScene(stage, "/MainMenu.fxml");
+		Scene scene = BalanpyScreen.loadScene(stage, "/MainMenu.fxml", FAILSAFE_SCREEN);
 
 		Label temperaturaMaxima = (Label) scene.lookup("#temperaturaMaxima");
 		temperaturaMaxima.setText(Balanpy.getTemperaturaMaxima(temperaturas).toString());

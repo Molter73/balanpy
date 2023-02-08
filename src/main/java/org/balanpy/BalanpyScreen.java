@@ -14,7 +14,9 @@ public class BalanpyScreen {
 	public static final double WINDOW_WIDTH = 600;
 	public static final double WINDOW_HEIGHT = 800;
 
-	public static Scene loadScene(Stage stage, String sceneName) throws IOException {
+	private static String previousScreen = "/PantallaInicio.fxml";
+
+	public static Scene loadScene(Stage stage, String sceneName, String origin) throws IOException {
 		Parent root = FXMLLoader.load(BalanpyScreen.class.getResource(sceneName));
 		Scene scene = new Scene(root, BalanpyScreen.WINDOW_WIDTH, BalanpyScreen.WINDOW_HEIGHT);
 
@@ -22,6 +24,13 @@ public class BalanpyScreen {
 		stage.setTitle("Balanpy");
 		stage.show();
 
+		previousScreen = origin;
+		return scene;
+	}
+
+	public static Scene back(Stage stage, String origin) throws IOException {
+		Scene scene = loadScene(stage, previousScreen, previousScreen);
+		previousScreen = origin;
 		return scene;
 	}
 
