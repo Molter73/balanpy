@@ -1,25 +1,13 @@
 package org.balanpy;
 
-import javafx.fxml.FXML;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.ChoiceBox;
+import javafx.scene.input.MouseEvent;
 
 public class PerfilMascota {
-	@FXML
-CheckBox configuracion_mascota;
-	
-CheckBox salud_mascota;
 
-CheckBox seguro_mascota;
+	public void HandleDone(MouseEvent event) throws Exception {
 
-CheckBox dni_mascota;
+		System.out.println("Está funcionando amigo");
 
-CheckBox pedigree;
+	}
 
-CheckBox chip;
-
-CheckBox esterilizado;
-
-CheckBox ppp;
-	
 }
