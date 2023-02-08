@@ -28,12 +28,12 @@
          <children>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="190.0" styleClass="usuario" stylesheets="@usuario.css">
                <children>
-                  <ImageView fx:id="foto_mascota1" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#HandleDone" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="fotoMascota1" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#HandleDone" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@Portada-Bulldog.png" />
                      </image>
                   </ImageView>
-                  <Text fx:id="mascota1" strokeType="OUTSIDE" strokeWidth="0.0" text="Mascota1">
+                  <Text fx:id="nombreMascota1" strokeType="OUTSIDE" strokeWidth="0.0" text="Mascota1">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -45,12 +45,12 @@
             </VBox>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" styleClass="usuario" stylesheets="@usuario.css" GridPane.columnIndex="1">
                <children>
-                  <ImageView fx:id="foto_mascota2" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#HandleDone" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="fotoMascota2" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#HandleDone" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@Portada-Carlino.png" />
                      </image>
                   </ImageView>
-                  <Text fx:id="mascota2" strokeType="OUTSIDE" strokeWidth="0.0" text="Mascota2">
+                  <Text fx:id="nombreMascota2" strokeType="OUTSIDE" strokeWidth="0.0" text="Mascota2">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -62,12 +62,12 @@
             </VBox>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" styleClass="usuario" stylesheets="@usuario.css" GridPane.columnIndex="2">
                <children>
-                  <ImageView fx:id="foto_mascota3" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#HandleDone" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="fotoMascota3" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#HandleDone" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@añadir-usuario-balanpy.png" />
                      </image>
                   </ImageView>
-                  <Text fx:id="mascota3" strokeType="OUTSIDE" strokeWidth="0.0" text="Mascota3">
+                  <Text fx:id="nombreMascota3" strokeType="OUTSIDE" strokeWidth="0.0" text="Mascota3">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -89,7 +89,7 @@
                   <Font size="26.0" />
                </font>
             </Label>
-            <TextArea fx:id="reg_baños" prefHeight="224.0" prefWidth="520.0" promptText="Se visualizará los datos recogidos en configuración de higiene.">
+            <TextArea fx:id="registroBaños" prefHeight="224.0" prefWidth="520.0" promptText="Se visualizará los datos recogidos en configuración de higiene.">
                <VBox.margin>
                   <Insets bottom="10.0" left="40.0" right="40.0" top="10.0" />
                </VBox.margin>
@@ -98,12 +98,12 @@
       </VBox>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="70.0">
          <children>
-            <Button fx:id="pdf_h" alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#HandleDone" onMouseClicked="#HandleDone" prefHeight="50.0" prefWidth="220.0" style="-fx-background-color: #87D5CA;" styleClass="boton_personalizado" stylesheets="@usuario.css" text="Documento PDF" textAlignment="CENTER" textFill="WHITE">
+            <Button fx:id="pdfHigiene" alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#HandleDone" onMouseClicked="#HandleDone" prefHeight="50.0" prefWidth="220.0" style="-fx-background-color: #87D5CA;" styleClass="boton_personalizado" stylesheets="@usuario.css" text="Documento PDF" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
             </Button>
-            <Button fx:id="configuracion_h" alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#HandleDone" onMouseClicked="#HandleDone" prefHeight="50.0" prefWidth="220.0" style="-fx-background-color: #87D5CA;" styleClass="boton_personalizado" stylesheets="@usuario.css" text="Configuración" textFill="WHITE">
+            <Button fx:id="configHigiene" alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#HandleDone" onMouseClicked="#HandleDone" prefHeight="50.0" prefWidth="220.0" style="-fx-background-color: #87D5CA;" styleClass="boton_personalizado" stylesheets="@usuario.css" text="Configuración" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
