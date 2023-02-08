@@ -35,9 +35,9 @@
                   <Text fx:id="sexo" strokeType="OUTSIDE" strokeWidth="0.0" text="sexo" />
                   <Text fx:id="color" strokeType="OUTSIDE" strokeWidth="0.0" text="color" />
                   <Text fx:id="raza" strokeType="OUTSIDE" strokeWidth="0.0" text="raza" />
-                  <Text fx:id="f_nacimiento" strokeType="OUTSIDE" strokeWidth="0.0" text="f_nacimiento" />
+                  <Text fx:id="fechaNacimiento" strokeType="OUTSIDE" strokeWidth="0.0" text="f_nacimiento" />
                   <Text fx:id="esterilizado" strokeType="OUTSIDE" strokeWidth="0.0" text="esterilizado" />
-                  <Text fx:id="g_sanguineo" strokeType="OUTSIDE" strokeWidth="0.0" text="g_sanguineo" />
+                  <Text fx:id="grupoSanguineo" strokeType="OUTSIDE" strokeWidth="0.0" text="g_sanguineo" />
                </children>
                <opaqueInsets>
                   <Insets />
@@ -80,7 +80,7 @@
                 <RowConstraints maxHeight="166.0" minHeight="10.0" prefHeight="165.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <ImageView fx:id="foto_mascota" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="fotoMascota" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@Portada-Bulldog.png" />
                      </image>
@@ -101,7 +101,7 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button fx:id="configuracion_mascota" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#HandleDone" prefHeight="69.0" prefWidth="345.0" style="-fx-background-color: #87D5CA;" text="Configuración" textFill="WHITE" GridPane.columnIndex="1">
+            <Button fx:id="configuracionMascota" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#HandleDone" prefHeight="69.0" prefWidth="345.0" style="-fx-background-color: #87D5CA;" text="Configuración" textFill="WHITE" GridPane.columnIndex="1">
                <font>
                   <Font size="14.0" />
                </font>
@@ -109,7 +109,7 @@
                   <Insets bottom="10.0" left="10.0" right="205.0" top="10.0" />
                </GridPane.margin>
             </Button>
-            <Text fx:id="nombre_mascota" strokeType="OUTSIDE" strokeWidth="0.0" text="nombre_mascota" textAlignment="CENTER">
+            <Text fx:id="nombreMascota" strokeType="OUTSIDE" strokeWidth="0.0" text="nombre_mascota" textAlignment="CENTER">
                <GridPane.margin>
                   <Insets bottom="40.0" left="65.0" />
                </GridPane.margin>
@@ -125,7 +125,7 @@
           <RowConstraints maxHeight="239.0" minHeight="10.0" prefHeight="231.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <LineChart fx:id="temp_diaria" title="Temperatura Diaria">
+            <LineChart fx:id="temperaturaDiaria" title="Temperatura Diaria">
               <xAxis>
                 <CategoryAxis side="BOTTOM" />
               </xAxis>
@@ -158,7 +158,7 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button fx:id="salud_mascota" mnemonicParsing="false" onMouseClicked="#HandleDone" prefHeight="50.0" prefWidth="300.0" style="-fx-background-color: #87D5CA;" text="Alergias, Vacunas y Enfermedades Anteriores" textFill="WHITE">
+            <Button fx:id="saludMascota" mnemonicParsing="false" onMouseClicked="#HandleDone" prefHeight="50.0" prefWidth="300.0" style="-fx-background-color: #87D5CA;" text="Alergias, Vacunas y Enfermedades Anteriores" textFill="WHITE">
                <font>
                   <Font size="14.0" />
                </font>
@@ -168,7 +168,7 @@
             </Button>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="284.0" GridPane.columnIndex="1">
                <children>
-                  <Button fx:id="seguro_mascota" mnemonicParsing="false" onMouseClicked="#HandleDone" prefHeight="50.0" style="-fx-background-color: #87D5CA;" text="Seguro De La Mascota" textFill="WHITE">
+                  <Button fx:id="seguroMascota" mnemonicParsing="false" onMouseClicked="#HandleDone" prefHeight="50.0" style="-fx-background-color: #87D5CA;" text="Seguro De La Mascota" textFill="WHITE">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -179,7 +179,7 @@
       </GridPane>
       <HBox prefHeight="100.0" prefWidth="600.0" spacing="38.0">
          <children>
-            <Button fx:id="dni_mascota" mnemonicParsing="false" onMouseClicked="#HandleDone" prefHeight="50.0" style="-fx-background-color: #87D5CA;" text="DNI Mascota" textFill="WHITE">
+            <Button fx:id="dniMascota" mnemonicParsing="false" onMouseClicked="#HandleDone" prefHeight="50.0" style="-fx-background-color: #87D5CA;" text="DNI Mascota" textFill="WHITE">
                <font>
                   <Font size="14.0" />
                </font>
