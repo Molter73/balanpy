@@ -5,6 +5,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.regex.Pattern;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.core.exc.StreamReadException;
 import com.fasterxml.jackson.databind.DatabindException;
@@ -28,6 +29,7 @@ public class UsuarioImpl implements Usuario {
 
 	@JsonProperty(value = "DNI")
 	private String dni = "";
+	private Integer edad = 0;
 	private String nombre = "";
 	private String telefono = "";
 	private String email = "";
@@ -49,7 +51,7 @@ public class UsuarioImpl implements Usuario {
 			try {
 				instance = om.readValue(USUARIO_PATH.toFile(), UsuarioImpl.class);
 			} catch (IOException e) {
-				System.out.println("Failed to load user data.");
+				System.out.println("Failed to load user data. " + e.getMessage());
 				instance = new UsuarioImpl();
 			}
 		}
@@ -60,6 +62,11 @@ public class UsuarioImpl implements Usuario {
 	@Override
 	public String getDNI() {
 		return dni;
+	}
+
+	@Override
+	public Integer getEdad() {
+		return edad;
 	}
 
 	@Override
@@ -98,17 +105,22 @@ public class UsuarioImpl implements Usuario {
 	}
 
 	@Override
-	public void setDNI(String dni) {
+	public void setDNI(String dni) throws UsuarioException {
 		if (!isValidDNI(dni)) {
-			return;
+			throw new UsuarioException("DNI invalido");
 		}
 		this.dni = dni;
 	}
 
 	@Override
-	public void setNombre(String nombre) {
+	public void setEdad(Integer edad) {
+		this.edad = edad;
+	}
+
+	@Override
+	public void setNombre(String nombre) throws UsuarioException {
 		if (nombre.isEmpty()) {
-			return;
+			throw new UsuarioException("No se aceptan nombres vacios");
 		}
 		this.nombre = nombre;
 	}
@@ -120,17 +132,17 @@ public class UsuarioImpl implements Usuario {
 	}
 
 	@Override
-	public void setEmail(String email) {
+	public void setEmail(String email) throws UsuarioException {
 		if (!isValidEmail(email)) {
-			return;
+			throw new UsuarioException("email invalido");
 		}
 		this.email = email;
 	}
 
 	@Override
-	public void setSexo(String sexo) {
+	public void setSexo(String sexo) throws UsuarioException {
 		if (!isValidSexo(sexo)) {
-			return;
+			throw new UsuarioException("Sexo invalido");
 		}
 		this.sexo = sexo;
 	}
@@ -163,11 +175,13 @@ public class UsuarioImpl implements Usuario {
 	}
 
 	@Override
-	public void reload() throws StreamReadException, DatabindException, IOException {
+	public Usuario reload() throws StreamReadException, DatabindException, IOException {
 		instance = om.readValue(USUARIO_PATH.toFile(), UsuarioImpl.class);
+		return instance;
 	}
 
 	@Override
+	@JsonIgnore
 	public boolean isValid() {
 		// Como el dni es nuestro indicador unico para cada usuario,
 		// si este está vacío asumimos que el usuario no existe.

@@ -32,7 +32,7 @@ class UsuarioImplTest {
 			assertTrue(UsuarioImpl.isValidDNI(dni));
 		}
 
-		String[] dniInvalidos = { "12345678a", "y1234567n", "12345789", "cualquiercosa" };
+		String[] dniInvalidos = { "12345678a", "y1234567n", "12345789", "cualquiercosa", "" };
 
 		for (String dni : dniInvalidos) {
 			assertFalse(UsuarioImpl.isValidDNI(dni));
