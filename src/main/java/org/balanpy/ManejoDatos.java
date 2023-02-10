@@ -1,41 +1,91 @@
 package org.balanpy;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
 
-public interface ManejoDatos {
+public class ManejoDatos {
 
-	public double obtenerTemperatura(String archivo) throws IOException;
+	private ArrayList<Double> temperaturas;
 
-	public int obtenerPulsaciones(String archivo) throws IOException;
+	private ArrayList<Integer> pulsaciones;
 
-}
+	public ManejoDatos() {
 
-class DatosMascota implements ManejoDatos {
+		temperaturas = new ArrayList<>();
 
-	@Override
-	public double obtenerTemperatura(String archivo) throws IOException {
-
-		BufferedReader br = new BufferedReader(new FileReader(archivo));
-
-		String linea = br.readLine();
-
-		br.close();
-
-		return Double.parseDouble(linea);
-	}
-
-	@Override
-	public int obtenerPulsaciones(String archivo) throws IOException {
-
-		BufferedReader br = new BufferedReader(new FileReader(archivo));
-
-		String linea = br.readLine();
-
-		br.close();
-
-		return Integer.parseInt(linea);
+		pulsaciones = new ArrayList<>();
 
 	}
+
+	class DatoGenerico {
+
+		private LocalDateTime fecha;
+
+		private Integer dato;
+
+		public LocalDateTime getFecha() {
+			return fecha;
+		}
+
+		public void setFecha(LocalDateTime fecha) {
+			this.fecha = fecha;
+		}
+
+		public Integer getDato() {
+			return dato;
+		}
+
+		public void setDato(Integer dato) {
+			this.dato = dato;
+		}
+
+	}
+
+	class Temperaturas {
+
+		private ArrayList<DatoGenerico> datos;
+
+		public ArrayList<DatoGenerico> getDatos() {
+			return datos;
+		}
+
+		public void setDatos(ArrayList<DatoGenerico> datos) {
+			this.datos = datos;
+		}
+
+		public void imprimeDatos(ArrayList<DatoGenerico> datos) {
+
+			for (DatoGenerico d : datos) {
+
+				System.out.println(d + "º.");
+
+			}
+
+		}
+
+	}
+
+	class Pulsaciones {
+
+		private ArrayList<DatoGenerico> datos;
+
+		public ArrayList<DatoGenerico> getDatos() {
+			return datos;
+		}
+
+		public void setDatos(ArrayList<DatoGenerico> datos) {
+			this.datos = datos;
+		}
+
+		public void imprimeDatos(ArrayList<DatoGenerico> datos) {
+
+			for (DatoGenerico d : datos) {
+
+				System.out.println(d + "ppm.");
+
+			}
+
+		}
+	}
+
 }
