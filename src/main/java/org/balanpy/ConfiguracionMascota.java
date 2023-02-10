@@ -18,7 +18,7 @@ import javafx.scene.input.MouseEvent;
 public class ConfiguracionMascota implements Initializable{
 	
 	@FXML
-	TextField nombre_mascota;
+	TextField nombreMascota;
 	@FXML
 	TextField color;
 	@FXML
@@ -27,46 +27,46 @@ public class ConfiguracionMascota implements Initializable{
 	TextField chip;
 	
 	@FXML
-	ChoiceBox<String> sexo_mascota;
-	private static final String[] sexo = {"Macho", "Hembra"};
+	ChoiceBox<String> sexoMascota;
+	private static final String[] SEXO = {"Macho", "Hembra"};
 	@FXML
 	ChoiceBox<String> esterilizada;
-	private static final String[] estrl = {"Si", "No"};
+	private static final String[] ESTERILIZADA = {"Si", "No"};
 	@FXML
-	ChoiceBox<String> sanguineo;
-	private static final String[] gsanguineo = {"DEA-1.1.", "DEA-1.2.", "DEA-3", "DEA-4", "DEA-5", "DEA-6", "DEA-7", "DEA-8"};
+	ChoiceBox<String> grupoSanguineo;
+	private static final String[] GRUPO_SANGUINEO = {"DEA-1.1.", "DEA-1.2.", "DEA-3", "DEA-4", "DEA-5", "DEA-6", "DEA-7", "DEA-8"};
 	
 	@FXML
 	DatePicker nacimiento;
 	
 	@FXML
-	ListView<String> vacunas;
-	String[] lista_v = {};	
+	ListView<String> VACUNAS;
+	String[] listaVacunas = {};	
 	
 	@FXML
-	ListView<String> alergias;
-	String[] lista_a = {};
+	ListView<String> ALERGIAS;
+	String[] listaAlergias = {};
 	
 	@FXML
-	ListView<String> enfermedades;
-	String[] lista_e = {};
+	ListView<String> ENFERMEDADES;
+	String[] listaEnfermedades = {};
 	
 	
 	@FXML
 	Button esterilizacion;
 	@FXML
-	Button dni_mascota;
+	Button dniMascota;
 	@FXML
 	Button pedigree;
 	@FXML
-	Button eliminar_mascota;
+	Button eliminarMascota;
 	@FXML
 	Button atras;
 	@FXML
-	Button guardar_mascota;
+	Button guardarMascota;
 	
 	@FXML
-	ImageView subir_mascota;
+	ImageView subirMascota;
 
 	
 	public void HandleDone(MouseEvent event) throws Exception {
@@ -77,9 +77,9 @@ public class ConfiguracionMascota implements Initializable{
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		
 		//ChoiceBox
-		sexo_mascota.getItems().addAll(sexo);
-		esterilizada.getItems().addAll(estrl);
-		sanguineo.getItems().addAll(gsanguineo);
+		sexoMascota.getItems().addAll(SEXO);
+		esterilizada.getItems().addAll(ESTERILIZADA);
+		grupoSanguineo.getItems().addAll(GRUPO_SANGUINEO);
 		
 		//ListView
 	}

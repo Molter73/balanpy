@@ -16,7 +16,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
+<<<<<<< Updated upstream
 <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="600.0" style="-fx-background-color: #FFF;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.balanpy.ConfiguracionMascota">
+=======
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="600.0" style="-fx-background-color: #FFF;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.balanpy.ConfiguracionMascota">
+>>>>>>> Stashed changes
    <children>
       <Label text="Introducir Datos">
          <VBox.margin>
@@ -37,7 +41,7 @@
                      <VBox.margin>
                         <Insets bottom="8.0" />
                      </VBox.margin></Button>
-                  <Button fx:id="dni_mascota" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#HandleDone" prefHeight="30.0" prefWidth="181.0" styleClass="boton_personalizado" stylesheets="@usuario.css" text="Añadir DNI Mascota">
+                  <Button fx:id="dniMascota" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#HandleDone" prefHeight="30.0" prefWidth="181.0" styleClass="boton_personalizado" stylesheets="@usuario.css" text="Añadir DNI Mascota">
                      <VBox.margin>
                         <Insets bottom="8.0" />
                      </VBox.margin></Button>
@@ -51,7 +55,7 @@
                </padding></VBox>
             <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="130.0" prefWidth="120.0" styleClass="usuario" stylesheets="@usuario.css">
                <children>
-                  <ImageView fx:id="subir_mascota" fitHeight="75.0" fitWidth="75.0" onMouseClicked="#HandleDone" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="subirMascota" fitHeight="75.0" fitWidth="75.0" onMouseClicked="#HandleDone" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@añadir-usuario-balanpy.png" />
                      </image>
@@ -71,7 +75,7 @@
                   <Insets left="135.0" right="4.0" top="15.0" />
                </HBox.margin>
                <children>
-                  <Button fx:id="eliminar_mascota" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#HandleDone" prefHeight="30.0" prefWidth="181.0" styleClass="boton_personalizado" stylesheets="@usuario.css" text="Eliminar Perfil">
+                  <Button fx:id="eliminarMascota" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#HandleDone" prefHeight="30.0" prefWidth="181.0" styleClass="boton_personalizado" stylesheets="@usuario.css" text="Eliminar Perfil">
                      <VBox.margin>
                         <Insets bottom="8.0" />
                      </VBox.margin></Button>
@@ -79,7 +83,7 @@
                      <VBox.margin>
                         <Insets bottom="8.0" />
                      </VBox.margin></Button>
-                  <Button fx:id="guardar_mascota" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#HandleDone" prefHeight="30.0" prefWidth="181.0" styleClass="boton_personalizado" stylesheets="@usuario.css" text="Guardar" />
+                  <Button fx:id="guardarMascota" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#HandleDone" prefHeight="30.0" prefWidth="181.0" styleClass="boton_personalizado" stylesheets="@usuario.css" text="Guardar" />
                </children>
                <padding>
                   <Insets top="4.0" />
@@ -106,11 +110,11 @@
               </rowConstraints>
                <children>
                   <Label contentDisplay="CENTER" text="Nombre *" />
-                  <TextField fx:id="nombre_mascota" styleClass="boton-inferior-centro" stylesheets="@usuario.css" GridPane.rowIndex="1" />
+                  <TextField fx:id="nombreMascota" styleClass="boton-inferior-centro" stylesheets="@usuario.css" GridPane.rowIndex="1" />
                   <Label contentDisplay="CENTER" text="Color" GridPane.columnIndex="1" />
                   <TextField fx:id="color" styleClass="boton-inferior-centro" stylesheets="@usuario.css" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                   <Label contentDisplay="CENTER" text="Sexo *" GridPane.columnIndex="2" />
-                  <ChoiceBox fx:id="sexo_mascota" prefWidth="150.0" styleClass="boton-inferior-centro" stylesheets="@usuario.css" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <ChoiceBox fx:id="sexoMascota" prefWidth="150.0" styleClass="boton-inferior-centro" stylesheets="@usuario.css" GridPane.columnIndex="2" GridPane.rowIndex="1" />
                   <Label contentDisplay="CENTER" text="Fecha Nacimiento *" GridPane.rowIndex="2" />
                   <DatePicker fx:id="nacimiento" onAction="#getDate" styleClass="boton-inferior-centro" stylesheets="@usuario.css" GridPane.rowIndex="3" />
                   <Label contentDisplay="CENTER" text="Raza" GridPane.columnIndex="1" GridPane.rowIndex="2" />
@@ -118,15 +122,15 @@
                   <Label text="Esterilizada" GridPane.columnIndex="2" GridPane.rowIndex="2" />
                   <ChoiceBox fx:id="esterilizada" prefWidth="150.0" styleClass="boton-inferior-centro" stylesheets="@usuario.css" GridPane.columnIndex="2" GridPane.rowIndex="3" />
                   <Label text="Grupo Sanguíneo" GridPane.rowIndex="4" />
-                  <ChoiceBox fx:id="sanguineo" prefWidth="150.0" styleClass="boton-inferior-centro" stylesheets="@usuario.css" GridPane.rowIndex="5" />
+                  <ChoiceBox fx:id="grupoSanguineo" prefWidth="150.0" styleClass="boton-inferior-centro" stylesheets="@usuario.css" GridPane.rowIndex="5" />
                   <Label text="Vacunas" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                  <ListView fx:id="vacunas" prefHeight="200.0" prefWidth="200.0" styleClass="boton-inferior-centro" stylesheets="@usuario.css" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <ListView fx:id="VACUNAS" prefHeight="200.0" prefWidth="200.0" styleClass="boton-inferior-centro" stylesheets="@usuario.css" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                   <Label contentDisplay="CENTER" text="Nº Chip  Mascota" GridPane.columnIndex="2" GridPane.rowIndex="4" />
                   <TextField fx:id="chip" styleClass="boton-inferior-centro" stylesheets="@usuario.css" GridPane.columnIndex="2" GridPane.rowIndex="5" />
                   <Label contentDisplay="CENTER" text="Alergias" GridPane.rowIndex="6" />
-                  <ListView fx:id="alergias" prefHeight="200.0" prefWidth="200.0" styleClass="boton-inferior-centro" stylesheets="@usuario.css" GridPane.rowIndex="7" />
+                  <ListView fx:id="ALERGIAS" prefHeight="200.0" prefWidth="200.0" styleClass="boton-inferior-centro" stylesheets="@usuario.css" GridPane.rowIndex="7" />
                   <Label contentDisplay="CENTER" text="Enfermedades" GridPane.columnIndex="2" GridPane.rowIndex="6" />
-                  <ListView fx:id="enfermedades" prefHeight="200.0" prefWidth="200.0" styleClass="boton-inferior-centro" stylesheets="@usuario.css" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                  <ListView fx:id="ENFERMEDADES" prefHeight="200.0" prefWidth="200.0" styleClass="boton-inferior-centro" stylesheets="@usuario.css" GridPane.columnIndex="2" GridPane.rowIndex="7" />
                </children>
                <HBox.margin>
                   <Insets bottom="18.0" top="18.0" />
