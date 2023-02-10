@@ -16,7 +16,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 
 public class PortadaAplicacion {
-	private static final Path MASCOTAS_PATH = Paths.get(System.getenv("BALANPY_CONFIG_DIR"), "mascotas.json");
+	private static final Path MASCOTAS_PATH = Paths.get(Configuracion.ROOT_DIR, "mascotas.json");
 	ArrayList<MascotaImpl> mascotas;
 
 	@FXML
@@ -49,7 +49,7 @@ public class PortadaAplicacion {
 	}
 
 	private void setProfile(ImageView imageView, Label label, Mascota mascota) throws MalformedURLException {
-		Path imagePath = Paths.get(System.getenv("BALANPY_CONFIG_DIR"), mascota.getUUID().toString(), "profile.png");
+		Path imagePath = Paths.get(Configuracion.ROOT_DIR, mascota.getUUID().toString(), "profile.png");
 		label.setText(mascota.getNombre());
 		imageView.setImage(new Image(imagePath.toUri().toURL().toExternalForm()));
 	}

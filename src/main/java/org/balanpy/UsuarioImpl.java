@@ -20,7 +20,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  *  para permitir mejor manejo de error.
  */
 public class UsuarioImpl implements Usuario {
-	private static final Path USUARIO_PATH = Paths.get(System.getenv("BALANPY_CONFIG_DIR"), "usuario.json");
+	private static final Path USUARIO_PATH = Paths.get(Configuracion.ROOT_DIR, "usuario.json");
 	private static final String MASCULINO = "masculino";
 	private static final String FEMENINO = "femenino";
 	private static final Pattern NIE_PATTERN = Pattern.compile("^\\p{Upper}\\d{7}\\p{Upper}$");
