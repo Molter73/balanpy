@@ -8,7 +8,7 @@
 
 <HBox alignment="BOTTOM_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: #FFF;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.balanpy.BarraTareas">
    <children>
-      <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#HandleDone" prefHeight="100.0" prefWidth="100.0" styleClass="acceso-rapido" stylesheets="@usuario.css">
+      <VBox fx:id="pulsaciones" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#HandleDone" prefHeight="100.0" prefWidth="100.0" styleClass="acceso-rapido" stylesheets="@usuario.css">
          <children>
             <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -17,7 +17,7 @@
             </ImageView>
          </children>
       </VBox>
-      <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#HandleDone" prefHeight="100.0" prefWidth="100.0" styleClass="acceso-rapido" stylesheets="@usuario.css">
+      <VBox fx:id="temperatura" alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#HandleDone" prefHeight="100.0" prefWidth="100.0" styleClass="acceso-rapido" stylesheets="@usuario.css">
          <children>
             <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -32,7 +32,7 @@
             <Insets left="-1.0" right="-1.0" />
          </HBox.margin>
       </VBox>
-      <VBox alignment="CENTER" layoutX="130.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#HandleDone" prefHeight="100.0" prefWidth="100.0" styleClass="boton-inferior-centro" stylesheets="@usuario.css">
+      <VBox fx:id="portada" alignment="CENTER" layoutX="130.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#HandleDone" prefHeight="100.0" prefWidth="100.0" styleClass="boton-inferior-centro" stylesheets="@usuario.css">
          <children>
             <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -41,7 +41,7 @@
             </ImageView>
          </children>
       </VBox>
-      <VBox alignment="CENTER" layoutX="250.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#HandleDone" prefHeight="100.0" prefWidth="100.0" styleClass="acceso-rapido" stylesheets="@usuario.css">
+      <VBox fx:id="veterinario" alignment="CENTER" layoutX="250.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#HandleDone" prefHeight="100.0" prefWidth="100.0" styleClass="acceso-rapido" stylesheets="@usuario.css">
          <children>
             <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -53,7 +53,7 @@
             <Insets left="-1.0" right="-1.0" />
          </HBox.margin>
       </VBox>
-      <VBox alignment="CENTER" layoutX="370.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#HandleDone" prefHeight="100.0" prefWidth="100.0" styleClass="acceso-rapido" stylesheets="@usuario.css">
+      <VBox fx:id="perfilUsuario" alignment="CENTER" layoutX="370.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#HandleDone" prefHeight="100.0" prefWidth="100.0" styleClass="acceso-rapido" stylesheets="@usuario.css">
          <children>
             <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
                <image>
