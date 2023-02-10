@@ -50,14 +50,14 @@
             <Insets bottom="30.0" />
          </padding>
             </Label>
-      <VBox alignment="TOP_CENTER" fillWidth="false" maxWidth="-Infinity" onMouseClicked="#HandleDone" prefHeight="200.0" prefWidth="180.0" styleClass="usuario" stylesheets="@usuario.css">
+      <VBox alignment="TOP_CENTER" fillWidth="false" maxWidth="-Infinity" onMouseClicked="#crearUsuario" prefHeight="200.0" prefWidth="180.0" styleClass="usuario" stylesheets="@usuario.css">
          <children>
             <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@añadir-usuario-balanpy.png" />
                </image>
             </ImageView>
-            <Label onMouseClicked="#HandleDone" text="Añadir Usuario">
+            <Label onMouseClicked="#crearUsuario" text="Añadir Usuario">
                <font>
                   <Font name="Poppins Bold" size="14.0" />
                </font>
