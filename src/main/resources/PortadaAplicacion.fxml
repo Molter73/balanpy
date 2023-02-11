@@ -69,12 +69,12 @@
          <children>
             <VBox alignment="TOP_CENTER" onMouseClicked="#HandleDone" styleClass="usuario" stylesheets="@usuario.css">
                <children>
-                  <ImageView fitHeight="160.0" fitWidth="220.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="petImage0" fitHeight="160.0" fitWidth="220.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@Portada-Bulldog.png" />
+                        <Image url="@añadir-usuario-balanpy.png" />
                      </image>
                   </ImageView>
-                  <Label text="Sansa" textAlignment="CENTER">
+                  <Label fx:id="petName0" text="Añadir Mascota" textAlignment="CENTER">
                      <font>
                         <Font name="Poppins Bold" size="16.0" />
                      </font>
@@ -83,12 +83,12 @@
             </VBox>
             <VBox alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" onMouseClicked="#HandleDone" prefHeight="200.0" prefWidth="100.0" styleClass="usuario" stylesheets="@usuario.css" GridPane.columnIndex="1">
                <children>
-                  <ImageView fitHeight="180.0" fitWidth="160.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="petImage1" fitHeight="180.0" fitWidth="160.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@Portada-Carlino.png" />
+                        <Image url="@añadir-usuario-balanpy.png" />
                      </image>
                   </ImageView>
-                  <Label text="Hank" textAlignment="CENTER">
+                  <Label fx:id="petName1" text="Añadir Mascota" textAlignment="CENTER">
                      <font>
                         <Font name="Poppins Bold" size="16.0" />
                      </font>
@@ -97,12 +97,12 @@
             </VBox>
             <VBox alignment="TOP_CENTER" layoutX="194.0" layoutY="10.0" onMouseClicked="#HandleDone" prefHeight="200.0" prefWidth="100.0" styleClass="usuario" stylesheets="@usuario.css" GridPane.columnIndex="2">
                <children>
-                  <ImageView fitHeight="160.0" fitWidth="220.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="petImage2" fitHeight="160.0" fitWidth="220.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@añadir-usuario-balanpy.png" />
                      </image>
                   </ImageView>
-                  <Label text="Añadir Mascota" textAlignment="CENTER">
+                  <Label fx:id="petName2" text="Añadir Mascota" textAlignment="CENTER">
                      <font>
                         <Font name="Poppins Bold" size="16.0" />
                      </font>
