@@ -7,7 +7,6 @@ import java.util.Map;
 import java.util.UUID;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class MascotaImpl implements Mascota {
 
@@ -55,13 +54,11 @@ public class MascotaImpl implements Mascota {
 	@JsonProperty(value = "temperaturas")
 	private String pathTemperaturas = "";
 
-	private ArrayList<String> alergias = new ArrayList();
+	private ArrayList<String> alergias = new ArrayList<>();
 
-	private ArrayList<String> enfermedades = new ArrayList();
+	private ArrayList<String> enfermedades = new ArrayList<>();
 
 	private Map<String, Date> vacunas = new HashMap<>();
-
-	private static ObjectMapper om = new ObjectMapper();
 
 	// -----------------------------------------------------------------------------
 
@@ -268,13 +265,13 @@ public class MascotaImpl implements Mascota {
 
 	public class HigieneImpl implements Higiene {
 
-		private ArrayList<Date> banos = new ArrayList();
+		private ArrayList<Date> banos = new ArrayList<>();
 
-		private ArrayList<Date> cepillado = new ArrayList();
+		private ArrayList<Date> cepillado = new ArrayList<>();
 
 		private Map<String, Date> desparasitado = new HashMap<>();
 
-		private ArrayList<String> productosNR = new ArrayList();
+		private ArrayList<String> productosNR = new ArrayList<>();
 
 		private HigieneImpl() {
 
