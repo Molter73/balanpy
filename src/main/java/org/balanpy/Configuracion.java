@@ -1,5 +1,12 @@
 package org.balanpy;
 
 public class Configuracion {
-	public static final String ROOT_DIR = System.getenv("BALANPY_CONFIG_DIR");
+	private static String rootDir = System.getenv("BALANPY_CONFIG_DIR");
+
+	public static String getRootDir() {
+		if (rootDir == null) {
+			return "target";
+		}
+		return rootDir;
+	}
 }
