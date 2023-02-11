@@ -32,29 +32,29 @@ public class DatoGenerico {
 
 }
 
-class Temperaturas {
+class DatoTemperaturas {
 
 	private ArrayList<DatoGenerico> datos;
 
 	private static ObjectMapper om = new ObjectMapper();
 
-	private static Temperaturas instance;
+	private static DatoTemperaturas instance;
 
 	private static final Path TEMP_PATH = Paths.get(System.getenv("BALANPY_CONFIG_DIR"), "temperaturas.json");
 
-	public static Temperaturas getInstance() {
+	public static DatoTemperaturas getInstance() {
 
 		if (instance == null) {
 
 			try {
 
-				instance = om.readValue(TEMP_PATH.toFile(), Temperaturas.class);
+				instance = om.readValue(TEMP_PATH.toFile(), DatoTemperaturas.class);
 
 			} catch (IOException e) {
 
 				System.out.println("Failed to load user data. " + e.getMessage());
 
-				instance = new Temperaturas();
+				instance = new DatoTemperaturas();
 			}
 		}
 
@@ -79,29 +79,29 @@ class Temperaturas {
 
 }
 
-class Pulsaciones {
+class DatoPulsaciones {
 
 	private ArrayList<DatoGenerico> datos;
 
 	private static ObjectMapper om = new ObjectMapper();
 
-	private static Pulsaciones instance;
+	private static DatoPulsaciones instance;
 
 	private static final Path PULS_PATH = Paths.get(System.getenv("BALANPY_CONFIG_DIR"), "pulsaciones.json");
 
-	public static Pulsaciones getInstance() {
+	public static DatoPulsaciones getInstance() {
 
 		if (instance == null) {
 
 			try {
 
-				instance = om.readValue(PULS_PATH.toFile(), Pulsaciones.class);
+				instance = om.readValue(PULS_PATH.toFile(), DatoPulsaciones.class);
 
 			} catch (IOException e) {
 
 				System.out.println("Failed to load user data. " + e.getMessage());
 
-				instance = new Pulsaciones();
+				instance = new DatoPulsaciones();
 			}
 		}
 
