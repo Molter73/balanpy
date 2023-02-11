@@ -12,11 +12,12 @@ import javafx.stage.Stage;
 
 public class BarraTareas implements Initializable {
 
-	String currentScene = BalanpyScreen.getcurrentScreen();
+	String currentScene;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 
+		currentScene = BalanpyScreen.getcurrentScreen();
 	}
 
 	private void switchScene(MouseEvent event, String scene) {
