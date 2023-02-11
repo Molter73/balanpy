@@ -2,28 +2,22 @@ package org.balanpy;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
-import java.net.URL;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.ResourceBundle;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-public class PortadaAplicacion implements Initializable {
-
-	private Stage stage;
+public class PortadaAplicacion {
 
 	private static final String SCREEN = "/PortadaAplicacion.fxml";
 
@@ -48,30 +42,7 @@ public class PortadaAplicacion implements Initializable {
 	@FXML
 	Label petName2;
 
-	public void setStage(Stage stage) {
-
-		this.stage = stage;
-
-	}
-
 	BalanpyScreen balanpyScreen = new BalanpyScreen();
-
-	@FXML
-	VBox temperaturaExterna;
-
-	@FXML
-	VBox higiene;
-
-	@FXML
-	VBox vacunas;
-
-	@FXML
-	VBox registroMascota;
-
-	@Override
-	public void initialize(URL location, ResourceBundle resources) {
-
-	}
 
 	public PortadaAplicacion() {
 		try {
@@ -111,45 +82,77 @@ public class PortadaAplicacion implements Initializable {
 		}
 	}
 
+	public static Mascota selectedPet;
+
+	public void selectProfile(MouseEvent event, int id) throws Exception {
+
+		if (mascotas.size() >= (id + 1)) {
+			selectedPet = mascotas.get(id);
+			switchScene(event, "/PerfilMascota.fxml");
+
+		} else {
+			switchScene(event, "/ConfiguracionMascota.fxml");
+		}
+	}
+
+	public void selectProfile0(MouseEvent event) throws Exception {
+
+		selectProfile(event, 0);
+	}
+
+	public void selectProfile1(MouseEvent event) throws Exception {
+
+		selectProfile(event, 1);
+
+	}
+
+	public void selectProfile2(MouseEvent event) throws Exception {
+
+		selectProfile(event, 2);
+
+	}
+
 	public void HandleDone(MouseEvent event) throws Exception {
 
 		System.out.println("Está funcionando crack");
 
 	}
 
-	public void temperaturaExterna(MouseEvent event) throws IOException {
+	private void switchScene(MouseEvent event, String scene) throws IOException {
 
 		Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-		BalanpyScreen.loadScene(stage, "/Clima.fxml", SCREEN);
+		BalanpyScreen.loadScene(stage, scene, SCREEN);
+	}
+
+	public void temperaturaExterna(MouseEvent event) throws IOException {
+
+		switchScene(event, "/Clima.fxml");
+
 	}
 
 	public void higiene(MouseEvent event) throws IOException {
 
-		Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+		switchScene(event, "/Higiene.fxml");
 
-		BalanpyScreen.loadScene(stage, "/Higiene.fxml", SCREEN);
 	}
 
 	public void vacunas(MouseEvent event) throws IOException {
 
-		Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+		switchScene(event, "/Vacunas.fxml");
 
-		BalanpyScreen.loadScene(stage, "/Vacunas.fxml", SCREEN);
 	}
 
 	public void registroMascota(MouseEvent event) throws IOException {
 
-		Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+		switchScene(event, "/ConfiguracionMascota.fxml");
 
-		BalanpyScreen.loadScene(stage, "/ConfiguracionMascota.fxml", SCREEN);
 	}
 
 	public void perfilMascota(MouseEvent event) throws IOException {
 
-		Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+		switchScene(event, "/PerfilMascota.fxml");
 
-		BalanpyScreen.loadScene(stage, "/PerfilMascota.fxml", SCREEN);
 	}
 
 }
