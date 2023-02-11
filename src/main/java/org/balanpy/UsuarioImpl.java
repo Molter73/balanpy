@@ -1,6 +1,7 @@
 package org.balanpy;
 
 import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.regex.Pattern;
@@ -12,12 +13,9 @@ import com.fasterxml.jackson.databind.DatabindException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 /*
- *  UsuarioImpl es un singleton para evitar tener que copiar el
- *  objeto cada vez que se cambia de pantalla, recargando los
- *  datos desde disco innecesariamente.
+ * UsuarioImpl es un singleton para evitar tener que copiar el objeto cada vez que se cambia de pantalla, recargando los datos desde disco innecesariamente.
  *
- *  TODO: Las funciones de validación deberían lanzar una excepción
- *  para permitir mejor manejo de error.
+ * TODO: Las funciones de validación deberían lanzar una excepción para permitir mejor manejo de error.
  */
 public class UsuarioImpl implements Usuario {
 	private static final Path USUARIO_PATH = Paths.get(Configuracion.getRootDir(), "usuario.json");
@@ -172,6 +170,18 @@ public class UsuarioImpl implements Usuario {
 			// try to rollback to the saved values
 			reload();
 		}
+	}
+
+	public static void deleteUser() {
+		Path usuarioPath = Paths.get(Configuracion.getRootDir(), "usuario.json");
+		try {
+			Files.delete(usuarioPath);
+			instance = null;
+		} catch (IOException e) {
+			System.out.print("No se pudo borrar el archivo");
+			e.printStackTrace();
+		}
+
 	}
 
 	@Override
