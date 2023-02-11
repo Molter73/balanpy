@@ -95,7 +95,7 @@
                   </Label>
                </children>
             </VBox>
-            <VBox alignment="TOP_CENTER" layoutX="194.0" layoutY="10.0" onMouseClicked="#HandleDone" prefHeight="200.0" prefWidth="100.0" styleClass="usuario" stylesheets="@usuario.css" GridPane.columnIndex="2">
+            <VBox fx:id="registroMascota" alignment="TOP_CENTER" layoutX="194.0" layoutY="10.0" onMouseClicked="#HandleDone" prefHeight="200.0" prefWidth="100.0" styleClass="usuario" stylesheets="@usuario.css" GridPane.columnIndex="2">
                <children>
                   <ImageView fitHeight="160.0" fitWidth="220.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -121,7 +121,7 @@
       </Label>
       <HBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="80.0" prefWidth="550.0">
          <children>
-            <VBox alignment="CENTER" onMouseClicked="#HandleDone" prefHeight="100.0" prefWidth="100.0" styleClass="acceso-rapido" stylesheets="@usuario.css">
+            <VBox fx:id="temperaturaExterna" alignment="CENTER" onMouseClicked="#temperaturaExterna" prefHeight="100.0" prefWidth="100.0" styleClass="acceso-rapido" stylesheets="@usuario.css">
                <children>
                   <Label text="Temp. Externa" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                      <font>
@@ -133,7 +133,7 @@
                   <Insets right="10.0" />
                </HBox.margin>
             </VBox>
-            <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#HandleDone" prefHeight="100.0" prefWidth="100.0" styleClass="acceso-rapido" stylesheets="@usuario.css">
+            <VBox fx:id="higiene" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#higiene" prefHeight="100.0" prefWidth="100.0" styleClass="acceso-rapido" stylesheets="@usuario.css">
                <children>
                   <Label text="Higiene" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                      <font>
@@ -145,7 +145,7 @@
                   <Insets left="5.0" right="5.0" />
                </HBox.margin>
             </VBox>
-            <VBox alignment="CENTER" onMouseClicked="#HandleDone" prefHeight="200.0" prefWidth="100.0" styleClass="acceso-rapido" stylesheets="@usuario.css">
+            <VBox fx:id="vacunas" alignment="CENTER" onMouseClicked="#vacunas" prefHeight="200.0" prefWidth="100.0" styleClass="acceso-rapido" stylesheets="@usuario.css">
                <children>
                   <Label text="Vacunas" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                      <font>
