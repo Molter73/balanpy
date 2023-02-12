@@ -12,15 +12,13 @@ public class DatoTemperaturas {
 
 	private static ArrayList<DatoGenerico> datos;
 
-	private static ObjectMapper om = new ObjectMapper();
-
 	private static final Path TEMP_PATH = Paths.get(System.getenv("BALANPY_CONFIG_DIR"), "temperaturas.json");
 
 	DatoTemperaturas(Mascota mascota) {
 
 		ObjectMapper om = new ObjectMapper();
 
-		Path temperaturasPath = Paths.get(System.getenv("BALANPY_CONFIG_DIR"), mascota.getUUID().toString(),
+		Path temperaturasPath = Paths.get(Configuracion.getRootDir(), mascota.getUUID().toString(),
 				"temperaturas.json");
 
 		try {
@@ -41,11 +39,7 @@ public class DatoTemperaturas {
 		return datos;
 	}
 
-	public void setDatos(ArrayList<DatoGenerico> datos) {
-		this.datos = datos;
-	}
-
-	public static String imprimeDatos(Integer dato) {
+	public static String imprimeDato(Integer dato) {
 
 		Integer parteEntera = dato / 10;
 
