@@ -69,6 +69,12 @@ public class EditarPerfilUsuario {
 		BalanpyScreen.back(stage, SCREEN);
 	}
 
+	public void delete(ActionEvent event) throws Exception {
+		UsuarioImpl.deleteUser();
+		Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+		BalanpyScreen.loadScene(stage, "/PantallaInicio.fxml", SCREEN);
+	}
+
 	public void HandleDone(MouseEvent event) throws Exception {
 
 		System.out.println("Está funcionando crack");

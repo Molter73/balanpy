@@ -17,7 +17,7 @@
    <children>
       <BorderPane prefHeight="200.0" prefWidth="200.0">
          <bottom>
-            <Button mnemonicParsing="false" onMouseClicked="#HandleDone" style="-fx-background-color: #87D5CA;" text="Eliminar perfil" textFill="WHITE" BorderPane.alignment="CENTER">
+            <Button mnemonicParsing="false" onAction="#delete" style="-fx-background-color: #87D5CA;" text="Eliminar perfil" textFill="WHITE" BorderPane.alignment="CENTER">
                <font>
                   <Font name="Arial Black" size="13.0" />
                </font>
