@@ -79,5 +79,7 @@ public interface Mascota {
 
 	public Map<String, Date> getVacuna(); // GETTER
 
-	public void setVacunas(Map<String, Date> vacunas); // SETTER
+	public void setVacunas(Map<String, String> vacunas); // SETTER
+
+	public HigieneImpl getHigiene();
 }
