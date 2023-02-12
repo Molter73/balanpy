@@ -18,7 +18,7 @@ public class HigieneImpl implements Higiene {
 	private Map<String, String> desparasitado = new HashMap<>();
 
 	@JsonProperty(value = "productos_no_recomendables")
-	private ArrayList<String> productosNR = new ArrayList();
+	private ArrayList<String> productosNR = new ArrayList<>();
 
 	public HigieneImpl() {
 
