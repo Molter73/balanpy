@@ -5,6 +5,7 @@ import java.net.MalformedURLException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Map;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -19,6 +20,7 @@ import javafx.scene.input.MouseEvent;
 public class Vacunas {
 
 	private static final Path MASCOTAS_PATH = Paths.get(Configuracion.getRootDir(), "mascotas.json");
+
 	ArrayList<MascotaImpl> mascotas;
 
 	@FXML
@@ -95,9 +97,17 @@ public class Vacunas {
 
 	private String vacunasToString(Mascota mascota) {
 
-		return "Última vacunación: 15/06/2021" + "\nNombre de la vacuna: Parvovirosis y Moquillo.\n"
-				+ "\nÚltima vacunación: 02/02/2022" + "\nNombre de la vacuna: Rabia.\n"
-				+ "\nÚltima vacunación: 02/02/2022" + "\nNombre de la vacuna: Rabia.";
+		String returnVacunas = "";
+
+		Map<String, String> vacunaMascota = mascota.getVacuna();
+
+		for (Map.Entry<String, String> v : vacunaMascota.entrySet()) {
+
+			returnVacunas += "Nombre de la Vacuna: " + v.getKey() + "\n" + "Fecha Vacunación: " + v.getValue() + "\n\n";
+
+		}
+
+		return returnVacunas;
 
 	}
 
