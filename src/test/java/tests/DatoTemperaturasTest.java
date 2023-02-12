@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 public class DatoTemperaturasTest {
 
 	@Test
-	void testImprimeDatos() {
+	void testImprimeDato() {
 
 		int[] datosTemperatura = { 365, 374, 372, 346, 367, 356 };
 
@@ -16,7 +16,7 @@ public class DatoTemperaturasTest {
 
 		for (int i = 0; i < datosTemperatura.length; i++) {
 
-			assertEquals(expDatos[i], DatoTemperaturas.imprimeDatos(datosTemperatura[i]));
+			assertEquals(expDatos[i], DatoTemperaturas.imprimeDato(datosTemperatura[i]));
 
 		}
 
