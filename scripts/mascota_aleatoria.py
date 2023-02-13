@@ -94,7 +94,8 @@ def get_hygiene() -> dict:
         'ultimo_desparasitado': {
             'interno': printable_date(now - timedelta(weeks=2)),
             'externo': printable_date(now - timedelta(weeks=2)),
-        }
+        },
+        'productos_no_recomendables': [],
     }
 
 
@@ -119,7 +120,6 @@ def get_mascota() -> dict:
         'vacunas': get_vaccines(dob),
         'enfermedades': [],
         'higiene': get_hygiene(),
-        'productos_no_recomendables': [],
     }
 
 
