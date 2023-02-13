@@ -13,10 +13,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<BorderPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.balanpy.PerfilUsuario">
+<BorderPane stylesheets="@styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.balanpy.PerfilUsuario">
    <center>
-      <VBox alignment="TOP_CENTER" style="-fx-background-color: #fff;">
+      <VBox alignment="TOP_CENTER">
          <children>
             <GridPane maxHeight="-Infinity">
               <columnConstraints>
@@ -108,20 +107,12 @@
             </GridPane>
             <VBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308">
                <children>
-                  <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#HandleDone" prefHeight="100.0" prefWidth="150.0" text="Editar  Perfil" textAlignment="CENTER">
+                  <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#HandleDone" prefHeight="100.0" prefWidth="150.0" styleClass="boton_personalizado" text="Editar  Perfil" textAlignment="CENTER">
                      <font>
                         <Font name="Poppins Bold" size="12.0" />
                      </font>
                   </Button>
-                  <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#HandleDone" prefHeight="100.0" prefWidth="150.0" text="Cambio Contraseña (Próximamente)" textAlignment="CENTER" wrapText="true">
-                     <font>
-                        <Font name="Poppins Bold" size="12.0" />
-                     </font>
-                     <VBox.margin>
-                        <Insets top="10.0" />
-                     </VBox.margin>
-                  </Button>
-                  <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#HandleDone" prefHeight="100.0" prefWidth="150.0" text="Añadir Archivo PPP" textAlignment="CENTER" wrapText="true">
+                  <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#HandleDone" prefHeight="100.0" prefWidth="150.0" styleClass="boton_personalizado" text="Cambio Contraseña (Próximamente)" textAlignment="CENTER" wrapText="true">
                      <font>
                         <Font name="Poppins Bold" size="12.0" />
                      </font>
@@ -129,7 +120,15 @@
                         <Insets top="10.0" />
                      </VBox.margin>
                   </Button>
-                  <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#HandleDone" prefHeight="100.0" prefWidth="150.0" text="Seguro" textAlignment="CENTER">
+                  <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#HandleDone" prefHeight="100.0" prefWidth="150.0" styleClass="boton_personalizado" text="Añadir Archivo PPP" textAlignment="CENTER" wrapText="true">
+                     <font>
+                        <Font name="Poppins Bold" size="12.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#HandleDone" prefHeight="100.0" prefWidth="150.0" styleClass="boton_personalizado" text="Seguro" textAlignment="CENTER">
                      <font>
                         <Font name="Poppins Bold" size="12.0" />
                      </font>
@@ -147,7 +146,7 @@
             </VBox>
             <HBox alignment="TOP_RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
                <children>
-                  <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#HandleDone" prefHeight="100.0" prefWidth="150.0" text="Términos de Uso y Condiciones" textAlignment="CENTER" wrapText="true">
+                  <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#HandleDone" prefHeight="100.0" prefWidth="150.0" styleClass="boton_personalizado" text="Términos de Uso y Condiciones" textAlignment="CENTER" wrapText="true">
                      <font>
                         <Font name="Poppins Bold" size="12.0" />
                      </font>
@@ -155,7 +154,7 @@
                         <Insets right="10.0" />
                      </HBox.margin>
                   </Button>
-                  <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#HandleDone" prefHeight="100.0" prefWidth="150.0" text="Acerca de Nosotros" textAlignment="CENTER" wrapText="true">
+                  <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#HandleDone" prefHeight="100.0" prefWidth="150.0" styleClass="boton_personalizado" text="Acerca de Nosotros" textAlignment="CENTER" wrapText="true">
                      <font>
                         <Font name="Poppins Bold" size="12.0" />
                      </font>
@@ -163,7 +162,7 @@
                         <Insets left="5.0" right="5.0" />
                      </HBox.margin>
                   </Button>
-                  <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#HandleDone" prefHeight="100.0" prefWidth="150.0" text="Manual de Uso" textAlignment="CENTER" wrapText="true">
+                  <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#HandleDone" prefHeight="100.0" prefWidth="150.0" styleClass="boton_personalizado" text="Manual de Uso" textAlignment="CENTER" wrapText="true">
                      <font>
                         <Font name="Poppins Bold" size="12.0" />
                      </font>

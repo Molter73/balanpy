@@ -17,8 +17,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<BorderPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.balanpy.PerfilMascota">
+<BorderPane stylesheets="@styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.balanpy.PerfilMascota">
    <center>
       <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
          <children>
@@ -105,7 +104,7 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button fx:id="configuracionMascota" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#HandleDone" prefHeight="69.0" prefWidth="345.0" style="-fx-background-color: #87D5CA;" text="Configuración" textFill="WHITE" GridPane.columnIndex="1">
+                  <Button fx:id="configuracionMascota" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#HandleDone" prefHeight="69.0" prefWidth="345.0" styleClass="boton_personalizado" text="Configuración" textFill="WHITE" GridPane.columnIndex="1">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -162,7 +161,7 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button fx:id="saludMascota" mnemonicParsing="false" onMouseClicked="#HandleDone" prefHeight="50.0" prefWidth="300.0" style="-fx-background-color: #87D5CA;" text="Alergias, Vacunas y Enfermedades Anteriores" textFill="WHITE">
+                  <Button fx:id="saludMascota" mnemonicParsing="false" onMouseClicked="#HandleDone" prefHeight="50.0" prefWidth="300.0" styleClass="boton_personalizado" text="Alergias, Vacunas y Enfermedades Anteriores" textFill="WHITE">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -172,7 +171,7 @@
                   </Button>
                   <VBox alignment="CENTER" prefHeight="200.0" prefWidth="284.0" GridPane.columnIndex="1">
                      <children>
-                        <Button fx:id="seguroMascota" mnemonicParsing="false" onMouseClicked="#HandleDone" prefHeight="50.0" style="-fx-background-color: #87D5CA;" text="Seguro De La Mascota" textFill="WHITE">
+                        <Button fx:id="seguroMascota" mnemonicParsing="false" onMouseClicked="#HandleDone" prefHeight="50.0" styleClass="boton_personalizado" text="Seguro De La Mascota" textFill="WHITE">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -183,27 +182,27 @@
             </GridPane>
             <HBox prefHeight="100.0" prefWidth="600.0" spacing="38.0">
                <children>
-                  <Button fx:id="dniMascota" mnemonicParsing="false" onMouseClicked="#HandleDone" prefHeight="50.0" style="-fx-background-color: #87D5CA;" text="DNI Mascota" textFill="WHITE">
+                  <Button fx:id="dniMascota" mnemonicParsing="false" onMouseClicked="#HandleDone" prefHeight="50.0" styleClass="boton_personalizado" text="DNI Mascota" textFill="WHITE">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Button>
-                  <Button fx:id="pedigree" mnemonicParsing="false" onMouseClicked="#HandleDone" prefHeight="50.0" style="-fx-background-color: #87D5CA;" text="Pedigree" textFill="WHITE">
+                  <Button fx:id="pedigree" mnemonicParsing="false" onMouseClicked="#HandleDone" prefHeight="50.0" styleClass="boton_personalizado" text="Pedigree" textFill="WHITE">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Button>
-                  <Button fx:id="chip" mnemonicParsing="false" onMouseClicked="#HandleDone" prefHeight="50.0" style="-fx-background-color: #87D5CA;" text="Nº Chip" textFill="WHITE">
+                  <Button fx:id="chip" mnemonicParsing="false" onMouseClicked="#HandleDone" prefHeight="50.0" styleClass="boton_personalizado" text="Nº Chip" textFill="WHITE">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Button>
-                  <Button fx:id="esterilizado" mnemonicParsing="false" onMouseClicked="#HandleDone" prefHeight="50.0" style="-fx-background-color: #87D5CA;" text="Esterilizado" textFill="WHITE">
+                  <Button fx:id="esterilizado" mnemonicParsing="false" onMouseClicked="#HandleDone" prefHeight="50.0" styleClass="boton_personalizado" text="Esterilizado" textFill="WHITE">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Button>
-                  <Button fx:id="ppp" mnemonicParsing="false" onMouseClicked="#HandleDone" prefHeight="50.0" style="-fx-background-color: #87D5CA;" text="Archivo P.P.P" textFill="WHITE">
+                  <Button fx:id="ppp" mnemonicParsing="false" onMouseClicked="#HandleDone" prefHeight="50.0" styleClass="boton_personalizado" text="Archivo P.P.P" textFill="WHITE">
                      <font>
                         <Font size="14.0" />
                      </font>
