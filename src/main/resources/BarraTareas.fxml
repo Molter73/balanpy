@@ -6,61 +6,61 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<HBox alignment="BOTTOM_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: #FFF;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.balanpy.BarraTareas">
-   <children>
-      <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#pulsaciones" prefHeight="100.0" prefWidth="120.0" styleClass="acceso-rapido" stylesheets="@usuario.css">
-         <children>
-            <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@pulsaciones-botones-inferiores.png" />
-               </image>
-            </ImageView>
-         </children>
-      </VBox>
-      <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#temperaturas" prefHeight="100.0" prefWidth="120.0" styleClass="acceso-rapido" stylesheets="@usuario.css">
-         <children>
-            <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@temperatura-botones-inferiores.png" />
-               </image>
-            </ImageView>
-         </children>
-         <opaqueInsets>
-            <Insets />
-         </opaqueInsets>
-         <HBox.margin>
-            <Insets left="-1.0" right="-1.0" />
-         </HBox.margin>
-      </VBox>
-      <VBox alignment="CENTER" layoutX="130.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#portadaAplicacion" prefHeight="100.0" prefWidth="120.0" styleClass="boton-inferior-centro" stylesheets="@usuario.css">
-         <children>
-            <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@logo-balanpy.png" />
-               </image>
-            </ImageView>
-         </children>
-      </VBox>
-      <VBox alignment="CENTER" layoutX="250.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#perfilVeterinario" prefHeight="100.0" prefWidth="120.0" styleClass="acceso-rapido" stylesheets="@usuario.css">
-         <children>
-            <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@veterinario-botones-inferiores.png" />
-               </image>
-            </ImageView>
-         </children>
-         <HBox.margin>
-            <Insets left="-1.0" right="-1.0" />
-         </HBox.margin>
-      </VBox>
-      <VBox alignment="CENTER" layoutX="370.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#perfilUsuario" prefHeight="100.0" prefWidth="120.0" styleClass="acceso-rapido" stylesheets="@usuario.css">
-         <children>
-            <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@usuario-botones-inferiores.png" />
-               </image>
-            </ImageView>
-         </children>
-      </VBox>
-   </children>
+<HBox alignment="BOTTOM_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.balanpy.BarraTareas">
+	<children>
+		<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#pulsaciones" prefHeight="100.0" prefWidth="120.0" styleClass="acceso-rapido">
+			<children>
+				<ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+					<image>
+						<Image url="@pulsaciones-botones-inferiores.png" />
+					</image>
+				</ImageView>
+			</children>
+		</VBox>
+		<VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#temperaturas" prefHeight="100.0" prefWidth="120.0" styleClass="acceso-rapido">
+			<children>
+				<ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+					<image>
+						<Image url="@temperatura-botones-inferiores.png" />
+					</image>
+				</ImageView>
+			</children>
+			<opaqueInsets>
+				<Insets />
+			</opaqueInsets>
+			<HBox.margin>
+				<Insets left="-1.0" right="-1.0" />
+			</HBox.margin>
+		</VBox>
+		<VBox alignment="CENTER" layoutX="130.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#portadaAplicacion" prefHeight="100.0" prefWidth="120.0" styleClass="boton-inferior-centro">
+			<children>
+				<ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+					<image>
+						<Image url="@logo-balanpy.png" />
+					</image>
+				</ImageView>
+			</children>
+		</VBox>
+		<VBox alignment="CENTER" layoutX="250.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#perfilVeterinario" prefHeight="100.0" prefWidth="120.0" styleClass="acceso-rapido">
+			<children>
+				<ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+					<image>
+						<Image url="@veterinario-botones-inferiores.png" />
+					</image>
+				</ImageView>
+			</children>
+			<HBox.margin>
+				<Insets left="-1.0" right="-1.0" />
+			</HBox.margin>
+		</VBox>
+		<VBox alignment="CENTER" layoutX="370.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#perfilUsuario" prefHeight="100.0" prefWidth="120.0" styleClass="acceso-rapido">
+			<children>
+				<ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+					<image>
+						<Image url="@usuario-botones-inferiores.png" />
+					</image>
+				</ImageView>
+			</children>
+		</VBox>
+	</children>
 </HBox>

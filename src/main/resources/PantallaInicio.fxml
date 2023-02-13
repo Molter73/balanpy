@@ -12,8 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<BorderPane style="-fx-background-color: #FFF;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.balanpy.Inicio">
+<BorderPane stylesheets="@styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.balanpy.Inicio">
    <center>
       <VBox alignment="TOP_CENTER">
          <children>
@@ -42,7 +41,7 @@
                   <Insets bottom="30.0" />
                </padding>
                   </Label>
-            <VBox alignment="TOP_CENTER" fillWidth="false" maxWidth="-Infinity" onMouseClicked="#crearUsuario" prefHeight="200.0" prefWidth="180.0" styleClass="usuario" stylesheets="@usuario.css">
+            <VBox alignment="TOP_CENTER" fillWidth="false" maxWidth="-Infinity" onMouseClicked="#crearUsuario" prefHeight="200.0" prefWidth="180.0" styleClass="usuario">
                <children>
                   <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -69,7 +68,7 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#HandleDone" prefHeight="55.0" prefWidth="150.0" styleClass="boton_personalizado" stylesheets="@usuario.css" text="Términos de Uso y Condiciones" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                  <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#HandleDone" prefHeight="55.0" prefWidth="150.0" styleClass="boton_personalizado" text="Términos de Uso y Condiciones" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                      <font>
                         <Font name="Poppins Bold" size="14.0" />
                      </font>
@@ -77,7 +76,7 @@
                         <Insets />
                      </GridPane.margin>
                   </Button>
-                  <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#HandleDone" prefHeight="55.0" prefWidth="150.0" styleClass="boton_personalizado" stylesheets="@usuario.css" text="Acerca de Nosotros" textAlignment="CENTER" textFill="WHITE" wrapText="true" GridPane.columnIndex="1">
+                  <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#HandleDone" prefHeight="55.0" prefWidth="150.0" styleClass="boton_personalizado" text="Acerca de Nosotros" textAlignment="CENTER" textFill="WHITE" wrapText="true" GridPane.columnIndex="1">
                      <font>
                         <Font name="Poppins Bold" size="14.0" />
                      </font>
@@ -85,7 +84,7 @@
                         <Insets />
                      </GridPane.margin>
                   </Button>
-                  <Button layoutX="149.0" layoutY="35.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#HandleDone" prefHeight="55.0" prefWidth="150.0" styleClass="boton_personalizado" stylesheets="@usuario.css" text="Manual de Uso" textAlignment="CENTER" textFill="WHITE" wrapText="true" GridPane.columnIndex="2">
+                  <Button layoutX="149.0" layoutY="35.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#HandleDone" prefHeight="55.0" prefWidth="150.0" styleClass="boton_personalizado" text="Manual de Uso" textAlignment="CENTER" textFill="WHITE" wrapText="true" GridPane.columnIndex="2">
                      <font>
                         <Font name="Poppins Bold" size="14.0" />
                      </font>

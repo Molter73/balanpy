@@ -12,10 +12,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<BorderPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.balanpy.ClimaController">
+<BorderPane stylesheets="@styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.balanpy.ClimaController">
    <center>
-      <VBox alignment="CENTER" style="-fx-background-color: #FFF;">
+      <VBox alignment="CENTER">
          <children>
             <Label fx:id="avisoPaseo" alignment="CENTER" contentDisplay="CENTER" text="Aviso paseo" textAlignment="CENTER" wrapText="true">
                <font>
