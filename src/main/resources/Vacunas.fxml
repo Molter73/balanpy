@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="600.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.balanpy.Vacunas">
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="600.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.balanpy.Vacunas">
    <children>
       <ImageView fitHeight="150.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -37,7 +37,7 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <VBox alignment="TOP_CENTER" onMouseClicked="#selectProfile0" styleClass="usuario" stylesheets="@usuario.css">
+            <VBox alignment="TOP_CENTER" onMouseClicked="#selectProfile0" styleClass="usuario">
                <children>
                   <ImageView fx:id="petImage0" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" />
                   <Label fx:id="petName0" textAlignment="CENTER">
@@ -47,7 +47,7 @@
                   </Label>
                </children>
             </VBox>
-            <VBox alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" onMouseClicked="#selectProfile1" prefHeight="200.0" prefWidth="100.0" styleClass="usuario" stylesheets="@usuario.css" GridPane.columnIndex="1">
+            <VBox alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" onMouseClicked="#selectProfile1" prefHeight="200.0" prefWidth="100.0" styleClass="usuario" GridPane.columnIndex="1">
                <children>
                   <ImageView fx:id="petImage1" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" />
                   <Label fx:id="petName1" textAlignment="CENTER">
@@ -57,7 +57,7 @@
                   </Label>
                </children>
             </VBox>
-            <VBox alignment="TOP_CENTER" layoutX="194.0" layoutY="10.0" onMouseClicked="#selectProfile2" prefHeight="200.0" prefWidth="100.0" styleClass="usuario" stylesheets="@usuario.css" GridPane.columnIndex="2">
+            <VBox alignment="TOP_CENTER" layoutX="194.0" layoutY="10.0" onMouseClicked="#selectProfile2" prefHeight="200.0" prefWidth="100.0" styleClass="usuario" GridPane.columnIndex="2">
                <children>
                   <ImageView fx:id="petImage2" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" />
                   <Label fx:id="petName2" textAlignment="CENTER">
