@@ -14,7 +14,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.balanpy.Higiene">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="600.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.balanpy.Higiene">
    <children>
       <GridPane alignment="TOP_CENTER" prefHeight="270.0" prefWidth="570.0">
          <columnConstraints>
@@ -26,7 +26,7 @@
             <RowConstraints maxHeight="290.0" minHeight="10.0" prefHeight="155.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="190.0" styleClass="usuario" stylesheets="@usuario.css">
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="190.0" styleClass="usuario">
                <children>
                   <ImageView fx:id="fotoMascota1" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#HandleDone" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -43,7 +43,7 @@
                   </Text>
                </children>
             </VBox>
-            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" styleClass="usuario" stylesheets="@usuario.css" GridPane.columnIndex="1">
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" styleClass="usuario" GridPane.columnIndex="1">
                <children>
                   <ImageView fx:id="fotoMascota2" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#HandleDone" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -60,7 +60,7 @@
                   </Text>
                </children>
             </VBox>
-            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" styleClass="usuario" stylesheets="@usuario.css" GridPane.columnIndex="2">
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" styleClass="usuario" GridPane.columnIndex="2">
                <children>
                   <ImageView fx:id="fotoMascota3" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#HandleDone" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -98,12 +98,12 @@
       </VBox>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="70.0">
          <children>
-            <Button fx:id="pdfHigiene" alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#HandleDone" onMouseClicked="#HandleDone" prefHeight="50.0" prefWidth="220.0" style="-fx-background-color: #87D5CA;" styleClass="boton_personalizado" stylesheets="@usuario.css" text="Documento PDF" textAlignment="CENTER" textFill="WHITE">
+            <Button fx:id="pdfHigiene" alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#HandleDone" onMouseClicked="#HandleDone" prefHeight="50.0" prefWidth="220.0" styleClass="boton_personalizado" text="Documento PDF" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
             </Button>
-            <Button fx:id="configHigiene" alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#HandleDone" onMouseClicked="#HandleDone" prefHeight="50.0" prefWidth="220.0" style="-fx-background-color: #87D5CA;" styleClass="boton_personalizado" stylesheets="@usuario.css" text="Configuración" textFill="WHITE">
+            <Button fx:id="configHigiene" alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#HandleDone" onMouseClicked="#HandleDone" prefHeight="50.0" prefWidth="220.0" styleClass="boton_personalizado" text="Configuración" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>

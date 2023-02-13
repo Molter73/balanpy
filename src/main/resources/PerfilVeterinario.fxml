@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.balanpy.PerfilVeterinario">
+<BorderPane stylesheets="@styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.balanpy.PerfilVeterinario">
    <center>
       <VBox alignment="CENTER" BorderPane.alignment="CENTER">
          <children>
@@ -71,7 +71,7 @@
                <VBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </VBox.margin></DatePicker>
-            <Button mnemonicParsing="false" style="-fx-background-color: #87D5CA;" text="Descarga documentos PDF">
+            <Button mnemonicParsing="false" styleClass="boton_personalizado" text="Descarga documentos PDF">
                <font>
                   <Font name="Arial Black" size="13.0" />
                </font>
