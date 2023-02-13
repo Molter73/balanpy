@@ -77,7 +77,7 @@ public interface Mascota {
 	// ********************** Vacunas ******************************
 
 	public Map<String, String> getVacuna(); // GETTER
-
+  
 	public void setVacunas(Map<String, String> vacunas); // SETTER
 
 	public HigieneImpl getHigiene();
