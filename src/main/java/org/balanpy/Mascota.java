@@ -1,7 +1,6 @@
 package org.balanpy;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.Map;
 import java.util.UUID;
 
@@ -11,7 +10,7 @@ public interface Mascota {
 
 	public UUID getUUID();
 
-	public Date getFechaNacimiento();
+	public String getFechaNacimiento();
 
 	public String getChip();
 
@@ -39,7 +38,7 @@ public interface Mascota {
 
 	public void setUUID(UUID uuid);
 
-	public void setFechaNacimiento(Date fechaNacimiento);
+	public void setFechaNacimiento(String fechaNacimiento);
 
 	public void setChip(String chip);
 
@@ -77,9 +76,10 @@ public interface Mascota {
 
 	// ********************** Vacunas ******************************
 
-	public Map<String, Date> getVacuna(); // GETTER
+	public Map<String, String> getVacuna(); // GETTER
 
 	public void setVacunas(Map<String, String> vacunas); // SETTER
 
 	public HigieneImpl getHigiene();
+
 }
