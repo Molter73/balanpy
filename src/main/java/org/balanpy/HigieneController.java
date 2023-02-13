@@ -82,13 +82,17 @@ public class HigieneController {
 
 	public void selectProfile(int id) throws Exception {
 
-		ultimoBano.setText(ultimoBanoToString(mascotas.get(id)));
+		Mascota mascota = mascotas.get(id);
 
-		ultimoCepillado.setText(ultimoCepilladoToString(mascotas.get(id)));
+		Higiene higiene = mascota.getHigiene();
 
-		ultimaDesp.setText(desparasitadoToString(mascotas.get(id)));
+		ultimoBano.setText(higiene.getBano());
 
-		productosNR.setText(productosToString(mascotas.get(id)));
+		ultimoCepillado.setText(higiene.getCepillado());
+
+		ultimaDesp.setText(desparasitadoToString(mascota));
+
+		productosNR.setText(productosToString(mascota));
 
 	}
 
@@ -116,22 +120,6 @@ public class HigieneController {
 		label.setText(mascota.getNombre());
 
 		imageView.setImage(new Image(imagePath.toUri().toURL().toExternalForm()));
-
-	}
-
-	private String ultimoBanoToString(Mascota mascota) {
-
-		String bano = mascota.getHigiene().getBano();
-
-		return bano;
-
-	}
-
-	private String ultimoCepilladoToString(Mascota mascota) {
-
-		String capillado = mascota.getHigiene().getCepillado();
-
-		return capillado;
 
 	}
 
@@ -167,7 +155,7 @@ public class HigieneController {
 
 	}
 
-	public void initialize() throws MalformedURLException {
+	public void initialize() throws Exception {
 
 		if (mascotas.isEmpty()) {
 			// Nothing to do here.
@@ -178,13 +166,7 @@ public class HigieneController {
 
 			setProfile(petImage0, petName0, mascotas.get(0));
 
-			ultimoBano.setText(ultimoBanoToString(mascotas.get(0)));
-
-			ultimoCepillado.setText(ultimoCepilladoToString(mascotas.get(0)));
-
-			ultimaDesp.setText(desparasitadoToString(mascotas.get(0)));
-
-			productosNR.setText(productosToString(mascotas.get(0)));
+			selectProfile(0);
 
 		}
 
@@ -192,13 +174,7 @@ public class HigieneController {
 
 			setProfile(petImage1, petName1, mascotas.get(1));
 
-			ultimoBano.setText(ultimoBanoToString(mascotas.get(1)));
-
-			ultimoCepillado.setText(ultimoCepilladoToString(mascotas.get(1)));
-
-			ultimaDesp.setText(desparasitadoToString(mascotas.get(1)));
-
-			productosNR.setText(productosToString(mascotas.get(1)));
+			selectProfile(1);
 
 		}
 
@@ -206,13 +182,7 @@ public class HigieneController {
 
 			setProfile(petImage2, petName2, mascotas.get(2));
 
-			ultimoBano.setText(ultimoBanoToString(mascotas.get(2)));
-
-			ultimoCepillado.setText(ultimoCepilladoToString(mascotas.get(2)));
-
-			ultimaDesp.setText(desparasitadoToString(mascotas.get(2)));
-
-			productosNR.setText(productosToString(mascotas.get(2)));
+			selectProfile(2);
 
 		}
 	}
