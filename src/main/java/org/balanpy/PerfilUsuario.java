@@ -35,7 +35,7 @@ public class PerfilUsuario {
 		Usuario usuario = UsuarioImpl.getInstance();
 
 		nombre.setText(usuario.getNombre());
-		edad.setText(String.valueOf(usuario.getEdad()));
+		edad.setText(usuario.getEdad().toString());
 		telefono.setText(usuario.getTelefono());
 		email.setText(usuario.getEmail());
 		sexo.setText(usuario.getSexo());
