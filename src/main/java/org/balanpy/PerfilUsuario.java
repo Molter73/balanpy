@@ -30,7 +30,7 @@ public class PerfilUsuario {
 	@FXML
 	private Label direccion;
 
-	public void inicialize() {
+	public void initialize() {
 
 		Usuario usuario = UsuarioImpl.getInstance();
 
