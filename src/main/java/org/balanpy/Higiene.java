@@ -1,28 +1,27 @@
 package org.balanpy;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.Map;
 
 public interface Higiene {
 
 	// ************************ Baño **************************
 
-	public ArrayList<Date> getBanos(); // GETTER
+	public String getBano(); // GETTER
 
-	public void setBanos(ArrayList<Date> banos); // SETTER
+	public void setBano(String bano); // SETTER
 
 	// ********************* Cepillado ************************
 
-	public ArrayList<Date> getCepillado(); // GETTER
+	public String getCepillado(); // GETTER
 
-	public void setCepillado(ArrayList<Date> cepillado); // SETTER
+	public void setCepillado(String cepillado); // SETTER
 
 	// ******************* Desparasitación ********************
 
-	public Map<String, Date> getDesparasitado(); // GETTER
+	public Map<String, String> getDesparasitado(); // GETTER
 
-	public void setDesparasitado(Map<String, Date> desparasitado); // SETTER
+	public void setDesparasitado(Map<String, String> desparasitado); // SETTER
 
 	// ************* Productos No Recomendables ***************
 

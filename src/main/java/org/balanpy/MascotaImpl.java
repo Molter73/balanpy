@@ -1,7 +1,6 @@
 package org.balanpy;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -25,7 +24,8 @@ public class MascotaImpl implements Mascota {
 	@JsonProperty(value = "UUID")
 	private UUID uuid;
 
-	private Date fechaNacimiento;
+	@JsonProperty(value = "fecha_nacimiento")
+	private String fechaNacimiento;
 
 	@JsonProperty(value = "CHIP")
 	private String chip = "";
@@ -38,6 +38,7 @@ public class MascotaImpl implements Mascota {
 
 	private String color = "";
 
+	@JsonProperty(value = "grupo_sanguineo")
 	private String grupoSanguineo = "";
 
 	private String nombre = "";
@@ -58,7 +59,7 @@ public class MascotaImpl implements Mascota {
 
 	private ArrayList<String> enfermedades = new ArrayList<>();
 
-	private Map<String, Date> vacunas = new HashMap<>();
+	private Map<String, String> vacunas = new HashMap<>();
 
 	// -----------------------------------------------------------------------------
 
@@ -82,7 +83,7 @@ public class MascotaImpl implements Mascota {
 	}
 
 	@Override
-	public Date getFechaNacimiento() {
+	public String getFechaNacimiento() {
 		return fechaNacimiento;
 	}
 
@@ -152,7 +153,7 @@ public class MascotaImpl implements Mascota {
 	}
 
 	@Override
-	public Map<String, Date> getVacuna() {
+	public Map<String, String> getVacuna() {
 		return vacunas;
 	}
 
@@ -164,7 +165,7 @@ public class MascotaImpl implements Mascota {
 	}
 
 	@Override
-	public void setFechaNacimiento(Date fechaNacimiento) {
+	public void setFechaNacimiento(String fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 
@@ -244,7 +245,7 @@ public class MascotaImpl implements Mascota {
 	}
 
 	@Override
-	public void setVacunas(Map<String, Date> vacunas) {
+	public void setVacunas(Map<String, String> vacunas) {
 		this.vacunas = vacunas;
 	}
 
@@ -263,63 +264,4 @@ public class MascotaImpl implements Mascota {
 				|| grupoSanguineo.equals(DEA7) || grupoSanguineo.equals(DEA8);
 	}
 
-	public class HigieneImpl implements Higiene {
-
-		private ArrayList<Date> banos = new ArrayList<>();
-
-		private ArrayList<Date> cepillado = new ArrayList<>();
-
-		private Map<String, Date> desparasitado = new HashMap<>();
-
-		private ArrayList<String> productosNR = new ArrayList<>();
-
-		private HigieneImpl() {
-
-		}
-
-		// --------------- GETTERS HIGIENE -------------------------------------------
-
-		@Override
-		public ArrayList<Date> getBanos() {
-			return banos;
-		}
-
-		@Override
-		public ArrayList<Date> getCepillado() {
-			return cepillado;
-		}
-
-		@Override
-		public Map<String, Date> getDesparasitado() {
-			return desparasitado;
-		}
-
-		@Override
-		public ArrayList<String> getProductosNR() {
-			return productosNR;
-		}
-
-		// --------------- SETTERS HIGIENE -------------------------------------------
-
-		@Override
-		public void setBanos(ArrayList<Date> banos) {
-			this.banos = banos;
-		}
-
-		@Override
-		public void setCepillado(ArrayList<Date> cepillado) {
-			this.cepillado = cepillado;
-		}
-
-		@Override
-		public void setDesparasitado(Map<String, Date> desparasitado) {
-			this.desparasitado = desparasitado;
-		}
-
-		@Override
-		public void setProductosNR(ArrayList<String> productosNR) {
-			this.productosNR = productosNR;
-		}
-
-	}
 }
