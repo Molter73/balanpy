@@ -78,7 +78,7 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#HandleDone" styleClass="boton_mediano" text="Términos de Uso y Condiciones" textAlignment="CENTER">
+                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#terminosCondiciones" styleClass="boton_mediano" text="Términos de Uso y Condiciones" textAlignment="CENTER">
                      <GridPane.margin>
                         <Insets />
                      </GridPane.margin>
