@@ -34,6 +34,8 @@ public interface Mascota {
 
 	public String getPathTemperaturas();
 
+	public Integer getEdad();
+
 	// SETTERS
 
 	public void setUUID(UUID uuid);
