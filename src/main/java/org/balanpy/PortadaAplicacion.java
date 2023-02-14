@@ -71,7 +71,6 @@ public class PortadaAplicacion {
 	}
 
 	public void selectProfile(MouseEvent event, int id) throws Exception {
-
 		if (mascotas.size() >= (id + 1)) {
 			PerfilMascota.setMascota(mascotas.get(id));
 			switchScene(event, "/PerfilMascota.fxml");
