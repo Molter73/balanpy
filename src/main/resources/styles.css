@@ -13,21 +13,28 @@
 	-fx-font-family: 'Poppins', sans-serif;
 	-fx-font-weight:bold;
 	-fx-font-size:36px;
-	-fx-color:#82AAE3;
+	-fx-text-fill:#82d4c9;
 }
 
 .texto_h2 {
 	-fx-font-family: 'Poppins', sans-serif;
 	-fx-font-weight:bold;
 	-fx-font-size:24px;
-	-fx-color:#82d4c9;
+	-fx-text-fill:#2F9184;
 }
 
 .texto_h3 {
 	-fx-font-family: 'Poppins', sans-serif;
 	-fx-font-weight:bold;
 	-fx-font-size:18px;
-	-fx-color:#BFEAF5;
+	-fx-text-fill:#1C6A60;
+}
+
+.texto_h4 {
+	-fx-font-family: 'Poppins', sans-serif;
+	-fx-font-weight:bold;
+	-fx-font-size:18px;
+	-fx-text-fill:white;
 }
 
 .elegir_mascota{
@@ -54,46 +61,47 @@
 	-fx-font-family: 'Poppins', sans-serif;
 	-fx-font-weight:bold;
 	-fx-font-size:20px;
-	-fx-color:#ffffff;
+	-fx-text-fill:white;
 	-fx-background-color:#82d4c9;
   	-fx-border-radius: 50px;
 }
 
 .boton_grande:hover{
-	-fx-background-color:#F1CA2B;
+	-fx-background-color:#2F9184;
 }
 
 .boton_mediano{
 	-fx-font-family: 'Poppins', sans-serif;
 	-fx-font-weight:bold;
 	-fx-font-size:16px;
-	-fx-color:#ffffff;
+	-fx-text-fill:white;
 	-fx-background-color:#82d4c9;
+	-fx-wrap-text:true;
   	-fx-border-radius: 50px;
-  	
 }
 
+
 .boton_mediano:hover{
-	-fx-background-color:#F1CA2B;
+	-fx-background-color:#2F9184;
 }
 
 .boton_pequeno{
 	-fx-font-family: 'Poppins', sans-serif;
 	-fx-font-weight:bold;
 	-fx-font-size:12px;
-	-fx-color:#ffffff;
+	-fx-text-fill:white;
 	-fx-background-color:#82d4c9;
   	-fx-border-radius: 50px;
 }
 
 .boton_pequeno:hover{
-	-fx-background-color:#F1CA2B;
+	-fx-background-color:#2F9184;
 }
 
 .boton_eliminar{
 	-fx-font-family: 'Poppins', sans-serif;
 	-fx-font-size:16px;
-	-fx-color:#ffffff;
+	-fx-text-fill:white;
 	-fx-background-color:#CD1A00;
   	-fx-border-radius: 50px;
   	-fx-width:200px;
@@ -108,13 +116,13 @@
 	-fx-border-insets: 5;
 	-fx-font-weight:bold;
 	-fx-font-size:14px;
-	-fx-color:#ffffff;
+	-fx-text-fill:white;
 	-fx-background-color:#82d4c9;
   	-fx-border-radius: 10px;	
 }
 
 .boton_portada:hover{
-	-fx-background-color:#F1CA2B;
+	-fx-background-color:#2F9184;
 }
 
 .recuadro_texto{
@@ -131,25 +139,13 @@
 }
 
 
-.inferior_secundario {
+.inferior {
 	-fx-border-color: black;
     -fx-border-width: 1;
     -fx-border-style: solid;
     -fx-background-color: #82d4c9;
 }
 
-.inferior_secundario:hover {
-    -fx-background-color: #F1CA2B;
-}
-
-
-.inferior_principal {
-	-fx-border-color: black;
-    -fx-border-width: 1;
-    -fx-border-style: solid;
-    -fx-background-color: #fff;
-}
-
-.inferior_principal:hover {
-    -fx-background-color: #F1CA2B;
+.inferior:hover {
+    -fx-background-color: #2F9184;
 }

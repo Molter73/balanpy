@@ -8,10 +8,8 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
 
 <BorderPane stylesheets="@styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.balanpy.PerfilUsuario">
    <center>
@@ -35,85 +33,30 @@
                 <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <VBox>
+                  <VBox styleClass="texto_parrafo">
                      <children>
-                        <Label styleClass="texto_parrafo" text="Nombre:">
-                           <font>
-                              <Font name="Poppins Bold" size="14.0" />
-                           </font>
-                        </Label>
-                        <Label styleClass="texto_parrafo" text="Edad:">
-                           <font>
-                              <Font name="Poppins Bold" size="14.0" />
-                           </font>
-                        </Label>
-                        <Label styleClass="texto_parrafo" text="Teléfono:">
-                           <font>
-                              <Font name="Poppins Bold" size="14.0" />
-                           </font>
-                        </Label>
-                        <Label styleClass="texto_parrafo" text="Email:">
-                           <font>
-                              <Font name="Poppins Bold" size="14.0" />
-                           </font>
-                        </Label>
-                        <Label styleClass="texto_parrafo" text="Sexo:">
-                           <font>
-                              <Font name="Poppins Bold" size="14.0" />
-                           </font>
-                        </Label>
-                        <Label styleClass="texto_parrafo" text="Dirección">
-                           <font>
-                              <Font name="Poppins Bold" size="14.0" />
-                           </font>
-                        </Label>
+                        <Label text="Nombre:" />
+                        <Label text="Edad:" />
+                        <Label text="Teléfono:" />
+                        <Label text="Email:" />
+                        <Label text="Sexo:" />
+                        <Label text="Dirección" />
                      </children>
                   </VBox>
-                  <VBox GridPane.columnIndex="1">
+                  <VBox styleClass="texto_parrafo" GridPane.columnIndex="1">
                      <children>
-                        <Label fx:id="nombre" styleClass="texto_parrafo" text="Jorge Fulanito">
-                           <font>
-                              <Font name="Poppins" size="14.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="edad" styleClass="texto_parrafo" text="25 años">
-                           <font>
-                              <Font name="Poppins" size="14.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="telefono" styleClass="texto_parrafo" text="+34 123 45 67 89">
-                           <font>
-                              <Font name="Poppins" size="14.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="email" styleClass="texto_parrafo" text="jfulanito@hotmail.com">
-                           <font>
-                              <Font name="Poppins" size="14.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="sexo" styleClass="texto_parrafo" text="Masculino">
-                           <font>
-                              <Font name="Poppins" size="14.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="direccion" styleClass="texto_parrafo" text="Calle Falsa 123, Madrid">
-                           <font>
-                              <Font name="Poppins" size="14.0" />
-                           </font>
-                        </Label>
+                        <Label fx:id="nombre" text="Jorge Fulanito" />
+                        <Label fx:id="edad" text="25 años" />
+                        <Label fx:id="telefono" text="+34 123 45 67 89" />
+                        <Label fx:id="email" text="jfulanito@hotmail.com" />
+                        <Label fx:id="sexo" text="Masculino" />
+                        <Label fx:id="direccion" text="Calle Falsa 123, Madrid" />
                      </children>
                   </VBox>
                   <VBox alignment="CENTER" GridPane.columnIndex="2">
                      <children>
-                        <Button maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#editarPerfil" prefHeight="60.0" styleClass="boton_mediano" text="EDITAR PERFIL" textAlignment="CENTER" textFill="WHITE">
-                           <font>
-                              <Font name="Poppins Bold" size="12.0" />
-                           </font>
-                        </Button>
-                        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#HandleDone" prefHeight="60.0" styleClass="boton_mediano" text="CAMBIAR CONTRASEÑA" textAlignment="CENTER" textFill="WHITE" wrapText="true">
-                           <font>
-                              <Font name="Poppins Bold" size="12.0" />
-                           </font>
+                        <Button maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#editarPerfil" prefHeight="60.0" styleClass="boton_mediano" text="EDITAR PERFIL" textAlignment="CENTER" />
+                        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#HandleDone" prefHeight="60.0" styleClass="boton_mediano" text="CAMBIAR CONTRASEÑA" textAlignment="CENTER">
                            <VBox.margin>
                               <Insets top="20.0" />
                            </VBox.margin>
@@ -122,44 +65,43 @@
                   </VBox>
                </children>
                <VBox.margin>
-                  <Insets top="50.0" />
+                  <Insets left="25.0" right="25.0" top="50.0" />
                </VBox.margin>
-               <padding>
-                  <Insets left="20.0" right="20.0" />
-               </padding>
             </GridPane>
-            <HBox alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+            <GridPane alignment="TOP_CENTER" hgap="20.0" maxWidth="1.7976931348623157E308" prefHeight="80.0" prefWidth="550.0">
+               <columnConstraints>
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
                <children>
-                  <Button mnemonicParsing="false" onMouseClicked="#HandleDone" prefHeight="60.0" prefWidth="150.0" styleClass="boton_pequeno" text="Términos de Uso y Condiciones" textAlignment="CENTER" textFill="WHITE" wrapText="true">
-                     <font>
-                        <Font name="Poppins Bold" size="12.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets right="10.0" />
-                     </HBox.margin>
+                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#HandleDone" styleClass="boton_mediano" text="Términos de Uso y Condiciones" textAlignment="CENTER">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
                   </Button>
-                  <Button maxWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#HandleDone" prefHeight="60.0" prefWidth="150.0" styleClass="boton_pequeno" text="Acerca de Nosotros" textAlignment="CENTER" textFill="WHITE" wrapText="true">
-                     <font>
-                        <Font name="Poppins Bold" size="12.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets left="5.0" right="5.0" />
-                     </HBox.margin>
+                  <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#HandleDone" styleClass="boton_mediano" text="Acerca de Nosotros" textAlignment="CENTER" GridPane.columnIndex="1">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
                   </Button>
-                  <Button maxWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#HandleDone" prefHeight="60.0" prefWidth="150.0" styleClass="boton_pequeno" text="Manual de Uso" textAlignment="CENTER" textFill="WHITE" wrapText="true">
-                     <font>
-                        <Font name="Poppins Bold" size="12.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets left="10.0" />
-                     </HBox.margin>
+                  <Button layoutX="149.0" layoutY="35.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#HandleDone" styleClass="boton_mediano" text="Manual de Uso" textAlignment="CENTER" GridPane.columnIndex="2">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
                   </Button>
                </children>
                <VBox.margin>
-                  <Insets bottom="50.0" top="50.0" />
+                  <Insets bottom="50.0" left="25.0" right="25.0" top="80.0" />
                </VBox.margin>
-            </HBox>
+            </GridPane>
          </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
       </VBox>
    </center>
    <top>

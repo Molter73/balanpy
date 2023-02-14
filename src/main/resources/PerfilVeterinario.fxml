@@ -43,13 +43,13 @@
                   <VBox alignment="CENTER_LEFT" GridPane.columnIndex="2">
                      <children>
                         <Label text="La Huellita" />
-                        <Label alignment="CENTER_RIGHT" text="Juan Pérez" />
+                        <Label text="Juan Pérez" />
                         <Label text="+34 125 15 70 33" />
                         <Label text="Calle Falsa 32, Madrid" />
                         <Label text="L-V 09:00h - 20:30h" />
                      </children>
                   </VBox>
-                  <ImageView fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" styleClass="imagen_mascotas" GridPane.columnIndex="3">
+                  <ImageView fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" styleClass="imagen_mascotas" GridPane.columnIndex="3" GridPane.halignment="RIGHT">
                      <image>
                         <Image url="@veterinary.png" />
                      </image>
@@ -67,7 +67,7 @@
                   <Insets top="30.0" />
                </VBox.margin>
             </ImageView>
-            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="boton_grande" text="DESCARGAR DATOS MASCOTA" textFill="WHITE">
+            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="boton_grande" text="DESCARGAR DATOS MASCOTA">
                <VBox.margin>
                   <Insets top="30.0" />
                </VBox.margin>
@@ -83,8 +83,8 @@
                <children>
                   <VBox>
                      <children>
-                        <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="boton_mediano" text="LLAMAR" textFill="WHITE" />
-                        <Button layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="boton_mediano" text="PEDIR CITA" textFill="WHITE">
+                        <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="boton_mediano" text="LLAMAR" />
+                        <Button layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="boton_mediano" text="PEDIR CITA">
                            <VBox.margin>
                               <Insets top="20.0" />
                            </VBox.margin>
@@ -93,8 +93,8 @@
                   </VBox>
                   <VBox layoutX="10.0" layoutY="10.0" GridPane.columnIndex="1">
                      <children>
-                        <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="boton_mediano" text="COMO LLEGAR" textFill="WHITE" />
-                        <Button layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="boton_mediano" text="MENSAJE" textFill="WHITE">
+                        <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="boton_mediano" text="COMO LLEGAR" />
+                        <Button layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="boton_mediano" text="MENSAJE">
                            <VBox.margin>
                               <Insets top="20.0" />
                            </VBox.margin>

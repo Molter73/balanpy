@@ -14,13 +14,12 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
 
 <BorderPane stylesheets="@styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.balanpy.ConfiguracionMascota">
    <center>
       <VBox alignment="TOP_CENTER">
          <children>
-            <GridPane alignment="TOP_CENTER" hgap="20.0" maxWidth="-Infinity" prefWidth="550.0">
+            <GridPane alignment="TOP_CENTER" hgap="10.0" maxWidth="-Infinity" prefWidth="550.0">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
@@ -32,52 +31,46 @@
                <children>
                   <VBox alignment="TOP_CENTER">
                      <children>
-                        <Button fx:id="esterilizacion" alignment="TOP_CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#HandleDone" styleClass="boton_mediano" text="Añadir Esterilización" textFill="WHITE">
+                        <Button fx:id="esterilizacion" alignment="TOP_CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#HandleDone" styleClass="boton_mediano" text="AÑADIR ESTERILIZACIÓN">
                            <VBox.margin>
                               <Insets bottom="5.0" />
                            </VBox.margin>
-                           <font>
-                              <Font name="System Bold" size="13.0" />
-                           </font>
                         </Button>
-                        <Button fx:id="dni_mascota" alignment="TOP_CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#HandleDone" styleClass="boton_mediano" text="Añadir DNI Mascota" textFill="WHITE">
+                        <Button fx:id="dni_mascota" alignment="TOP_CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#HandleDone" styleClass="boton_mediano" text="AÑADIR DNI MASCOTA">
                            <VBox.margin>
                               <Insets bottom="5.0" />
                            </VBox.margin>
-                           <font>
-                              <Font name="System Bold" size="13.0" />
-                           </font>
                         </Button>
-                        <Button fx:id="pedigree" alignment="TOP_CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#HandleDone" styleClass="boton_mediano" text="Añadir Archivo Pedigree" textFill="WHITE" />
+                        <Button fx:id="pedigree" alignment="TOP_CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#HandleDone" styleClass="boton_mediano" text="AÑADIR PEDIGREE" />
                      </children>
                   </VBox>
                   <VBox alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="elegir_mascota" GridPane.columnIndex="1">
                      <children>
-                        <ImageView fx:id="subir_mascota" fitHeight="75.0" fitWidth="75.0" onMouseClicked="#HandleDone" pickOnBounds="true" preserveRatio="true" styleClass="imagen_mascotas">
+                        <ImageView fx:id="subir_mascota" fitHeight="85.0" fitWidth="85.0" onMouseClicked="#HandleDone" pickOnBounds="true" preserveRatio="true" styleClass="imagen_mascotas">
                            <image>
                               <Image url="@añadir-usuario-balanpy.png" />
                            </image>
                         </ImageView>
-                        <Label alignment="CENTER" contentDisplay="CENTER" styleClass="texto_parrafo" text="Subir Foto" />
+                        <Label alignment="CENTER" contentDisplay="CENTER" styleClass="texto_parrafo" text="Subir Foto">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin></Label>
                      </children>
                   </VBox>
                   <VBox alignment="TOP_CENTER" GridPane.columnIndex="2">
                      <children>
-                        <Button fx:id="eliminar_mascota" alignment="TOP_CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#HandleDone" styleClass="boton_mediano" text="Eliminar Perfil" textFill="WHITE">
+                        <Button fx:id="eliminar_mascota" alignment="TOP_CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#HandleDone" prefWidth="205.0" styleClass="boton_eliminar" text="ELIMINAR PERFIL">
                            <VBox.margin>
                               <Insets bottom="5.0" />
                            </VBox.margin>
                         </Button>
-                        <Button fx:id="atras" alignment="TOP_CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#HandleDone" styleClass="boton_mediano" text="Atrás" textFill="WHITE">
+                        <Button fx:id="atras" alignment="TOP_CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#HandleDone" styleClass="boton_mediano" text="ATRÁS">
                            <VBox.margin>
                               <Insets bottom="5.0" />
                            </VBox.margin>
                         </Button>
-                        <Button fx:id="guardar_mascota" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#HandleDone" prefHeight="30.0" prefWidth="181.0" styleClass="boton_mediano" text="Guardar" textFill="WHITE" />
+                        <Button fx:id="guardar_mascota" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#HandleDone" styleClass="boton_mediano" text="GUARDAR" />
                      </children>
-                     <padding>
-                        <Insets top="4.0" />
-                     </padding>
                   </VBox>
                </children>
             </GridPane>

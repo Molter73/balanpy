@@ -9,36 +9,25 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <BorderPane stylesheets="@styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.balanpy.EditarPerfilUsuario">
    <center>
-      <VBox alignment="TOP_CENTER" fillWidth="false" spacing="10.0">
+      <VBox alignment="TOP_CENTER" fillWidth="false" maxWidth="-Infinity" prefWidth="550.0" spacing="10.0">
          <children>
-            <HBox alignment="CENTER" spacing="10.0">
+            <HBox alignment="CENTER" spacing="20.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#atras" onMouseClicked="#HandleDone" prefWidth="150.0" styleClass="boton_mediano" text="Atrás" textFill="WHITE">
-                     <font>
-                        <Font name="Arial Black" size="13.0" />
-                     </font>
+                  <Button mnemonicParsing="false" onAction="#atras" onMouseClicked="#HandleDone" prefWidth="155.0" styleClass="boton_mediano" text="ATRÁS">
                      <HBox.margin>
                         <Insets />
                      </HBox.margin>
                   </Button>
-                  <Label styleClass="texto_h2" text="Introducir datos">
+                  <Label styleClass="texto_h3" text="INTRODUCIR DATOS">
                      <HBox.margin>
-                        <Insets left="20.0" right="20.0" />
+                        <Insets />
                      </HBox.margin>
-                     <font>
-                        <Font name="System Bold" size="13.0" />
-                     </font>
                   </Label>
-                  <Button mnemonicParsing="false" onAction="#delete" prefWidth="150.0" styleClass="boton_eliminar" text="Eliminar perfil" textFill="WHITE">
-                     <font>
-                        <Font name="Arial Black" size="13.0" />
-                     </font>
-                  </Button>
+                  <Button mnemonicParsing="false" onAction="#delete" prefWidth="155.0" styleClass="boton_eliminar" text="ELIMINAR PERFIL" />
                </children>
             </HBox>
             <VBox focusTraversable="true" prefWidth="550.0" spacing="10.0">
@@ -49,9 +38,6 @@
                      </padding>
                   </Separator>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="texto_parrafo" text="Nombre*">
-                     <font>
-                        <Font name="Arial" size="13.0" />
-                     </font>
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
@@ -64,9 +50,6 @@
                   <Label styleClass="texto_parrafo" text="DNI*" />
                   <TextField fx:id="dni" styleClass="recuadro_texto" />
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="texto_parrafo" text="Teléfono*">
-                     <font>
-                        <Font name="Arial" size="13.0" />
-                     </font>
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
@@ -77,9 +60,6 @@
                      </VBox.margin>
                   </TextField>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="texto_parrafo" text="Edad*">
-                     <font>
-                        <Font name="Arial" size="13.0" />
-                     </font>
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
@@ -90,9 +70,6 @@
                      </VBox.margin>
                   </TextField>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="texto_parrafo" text="Email*">
-                     <font>
-                        <Font name="Arial" size="13.0" />
-                     </font>
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
@@ -103,9 +80,6 @@
                      </VBox.margin>
                   </TextField>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="texto_parrafo" text="Sexo*">
-                     <font>
-                        <Font name="Arial" size="13.0" />
-                     </font>
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
@@ -116,9 +90,6 @@
                      </VBox.margin>
                   </ChoiceBox>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="texto_parrafo" text="Dirección*">
-                     <font>
-                        <Font name="Arial" size="13.0" />
-                     </font>
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
@@ -130,11 +101,7 @@
                   </TextField>
                   <HBox alignment="TOP_CENTER">
                      <children>
-                        <Button mnemonicParsing="false" onAction="#guardar" prefWidth="150.0" styleClass="boton_grande" text="Guardar" textFill="WHITE">
-                           <font>
-                              <Font name="Arial Black" size="13.0" />
-                           </font>
-                        </Button>
+                        <Button mnemonicParsing="false" onAction="#guardar" prefWidth="150.0" styleClass="boton_grande" text="GUARDAR" />
                      </children>
                      <VBox.margin>
                         <Insets top="20.0" />
@@ -146,6 +113,9 @@
                </VBox.margin>
             </VBox>
          </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
       </VBox>
    </center>
    <top>
