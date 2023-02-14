@@ -33,12 +33,12 @@
                      <children>
                         <Button fx:id="esterilizacion" alignment="TOP_CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#HandleDone" styleClass="boton_mediano" text="AÑADIR ESTERILIZACIÓN">
                            <VBox.margin>
-                              <Insets bottom="5.0" />
+                              <Insets bottom="10.0" />
                            </VBox.margin>
                         </Button>
                         <Button fx:id="dni_mascota" alignment="TOP_CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#HandleDone" styleClass="boton_mediano" text="AÑADIR DNI MASCOTA">
                            <VBox.margin>
-                              <Insets bottom="5.0" />
+                              <Insets bottom="10.0" />
                            </VBox.margin>
                         </Button>
                         <Button fx:id="pedigree" alignment="TOP_CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#HandleDone" styleClass="boton_mediano" text="AÑADIR PEDIGREE" />
@@ -61,12 +61,12 @@
                      <children>
                         <Button fx:id="eliminar_mascota" alignment="TOP_CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#HandleDone" prefWidth="205.0" styleClass="boton_eliminar" text="ELIMINAR PERFIL">
                            <VBox.margin>
-                              <Insets bottom="5.0" />
+                              <Insets bottom="10.0" />
                            </VBox.margin>
                         </Button>
                         <Button fx:id="atras" alignment="TOP_CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#HandleDone" styleClass="boton_mediano" text="ATRÁS">
                            <VBox.margin>
-                              <Insets bottom="5.0" />
+                              <Insets bottom="10.0" />
                            </VBox.margin>
                         </Button>
                         <Button fx:id="guardar_mascota" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#HandleDone" styleClass="boton_mediano" text="GUARDAR" />
@@ -88,51 +88,51 @@
                   <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="200.0" minHeight="10.0" prefHeight="200.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label contentDisplay="CENTER" styleClass="texto_parrafo" text="Nombre *" />
+                  <Label contentDisplay="CENTER" styleClass="texto_h5" text="Nombre *" />
                   <TextField fx:id="nombre_mascota" styleClass="recuadro_texto" GridPane.rowIndex="1" />
-                  <Label contentDisplay="CENTER" styleClass="texto_parrafo" text="Color" GridPane.columnIndex="1" />
+                  <Label contentDisplay="CENTER" styleClass="texto_h5" text="Color" GridPane.columnIndex="1" />
                   <TextField fx:id="color" styleClass="recuadro_texto" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <Label contentDisplay="CENTER" styleClass="texto_parrafo" text="Sexo *" GridPane.columnIndex="2" />
+                  <Label contentDisplay="CENTER" styleClass="texto_h5" text="Sexo *" GridPane.columnIndex="2" />
                   <ChoiceBox fx:id="sexo_mascota" maxWidth="1.7976931348623157E308" styleClass="recuadro_texto" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                  <Label contentDisplay="CENTER" styleClass="texto_parrafo" text="Fecha Nacimiento *" GridPane.rowIndex="2">
+                  <Label contentDisplay="CENTER" styleClass="texto_h5" text="Fecha Nacimiento *" GridPane.rowIndex="2">
                      <GridPane.margin>
                         <Insets top="10.0" />
                      </GridPane.margin></Label>
                   <DatePicker fx:id="nacimiento" onAction="#getDate" styleClass="recuadro_texto" GridPane.rowIndex="3" />
-                  <Label contentDisplay="CENTER" styleClass="texto_parrafo" text="Raza" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <Label contentDisplay="CENTER" styleClass="texto_h5" text="Raza" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <GridPane.margin>
                         <Insets top="10.0" />
                      </GridPane.margin></Label>
                   <TextField fx:id="raza" styleClass="recuadro_texto" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                  <Label styleClass="texto_parrafo" text="Esterilizada" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                  <Label styleClass="texto_h5" text="Esterilizada" GridPane.columnIndex="2" GridPane.rowIndex="2">
                      <GridPane.margin>
                         <Insets top="10.0" />
                      </GridPane.margin></Label>
                   <ChoiceBox fx:id="esterilizada" maxWidth="1.7976931348623157E308" styleClass="recuadro_texto" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-                  <Label styleClass="texto_parrafo" text="Grupo Sanguíneo" GridPane.rowIndex="4">
+                  <Label styleClass="texto_h5" text="Grupo Sanguíneo" GridPane.rowIndex="4">
                      <GridPane.margin>
                         <Insets top="10.0" />
                      </GridPane.margin></Label>
                   <ChoiceBox fx:id="sanguineo" maxWidth="1.7976931348623157E308" prefHeight="30.0" GridPane.rowIndex="5" />
-                  <Label styleClass="texto_parrafo" text="Vacunas" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                  <Label styleClass="texto_h5" text="Vacunas" GridPane.columnIndex="1" GridPane.rowIndex="6">
                      <GridPane.margin>
                         <Insets top="10.0" />
                      </GridPane.margin></Label>
-                  <ListView fx:id="vacunas" prefHeight="50.0" styleClass="recuadro_texto" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                  <Label contentDisplay="CENTER" styleClass="texto_parrafo" text="Nº Chip  Mascota" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                  <ListView fx:id="vacunas" prefHeight="50.0" styleClass="recuadro_texto" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                  <Label contentDisplay="CENTER" styleClass="texto_h5" text="Nº Chip  Mascota" GridPane.columnIndex="2" GridPane.rowIndex="4">
                      <GridPane.margin>
                         <Insets top="10.0" />
                      </GridPane.margin></Label>
                   <TextField fx:id="chip" styleClass="recuadro_texto" GridPane.columnIndex="2" GridPane.rowIndex="5" />
-                  <Label contentDisplay="CENTER" styleClass="texto_parrafo" text="Alergias" GridPane.rowIndex="6">
+                  <Label contentDisplay="CENTER" styleClass="texto_h5" text="Alergias" GridPane.rowIndex="6">
                      <GridPane.margin>
                         <Insets top="10.0" />
                      </GridPane.margin></Label>
                   <ListView fx:id="alergias" prefHeight="50.0" styleClass="recuadro_texto" GridPane.rowIndex="7" />
-                  <Label contentDisplay="CENTER" styleClass="texto_parrafo" text="Enfermedades" GridPane.columnIndex="2" GridPane.rowIndex="6">
+                  <Label contentDisplay="CENTER" styleClass="texto_h5" text="Enfermedades" GridPane.columnIndex="2" GridPane.rowIndex="6">
                      <GridPane.margin>
                         <Insets top="10.0" />
                      </GridPane.margin></Label>

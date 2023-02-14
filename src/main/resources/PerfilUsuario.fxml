@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane stylesheets="@styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.balanpy.PerfilUsuario">
+<BorderPane prefHeight="920.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.balanpy.PerfilUsuario">
    <center>
       <VBox alignment="TOP_CENTER">
          <children>
@@ -33,7 +33,7 @@
                 <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <VBox styleClass="texto_parrafo">
+                  <VBox styleClass="texto_h5">
                      <children>
                         <Label text="Nombre:" />
                         <Label text="Edad:" />
@@ -43,7 +43,7 @@
                         <Label text="Dirección" />
                      </children>
                   </VBox>
-                  <VBox styleClass="texto_parrafo" GridPane.columnIndex="1">
+                  <VBox styleClass="texto_h5" GridPane.columnIndex="1">
                      <children>
                         <Label fx:id="nombre" text="Jorge Fulanito" />
                         <Label fx:id="edad" text="25 años" />
@@ -95,7 +95,7 @@
                   </Button>
                </children>
                <VBox.margin>
-                  <Insets bottom="50.0" left="25.0" right="25.0" top="80.0" />
+                  <Insets bottom="50.0" left="25.0" right="25.0" top="60.0" />
                </VBox.margin>
             </GridPane>
          </children>
