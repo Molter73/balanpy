@@ -13,8 +13,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 
-public class Pulsaciones {
-	private static final String SCREEN = "/Pulsaciones.fxml";
+public class Temperaturas {
+	private static final String SCREEN = "/Temperaturas.fxml";
 	ArrayList<MascotaImpl> mascotas;
 
 	@FXML
@@ -36,9 +36,9 @@ public class Pulsaciones {
 	private Label petName2;
 
 	@FXML
-	private LineChart<String, Integer> pulsacionesChart;
+	private LineChart<String, Double> temperaturasChart;
 
-	public Pulsaciones() {
+	public Temperaturas() {
 		mascotas = Mascotas.getInstance();
 	}
 
@@ -53,21 +53,21 @@ public class Pulsaciones {
 			return;
 		}
 
-		DatoPulsaciones pulsaciones = new DatoPulsaciones(mascotas.get(id));
+		DatoTemperaturas temperaturas = new DatoTemperaturas(mascotas.get(id));
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
-		XYChart.Series<String, Integer> series = new XYChart.Series<>();
-		ArrayList<DatoGenerico> datos = pulsaciones.getDatos();
+		XYChart.Series<String, Double> series = new XYChart.Series<>();
+		ArrayList<DatoGenerico> datos = temperaturas.getDatos();
 
-		pulsacionesChart.getData().clear();
+		temperaturasChart.getData().clear();
 
-		for (DatoGenerico pulsacion : datos.subList(datos.size() - 40, datos.size())) {
-			series.getData()
-			.add(new XYChart.Data<String, Integer>(pulsacion.getFecha().format(formatter),
-					pulsacion.getDato()));
+		for (DatoGenerico temperatura : datos.subList(datos.size() - 40, datos.size())) {
+			series.getData().add(
+					new XYChart.Data<String, Double>(temperatura.getFecha().format(formatter),
+							temperatura.getDato() / 10.0));
 		}
 
-		series.setName("Pulsaciones en PPM.");
-		pulsacionesChart.getData().add(series);
+		series.setName("Temperatura en ºC");
+		temperaturasChart.getData().add(series);
 	}
 
 	public void initialize() throws MalformedURLException {

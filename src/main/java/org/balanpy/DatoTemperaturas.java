@@ -2,24 +2,21 @@ package org.balanpy;
 
 import java.io.IOException;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 
 public class DatoTemperaturas {
 
 	private static ArrayList<DatoGenerico> datos;
 
-	private static final Path TEMP_PATH = Paths.get(System.getenv("BALANPY_CONFIG_DIR"), "temperaturas.json");
-
 	DatoTemperaturas(Mascota mascota) {
-
 		ObjectMapper om = new ObjectMapper();
+		om.registerModule(new JavaTimeModule());
 
-		Path temperaturasPath = Paths.get(Configuracion.getRootDir(), mascota.getUUID().toString(),
-				"temperaturas.json");
+		Path temperaturasPath = Configuracion.getMascotaTemperaturas(mascota);
 
 		try {
 
