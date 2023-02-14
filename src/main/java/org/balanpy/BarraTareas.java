@@ -54,7 +54,7 @@ public class BarraTareas implements Initializable {
 	@FXML
 	public void temperaturas(MouseEvent event) throws Exception {
 
-		switchScene(event, "/Clima.fxml");
+		switchScene(event, "/Temperaturas.fxml");
 
 	}
 
