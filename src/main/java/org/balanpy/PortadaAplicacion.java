@@ -6,9 +6,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
@@ -21,8 +18,7 @@ public class PortadaAplicacion {
 
 	private static final String SCREEN = "/PortadaAplicacion.fxml";
 
-	private static final Path MASCOTAS_PATH = Paths.get(Configuracion.getRootDir(), "mascotas.json");
-	ArrayList<MascotaImpl> mascotas;
+	ArrayList<MascotaImpl> mascotas = Mascotas.getInstance();
 
 	@FXML
 	ImageView petImage0;
@@ -45,14 +41,6 @@ public class PortadaAplicacion {
 	BalanpyScreen balanpyScreen = new BalanpyScreen();
 
 	public PortadaAplicacion() {
-		try {
-			ObjectMapper om = new ObjectMapper();
-			mascotas = om.readValue(MASCOTAS_PATH.toFile(), new TypeReference<ArrayList<MascotaImpl>>() {
-			});
-		} catch (IOException e) {
-			System.out.println("Failed to load pet data. " + e.getMessage());
-			mascotas = new ArrayList<MascotaImpl>();
-		}
 	}
 
 	private void setProfile(ImageView imageView, Label label, Mascota mascota) throws MalformedURLException {
@@ -82,12 +70,10 @@ public class PortadaAplicacion {
 		}
 	}
 
-	public static Mascota selectedPet;
-
 	public void selectProfile(MouseEvent event, int id) throws Exception {
 
 		if (mascotas.size() >= (id + 1)) {
-			selectedPet = mascotas.get(id);
+			PerfilMascota.setMascota(mascotas.get(id));
 			switchScene(event, "/PerfilMascota.fxml");
 
 		} else {

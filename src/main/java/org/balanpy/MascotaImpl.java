@@ -1,5 +1,8 @@
 package org.balanpy;
 
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -156,6 +159,15 @@ public class MascotaImpl implements Mascota {
 	@Override
 	public Map<String, String> getVacuna() {
 		return vacunas;
+	}
+
+	@Override
+	public Integer getEdad() {
+		DateTimeFormatter df = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		LocalDate now = LocalDate.now();
+		LocalDate nacimiento = LocalDate.parse(fechaNacimiento, df);
+
+		return Period.between(nacimiento, now).getYears();
 	}
 
 	// --------------- SETTERS MASCOTAS -------------------------------------------
