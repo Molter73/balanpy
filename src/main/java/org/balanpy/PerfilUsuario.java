@@ -1,6 +1,8 @@
 package org.balanpy;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
+import java.nio.file.Paths;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -46,6 +48,10 @@ public class PerfilUsuario {
 	public void editarPerfil(ActionEvent event) throws IOException {
 		Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		BalanpyScreen.loadScene(stage, "/EditarPerfilUsuario.fxml", SCREEN);
+	}
+
+	public void terminosCondiciones(ActionEvent event) throws IOException, URISyntaxException {
+		LecturaArchivosGen.openFile(Paths.get(getClass().getResource("/terminos-condiciones.txt").toURI()));
 	}
 
 	public void HandleDone(MouseEvent event) throws Exception {
