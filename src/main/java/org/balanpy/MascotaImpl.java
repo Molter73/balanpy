@@ -65,6 +65,7 @@ public class MascotaImpl implements Mascota {
 
 	private HigieneImpl higiene = new HigieneImpl();
 
+	@Override
 	public HigieneImpl getHigiene() {
 		return higiene;
 	}
