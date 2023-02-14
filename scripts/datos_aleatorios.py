@@ -10,12 +10,15 @@ def generate_data(n: int, lower: int, upper: int) -> list:
     now = datetime.now()
     fecha_fmt = "%Y-%m-%dT%H:%M:%S"
 
-    return [
+    data = [
         {
             'fecha': (now - timedelta(0, (i * 15))).strftime(fecha_fmt),
             'dato': randrange(lower, upper),
         } for i in range(n)
     ]
+
+    data.reverse()
+    return data
 
 
 def dump(output: str, data: list):

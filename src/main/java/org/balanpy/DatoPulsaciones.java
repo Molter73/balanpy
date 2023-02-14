@@ -2,27 +2,24 @@ package org.balanpy;
 
 import java.io.IOException;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 
 public class DatoPulsaciones {
 
 	private static ArrayList<DatoGenerico> datos;
 
-	private static final Path PULS_PATH = Paths.get(System.getenv("BALANPY_CONFIG_DIR"), "pulsaciones.json");
-
 	DatoPulsaciones(Mascota mascota) {
-
 		ObjectMapper om = new ObjectMapper();
+		om.registerModule(new JavaTimeModule());
 
-		Path temperaturasPath = Paths.get(Configuracion.getRootDir(), mascota.getUUID().toString(), "pulsaciones.json");
-
+		Path pulsacionesPath = Configuracion.getMascotaPulsaciones(mascota);
 		try {
 
-			datos = om.readValue(temperaturasPath.toFile(), new TypeReference<ArrayList<DatoGenerico>>() {
+			datos = om.readValue(pulsacionesPath.toFile(), new TypeReference<ArrayList<DatoGenerico>>() {
 
 			});
 

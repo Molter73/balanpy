@@ -63,7 +63,7 @@
                   <Insets top="30.0" />
                </VBox.margin>
             </GridPane>
-            <LineChart maxWidth="1.7976931348623157E308" prefHeight="300.0">
+            <LineChart fx:id="pulsacionesChart" animated="false" maxWidth="1.7976931348623157E308" prefHeight="300.0">
               <xAxis>
                 <CategoryAxis side="BOTTOM" />
               </xAxis>
