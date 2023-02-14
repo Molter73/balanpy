@@ -127,9 +127,8 @@
 
 .recuadro_texto{
 	-fx-font-family: 'Poppins', sans-serif;
-	-fx-font-weight:regular;
 	-fx-font-size:13px;
-	-fx-color:black;
+	-fx-text-fill:black;
 	-fx-background-color:#fff;
   	-fx-border-radius: 50px;
   	-fx-border-color: black;
