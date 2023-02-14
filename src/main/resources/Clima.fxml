@@ -6,20 +6,14 @@
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
 
 <BorderPane stylesheets="@styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.balanpy.ClimaController">
    <center>
       <VBox alignment="CENTER">
          <children>
-            <Label fx:id="avisoPaseo" alignment="CENTER" contentDisplay="CENTER" text="Aviso paseo" textAlignment="CENTER" wrapText="true">
-               <font>
-                  <Font size="18.0" />
-               </font>
+            <Label fx:id="avisoPaseo" alignment="CENTER" contentDisplay="CENTER" styleClass="texto_h2" text="Aviso paseo" textAlignment="CENTER" wrapText="true">
                <VBox.margin>
                   <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
                </VBox.margin>
@@ -27,11 +21,7 @@
                   <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
                </padding>
             </Label>
-            <Label fx:id="temperaturaActual" alignment="CENTER" text="Temperatura externa actual" textOverrun="CENTER_ELLIPSIS">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </Label>
+            <Label fx:id="temperaturaActual" alignment="CENTER" styleClass="texto_h1" text="Temperatura externa actual" textOverrun="CENTER_ELLIPSIS" />
             <Separator prefHeight="20.0" prefWidth="500.0">
                <VBox.margin>
                   <Insets />
@@ -40,7 +30,7 @@
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
             </Separator>
-            <LineChart fx:id="tempChart">
+            <LineChart fx:id="tempChart" styleClass="texto_parrafo">
               <xAxis>
                 <CategoryAxis side="BOTTOM" />
               </xAxis>
@@ -55,23 +45,7 @@
       </VBox>
    </center>
    <top>
-      <VBox alignment="TOP_CENTER" BorderPane.alignment="CENTER">
-         <children>
-            <ImageView fitHeight="150.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@BORDE%20SUPERIOR%20-%20BALANPY.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="150.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@logo-balanpy.png" />
-               </image>
-               <VBox.margin>
-                  <Insets top="-50.0" />
-               </VBox.margin>
-            </ImageView>
-         </children>
-      </VBox>
+      <fx:include source="BarraSuperior.fxml" />
    </top>
    <bottom>
       <fx:include source="BarraTareas.fxml" />

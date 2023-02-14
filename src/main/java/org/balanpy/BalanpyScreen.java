@@ -12,7 +12,7 @@ import javafx.stage.Stage;
 
 public class BalanpyScreen {
 	public static final double WINDOW_WIDTH = 600;
-	public static final double WINDOW_HEIGHT = 800;
+	public static final double WINDOW_HEIGHT = 920;
 
 	private static String previousScreen = "/PantallaInicio.fxml";
 	private static String currentScreen = "/PantallaInicio.fxml";

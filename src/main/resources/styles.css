@@ -2,41 +2,150 @@
 	-fx-background-color:#fff;
 }
 
-.usuario {
-	-fx-border-color: black;
-    -fx-border-insets: 5;
-    -fx-border-width: 2;
-    -fx-border-style: solid;
-    -fx-border-radius: 10px;
+.texto_parrafo {
+	-fx-font-family: 'Poppins', sans-serif;
+	-fx-font-weight:bold;
+	-fx-font-size:12px;
+	-fx-color:black;
 }
 
-.boton_personalizado {
+.texto_h1 {
+	-fx-font-family: 'Poppins', sans-serif;
 	-fx-font-weight:bold;
-	-fx-font-size:14px;
-	-fx-color:#ffffff;
+	-fx-font-size:36px;
+	-fx-text-fill:#82d4c9;
+}
+
+.texto_h2 {
+	-fx-font-family: 'Poppins', sans-serif;
+	-fx-font-weight:bold;
+	-fx-font-size:24px;
+	-fx-text-fill:#2F9184;
+}
+
+.texto_h3 {
+	-fx-font-family: 'Poppins', sans-serif;
+	-fx-font-weight:bold;
+	-fx-font-size:18px;
+	-fx-text-fill:#1C6A60;
+}
+
+.texto_h4 {
+	-fx-font-family: 'Poppins', sans-serif;
+	-fx-font-weight:bold;
+	-fx-font-size:18px;
+	-fx-text-fill:white;
+}
+
+.elegir_mascota{
+	-fx-border-color: black;
+	-fx-border-insets: 5;
+	-fx-border-width: 1;
+	-fx-border-style: solid;
+	-fx-border-radius: 10px;  
+}
+
+.elegir_mascota:hover{
+	-fx-border-color: #82d4c9;
+	-fx-border-width: 3;
+}
+
+.imagen_mascotas{
+	border-radius: 50px;
+	width: 150px;
+	height: 150px;
+}
+
+
+.boton_grande{
+	-fx-font-family: 'Poppins', sans-serif;
+	-fx-font-weight:bold;
+	-fx-font-size:20px;
+	-fx-text-fill:white;
 	-fx-background-color:#82d4c9;
   	-fx-border-radius: 50px;
 }
 
-.acceso-rapido {
+.boton_grande:hover{
+	-fx-background-color:#2F9184;
+}
+
+.boton_mediano{
+	-fx-font-family: 'Poppins', sans-serif;
+	-fx-font-weight:bold;
+	-fx-font-size:16px;
+	-fx-text-fill:white;
+	-fx-background-color:#82d4c9;
+	-fx-wrap-text:true;
+  	-fx-border-radius: 50px;
+}
+
+
+.boton_mediano:hover{
+	-fx-background-color:#2F9184;
+}
+
+.boton_pequeno{
+	-fx-font-family: 'Poppins', sans-serif;
+	-fx-font-weight:bold;
+	-fx-font-size:12px;
+	-fx-text-fill:white;
+	-fx-background-color:#82d4c9;
+  	-fx-border-radius: 50px;
+}
+
+.boton_pequeno:hover{
+	-fx-background-color:#2F9184;
+}
+
+.boton_eliminar{
+	-fx-font-family: 'Poppins', sans-serif;
+	-fx-font-size:16px;
+	-fx-text-fill:white;
+	-fx-background-color:#CD1A00;
+  	-fx-border-radius: 50px;
+  	-fx-width:200px;
+}
+
+.boton_eliminar:hover{
+	-fx-background-color:#891100;
+}
+
+.boton_portada{
+	-fx-font-family: 'Poppins', sans-serif;
+	-fx-border-insets: 5;
+	-fx-font-weight:bold;
+	-fx-font-size:14px;
+	-fx-text-fill:white;
+	-fx-background-color:#82d4c9;
+  	-fx-border-radius: 10px;	
+}
+
+.boton_portada:hover{
+	-fx-background-color:#2F9184;
+}
+
+.recuadro_texto{
+	-fx-font-family: 'Poppins', sans-serif;
+	-fx-font-weight:regular;
+	-fx-font-size:13px;
+	-fx-color:black;
+	-fx-background-color:#fff;
+  	-fx-border-radius: 50px;
+  	-fx-border-color: black;
+	-fx-border-width: 1;
+	-fx-border-style: solid;
+	-fx-border-radius: 5px;  
+}
+
+
+.inferior {
 	-fx-border-color: black;
     -fx-border-width: 1;
     -fx-border-style: solid;
     -fx-background-color: #82d4c9;
 }
 
-.bottom-aplication-center {
-	-fx-border-color: black;
-    -fx-border-width: 1;
-    -fx-border-style: solid;
-}
-
-.boton-inferior-centro {
-	-fx-font-weight:bold;
-	-fx-border-width: 1px;
-	-fx-border-color: black;
-}
-
-.ingreso-datos {
-	-fx-background-color: #87D5CA;
+.inferior:hover {
+    -fx-background-color: #2F9184;
 }

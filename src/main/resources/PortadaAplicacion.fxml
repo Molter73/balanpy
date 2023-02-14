@@ -10,48 +10,20 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
 
 <BorderPane stylesheets="@styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.balanpy.PortadaAplicacion">
    <center>
       <VBox alignment="TOP_CENTER">
          <children>
-            <GridPane maxHeight="1.7976931348623157E308" maxWidth="-Infinity" prefHeight="80.0" prefWidth="500.0">
-              <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="369.0" minWidth="10.0" prefWidth="369.0" />
-                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="206.0" minWidth="10.0" prefWidth="131.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-              </rowConstraints>
+            <Label styleClass="texto_h1" text="Bienvenido a Balanpy">
                <VBox.margin>
+                  <Insets top="30.0" />
+               </VBox.margin></Label>
+            <Label styleClass="texto_h2" text="Por favor, seleccione un perfil:">
+               <opaqueInsets>
                   <Insets />
-               </VBox.margin>
-               <children>
-                  <VBox prefHeight="200.0" prefWidth="100.0">
-                     <children>
-                        <Label text="Bienvenido a Balanpy" textFill="#83d4c8">
-                           <font>
-                              <Font name="Poppins Bold" size="30.0" />
-                           </font>
-                        </Label>
-                        <Label text="Por favor, seleccione un perfil:">
-                           <font>
-                              <Font name="Poppins Bold" size="14.0" />
-                           </font>
-                           <opaqueInsets>
-                              <Insets />
-                           </opaqueInsets>
-                        </Label>
-                     </children>
-                  </VBox>
-                  <ImageView fitHeight="150.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
-                     <image>
-                        <Image url="@logo-balanpy.png" />
-                     </image>
-                  </ImageView>
-               </children>
-            </GridPane>
+               </opaqueInsets>
+            </Label>
             <GridPane maxHeight="1.7976931348623157E308" maxWidth="-Infinity" prefHeight="200.0" prefWidth="550.0">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -62,105 +34,116 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <VBox.margin>
-                  <Insets top="50.0" />
+                  <Insets top="30.0" />
                </VBox.margin>
                <children>
-                  <VBox alignment="TOP_CENTER" onMouseClicked="#selectProfile0" styleClass="usuario">
+                  <VBox alignment="TOP_CENTER" onMouseClicked="#selectProfile0" styleClass="elegir_mascota">
                      <children>
                         <ImageView fx:id="petImage0" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@añadir-usuario-balanpy.png" />
                            </image>
                         </ImageView>
-                        <Label fx:id="petName0" text="Añadir Mascota" textAlignment="CENTER">
-                           <font>
-                              <Font name="Poppins Bold" size="16.0" />
-                           </font>
-                        </Label>
+                        <Label fx:id="petName0" styleClass="texto_h3" text="Añadir Mascota" />
                      </children>
                   </VBox>
-                  <VBox alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" onMouseClicked="#selectProfile1" prefHeight="200.0" prefWidth="100.0" styleClass="usuario" GridPane.columnIndex="1">
+                  <VBox alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" onMouseClicked="#selectProfile1" prefHeight="200.0" prefWidth="100.0" styleClass="elegir_mascota" GridPane.columnIndex="1">
                      <children>
                         <ImageView fx:id="petImage1" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@añadir-usuario-balanpy.png" />
                            </image>
                         </ImageView>
-                        <Label fx:id="petName1" text="Añadir Mascota" textAlignment="CENTER">
-                           <font>
-                              <Font name="Poppins Bold" size="16.0" />
-                           </font>
-                        </Label>
+                        <Label fx:id="petName1" styleClass="texto_h3" text="Añadir Mascota" />
                      </children>
                   </VBox>
-                  <VBox alignment="TOP_CENTER" layoutX="194.0" layoutY="10.0" onMouseClicked="#selectProfile2" prefHeight="200.0" prefWidth="100.0" styleClass="usuario" GridPane.columnIndex="2">
+                  <VBox alignment="TOP_CENTER" layoutX="194.0" layoutY="10.0" onMouseClicked="#selectProfile2" prefHeight="200.0" prefWidth="100.0" styleClass="elegir_mascota" GridPane.columnIndex="2">
                      <children>
                         <ImageView fx:id="petImage2" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@añadir-usuario-balanpy.png" />
                            </image>
                         </ImageView>
-                        <Label fx:id="petName2" text="Añadir Mascota" textAlignment="CENTER">
-                           <font>
-                              <Font name="Poppins Bold" size="16.0" />
-                           </font>
-                        </Label>
+                        <Label fx:id="petName2" styleClass="texto_h3" text="Añadir Mascota" />
                      </children>
                   </VBox>
                </children>
             </GridPane>
-            <Label text="Acceso Rápido" textFill="#83d4c8">
-               <font>
-                  <Font name="Poppins Bold" size="30.0" />
-               </font>
+            <Label styleClass="texto_h2" text="Acceso Rápido">
                <VBox.margin>
-                  <Insets top="20.0" />
+                  <Insets top="50.0" />
                </VBox.margin>
             </Label>
-            <HBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="80.0" prefWidth="550.0">
+            <HBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefWidth="550.0">
                <children>
-                   <VBox alignment="CENTER" onMouseClicked="#temperaturaExterna" prefHeight="100.0" prefWidth="100.0" styleClass="acceso-rapido">
+                   <VBox alignment="TOP_CENTER" onMouseClicked="#temperaturaExterna" prefWidth="120.0" styleClass="boton_portada">
                      <children>
-                        <Label text="Temp. Externa" textAlignment="CENTER" textFill="WHITE" wrapText="true">
-                           <font>
-                              <Font name="Poppins Bold" size="14.0" />
-                           </font>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@temperatura-externa.png" />
+                           </image>
+                        </ImageView>
+                        <Label styleClass="texto_h4" text="PASEO">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
                         </Label>
                      </children>
                      <HBox.margin>
                         <Insets right="10.0" />
                      </HBox.margin>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
                   </VBox>
-                  <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#higiene" prefHeight="100.0" prefWidth="100.0" styleClass="acceso-rapido">
+                  <VBox alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" onMouseClicked="#higiene" prefWidth="120.0" styleClass="boton_portada">
                      <children>
-                        <Label text="Higiene" textAlignment="CENTER" textFill="WHITE" wrapText="true">
-                           <font>
-                              <Font name="Poppins Bold" size="14.0" />
-                           </font>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@higiene.png" />
+                           </image>
+                        </ImageView>
+                        <Label styleClass="texto_h4" text="HIGIENE">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
                         </Label>
                      </children>
                      <HBox.margin>
                         <Insets left="5.0" right="5.0" />
                      </HBox.margin>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
                   </VBox>
-                  <VBox alignment="CENTER" onMouseClicked="#vacunas" prefHeight="200.0" prefWidth="100.0" styleClass="acceso-rapido">
+                  <VBox alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" onMouseClicked="#vacunas" prefWidth="120.0" styleClass="boton_portada">
                      <children>
-                        <Label text="Vacunas" textAlignment="CENTER" textFill="WHITE" wrapText="true">
-                           <font>
-                              <Font name="Poppins Bold" size="14.0" />
-                           </font>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@vacuna.png" />
+                           </image>
+                        </ImageView>
+                        <Label styleClass="texto_h4" text="VACUNAS">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
                         </Label>
                      </children>
                      <HBox.margin>
                         <Insets left="10.0" />
                      </HBox.margin>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
                   </VBox>
                </children>
                <VBox.margin>
-                  <Insets top="20.0" />
+                  <Insets bottom="50.0" top="20.0" />
                </VBox.margin>
             </HBox>
-            <VBox alignment="BOTTOM_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" />
          </children>
       </VBox>
    </center>
@@ -168,10 +151,6 @@
       <fx:include source="BarraTareas.fxml" />
    </bottom>
    <top>
-      <ImageView fitHeight="100.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
-         <image>
-            <Image url="@BORDE%20SUPERIOR%20-%20BALANPY.png" />
-         </image>
-      </ImageView>
+      <fx:include source="BarraSuperior.fxml" />
    </top>
 </BorderPane>
