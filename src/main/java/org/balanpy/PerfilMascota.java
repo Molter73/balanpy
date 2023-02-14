@@ -52,12 +52,18 @@ public class PerfilMascota {
 
 	public void initialize() {
 		color.setText(mascota.getColor());
-		edad.setText(mascota.getEdad().toString() + "años");
+		edad.setText(mascota.getEdad().toString() + " años");
 		fechaNacimiento.setText(mascota.getFechaNacimiento());
 		grupoSanguineo.setText(mascota.getGrupoSanguineo());
 		nombreMascota.setText(mascota.getNombre());
 		raza.setText(mascota.getRaza());
 		sexo.setText(mascota.getSexo());
+
+		if (mascota.getPathEsterilización() == "") {
+			esterilizado.setText("No");
+		} else {
+			esterilizado.setText("Si");
+		}
 
 		try {
 			Path imagePath = Paths.get(Configuracion.getRootDir(), mascota.getUUID().toString(), "profile.png");
