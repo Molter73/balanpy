@@ -4,10 +4,9 @@
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.VBox?>
 
-
 <VBox alignment="CENTER" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.balanpy.ArchivosGenericosController">
    <children>
       <Label fx:id="fileNameLabel" text="Label" />
-      <TextArea fx:id="fileContentTextArea" editable="false" prefHeight="200.0" prefWidth="200.0" />
+      <TextArea fx:id="fileContentTextArea" editable="false" prefHeight="200.0" prefWidth="200.0" wrapText="true" />
    </children>
 </VBox>
