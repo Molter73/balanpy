@@ -6,12 +6,10 @@
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -19,37 +17,65 @@
 
 <BorderPane stylesheets="@styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.balanpy.PerfilMascota">
    <center>
-      <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
+      <VBox maxWidth="-Infinity" prefWidth="550.0">
          <children>
-            <GridPane alignment="CENTER" prefHeight="161.0" prefWidth="600.0">
+            <GridPane alignment="CENTER" hgap="10.0" prefHeight="160.0" prefWidth="550.0">
               <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="295.0" minWidth="10.0" prefWidth="210.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="378.0" minWidth="10.0" prefWidth="115.0" />
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="378.0" minWidth="10.0" prefWidth="114.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="378.0" minWidth="10.0" prefWidth="161.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
               </columnConstraints>
               <rowConstraints>
-                <RowConstraints maxHeight="167.0" minHeight="10.0" prefHeight="160.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <VBox prefHeight="200.0" prefWidth="100.0" spacing="3.0" GridPane.columnIndex="2">
+                  <VBox styleClass="texto_parrafo" GridPane.columnIndex="2">
                      <children>
-                        <Text fx:id="edad" strokeType="OUTSIDE" strokeWidth="0.0" text="edad" />
-                        <Text fx:id="sexo" strokeType="OUTSIDE" strokeWidth="0.0" text="sexo" />
-                        <Text fx:id="color" strokeType="OUTSIDE" strokeWidth="0.0" text="color" />
-                        <Text fx:id="raza" strokeType="OUTSIDE" strokeWidth="0.0" text="raza" />
-                        <Text fx:id="fechaNacimiento" strokeType="OUTSIDE" strokeWidth="0.0" text="f_nacimiento" />
-                        <Text fx:id="esterilizado" strokeType="OUTSIDE" strokeWidth="0.0" text="esterilizado" />
-                        <Text fx:id="grupoSanguineo" strokeType="OUTSIDE" strokeWidth="0.0" text="g_sanguineo" />
+                        <Text fx:id="edad" strokeType="OUTSIDE" strokeWidth="0.0" text="edad">
+                           <VBox.margin>
+                              <Insets bottom="2.0" top="2.0" />
+                           </VBox.margin>
+                        </Text>
+                        <Text fx:id="sexo" strokeType="OUTSIDE" strokeWidth="0.0" text="sexo">
+                           <VBox.margin>
+                              <Insets bottom="2.0" top="2.0" />
+                           </VBox.margin>
+                        </Text>
+                        <Text fx:id="color" strokeType="OUTSIDE" strokeWidth="0.0" text="color">
+                           <VBox.margin>
+                              <Insets bottom="2.0" />
+                           </VBox.margin>
+                        </Text>
+                        <Text fx:id="raza" strokeType="OUTSIDE" strokeWidth="0.0" text="raza">
+                           <VBox.margin>
+                              <Insets bottom="2.0" top="2.0" />
+                           </VBox.margin>
+                        </Text>
+                        <Text fx:id="fechaNacimiento" strokeType="OUTSIDE" strokeWidth="0.0" text="f_nacimiento">
+                           <VBox.margin>
+                              <Insets bottom="2.0" />
+                           </VBox.margin>
+                        </Text>
+                        <Text fx:id="esterilizado" strokeType="OUTSIDE" strokeWidth="0.0" text="esterilizado">
+                           <VBox.margin>
+                              <Insets bottom="2.0" />
+                           </VBox.margin>
+                        </Text>
+                        <Text fx:id="grupoSanguineo" strokeType="OUTSIDE" strokeWidth="0.0" text="g_sanguineo">
+                           <VBox.margin>
+                              <Insets top="2.0" />
+                           </VBox.margin>
+                        </Text>
                      </children>
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
                      <GridPane.margin>
-                        <Insets top="20.0" />
+                        <Insets />
                      </GridPane.margin>
                   </VBox>
-                  <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="115.0" spacing="3.0" GridPane.columnIndex="1">
+                  <VBox prefHeight="200.0" prefWidth="129.0" styleClass="texto_parrafo" GridPane.columnIndex="1">
                      <children>
                         <Label text="Edad: " />
                         <Label text="Sexo: " />
@@ -60,72 +86,48 @@
                         <Label text="Grupo Sanguíneo: " />
                      </children>
                      <GridPane.margin>
-                        <Insets top="20.0" />
+                        <Insets />
                      </GridPane.margin>
                   </VBox>
-                  <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3">
+                  <VBox alignment="CENTER" GridPane.columnIndex="3">
                      <children>
-                        <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@logo-balanpy.png" />
-                           </image>
-                        </ImageView>
+                        <Button fx:id="configuracionMascota" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#HandleDone" styleClass="boton_grande" text="CONFIGURAR" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="configuracionMascota1" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#HandleDone" styleClass="boton_grande" text="VINCULAR" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                        </Button>
                      </children>
-                     <padding>
-                        <Insets top="20.0" />
-                     </padding>
                   </VBox>
-                  <GridPane>
-                    <columnConstraints>
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                    </columnConstraints>
-                    <rowConstraints>
-                      <RowConstraints maxHeight="166.0" minHeight="10.0" prefHeight="165.0" vgrow="SOMETIMES" />
-                    </rowConstraints>
+                  <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
                      <children>
-                        <ImageView fx:id="fotoMascota" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@Portada-Bulldog.png" />
-                           </image>
-                           <GridPane.margin>
-                              <Insets left="30.0" />
-                           </GridPane.margin>
-                        </ImageView>
+                        <ImageView fx:id="fotoMascota" fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true" />
+                        <Text fx:id="nombreMascota" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="texto_parrafo" text="nombre_mascota" textAlignment="CENTER">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </Text>
                      </children>
-                  </GridPane>
+                  </VBox>
                </children>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
             </GridPane>
-            <GridPane prefHeight="67.0" prefWidth="600.0">
+            <GridPane alignment="TOP_CENTER" prefHeight="250.0" styleClass="texto_parrafo">
               <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="295.0" minWidth="10.0" prefWidth="205.0" />
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="408.0" minWidth="10.0" prefWidth="395.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
               </columnConstraints>
               <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-              </rowConstraints>
-               <children>
-                  <Button fx:id="configuracionMascota" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#HandleDone" prefHeight="69.0" prefWidth="345.0" styleClass="boton_personalizado" text="Configuración" textFill="WHITE" GridPane.columnIndex="1">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets bottom="10.0" left="10.0" right="205.0" top="10.0" />
-                     </GridPane.margin>
-                  </Button>
-                  <Text fx:id="nombreMascota" strokeType="OUTSIDE" strokeWidth="0.0" text="nombre_mascota" textAlignment="CENTER">
-                     <GridPane.margin>
-                        <Insets bottom="40.0" left="65.0" />
-                     </GridPane.margin>
-                  </Text>
-               </children>
-            </GridPane>
-            <GridPane alignment="TOP_CENTER" prefHeight="259.0" prefWidth="600.0">
-              <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints maxHeight="239.0" minHeight="10.0" prefHeight="231.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
                   <LineChart fx:id="temperaturaDiaria" title="Temperatura Diaria">
@@ -152,26 +154,61 @@
                   <Insets top="20.0" />
                </VBox.margin>
             </GridPane>
-            <GridPane prefHeight="93.0" prefWidth="600.0">
+            <Button fx:id="saludMascota" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#HandleDone" styleClass="boton_grande" text="HISTORIAL MÉDICO" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </Button>
+            <GridPane hgap="20.0" vgap="10.0">
               <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="342.0" minWidth="10.0" prefWidth="327.0" />
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="295.0" minWidth="10.0" prefWidth="273.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="265.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="265.0" />
               </columnConstraints>
               <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button fx:id="saludMascota" mnemonicParsing="false" onMouseClicked="#HandleDone" prefHeight="50.0" prefWidth="300.0" styleClass="boton_personalizado" text="Alergias, Vacunas y Enfermedades Anteriores" textFill="WHITE">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="20.0" />
-                     </GridPane.margin>
-                  </Button>
-                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="284.0" GridPane.columnIndex="1">
+                  <VBox alignment="TOP_CENTER">
                      <children>
-                        <Button fx:id="seguroMascota" mnemonicParsing="false" onMouseClicked="#HandleDone" prefHeight="50.0" styleClass="boton_personalizado" text="Seguro De La Mascota" textFill="WHITE">
+                        <Button fx:id="seguroMascota" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#HandleDone" styleClass="boton_mediano" text="SEGURO MASCOTA" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="pedigree" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#HandleDone" styleClass="boton_mediano" text="PEDIGREE" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="10.0" top="10.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button fx:id="esterilizado" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#HandleDone" styleClass="boton_mediano" text="ESTERILIZADO" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <VBox alignment="TOP_CENTER" GridPane.columnIndex="1">
+                     <children>
+                        <Button fx:id="dniMascota" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#HandleDone" styleClass="boton_mediano" text="DNI MASCOTA" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="chip" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#HandleDone" styleClass="boton_mediano" text="Nº CHIP" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="10.0" top="10.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button fx:id="ppp" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#HandleDone" styleClass="boton_mediano" text="ARCHIVO PPP" textFill="WHITE">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -179,42 +216,16 @@
                      </children>
                   </VBox>
                </children>
+               <VBox.margin>
+                  <Insets bottom="30.0" top="10.0" />
+               </VBox.margin>
             </GridPane>
-            <HBox prefHeight="100.0" prefWidth="600.0" spacing="38.0">
-               <children>
-                  <Button fx:id="dniMascota" mnemonicParsing="false" onMouseClicked="#HandleDone" prefHeight="50.0" styleClass="boton_personalizado" text="DNI Mascota" textFill="WHITE">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="pedigree" mnemonicParsing="false" onMouseClicked="#HandleDone" prefHeight="50.0" styleClass="boton_personalizado" text="Pedigree" textFill="WHITE">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="chip" mnemonicParsing="false" onMouseClicked="#HandleDone" prefHeight="50.0" styleClass="boton_personalizado" text="Nº Chip" textFill="WHITE">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="esterilizado" mnemonicParsing="false" onMouseClicked="#HandleDone" prefHeight="50.0" styleClass="boton_personalizado" text="Esterilizado" textFill="WHITE">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="ppp" mnemonicParsing="false" onMouseClicked="#HandleDone" prefHeight="50.0" styleClass="boton_personalizado" text="Archivo P.P.P" textFill="WHITE">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Button>
-               </children>
-               <padding>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-               </padding>
-            </HBox>
          </children>
       </VBox>
    </center>
+   <top>
+      <fx:include source="BarraSuperior.fxml" />
+   </top>
    <bottom>
       <fx:include source="BarraTareas.fxml" />
    </bottom>

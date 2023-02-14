@@ -6,8 +6,6 @@
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -18,7 +16,7 @@
          <children>
             <Label fx:id="avisoPaseo" alignment="CENTER" contentDisplay="CENTER" text="Aviso paseo" textAlignment="CENTER" wrapText="true">
                <font>
-                  <Font size="18.0" />
+                  <Font name="Poppins" size="18.0" />
                </font>
                <VBox.margin>
                   <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
@@ -27,9 +25,9 @@
                   <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
                </padding>
             </Label>
-            <Label fx:id="temperaturaActual" alignment="CENTER" text="Temperatura externa actual" textOverrun="CENTER_ELLIPSIS">
+            <Label fx:id="temperaturaActual" alignment="CENTER" styleClass="texto_h1" stylesheets="@styles.css" text="Temperatura externa actual" textOverrun="CENTER_ELLIPSIS">
                <font>
-                  <Font size="24.0" />
+                  <Font name="Poppins Bold" size="24.0" />
                </font>
             </Label>
             <Separator prefHeight="20.0" prefWidth="500.0">
@@ -45,7 +43,7 @@
                 <CategoryAxis side="BOTTOM" />
               </xAxis>
               <yAxis>
-                <NumberAxis side="LEFT" />
+                <NumberAxis side="LEFT" styleClass="texto_parrafo" stylesheets="@styles.css" />
               </yAxis>
                <VBox.margin>
                   <Insets bottom="20.0" left="30.0" right="30.0" />
@@ -55,23 +53,7 @@
       </VBox>
    </center>
    <top>
-      <VBox alignment="TOP_CENTER" BorderPane.alignment="CENTER">
-         <children>
-            <ImageView fitHeight="150.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@BORDE%20SUPERIOR%20-%20BALANPY.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="150.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@logo-balanpy.png" />
-               </image>
-               <VBox.margin>
-                  <Insets top="-50.0" />
-               </VBox.margin>
-            </ImageView>
-         </children>
-      </VBox>
+      <fx:include source="BarraSuperior.fxml" />
    </top>
    <bottom>
       <fx:include source="BarraTareas.fxml" />

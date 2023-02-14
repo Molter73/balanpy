@@ -10,7 +10,7 @@ public class Main extends Application {
 	public void start(Stage primaryStage) throws Exception {
 		Usuario usuario = UsuarioImpl.getInstance();
 		if (usuario.isValid()) {
-			BalanpyScreen.loadScene(primaryStage, "/PortadaAplicacion.fxml", FAILSAFE_SCREEN);
+			BalanpyScreen.loadScene(primaryStage, "/PerfilUsuario.fxml", FAILSAFE_SCREEN);
 		} else {
 			BalanpyScreen.loadScene(primaryStage, "/PantallaInicio.fxml", FAILSAFE_SCREEN);
 		}
