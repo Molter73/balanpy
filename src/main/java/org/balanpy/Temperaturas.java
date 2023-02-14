@@ -2,12 +2,10 @@ package org.balanpy;
 
 import java.net.MalformedURLException;
 import java.nio.file.Path;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 import javafx.fxml.FXML;
 import javafx.scene.chart.LineChart;
-import javafx.scene.chart.XYChart;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -54,20 +52,7 @@ public class Temperaturas {
 		}
 
 		DatoTemperaturas temperaturas = new DatoTemperaturas(mascotas.get(id));
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
-		XYChart.Series<String, Double> series = new XYChart.Series<>();
-		ArrayList<DatoGenerico> datos = temperaturas.getDatos();
-
-		temperaturasChart.getData().clear();
-
-		for (DatoGenerico temperatura : datos.subList(datos.size() - 40, datos.size())) {
-			series.getData().add(
-					new XYChart.Data<String, Double>(temperatura.getFecha().format(formatter),
-							temperatura.getDato() / 10.0));
-		}
-
-		series.setName("Temperatura en ºC");
-		temperaturasChart.getData().add(series);
+		temperaturas.fillGraph(temperaturasChart);
 	}
 
 	public void initialize() throws MalformedURLException {

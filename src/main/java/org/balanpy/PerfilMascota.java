@@ -43,7 +43,10 @@ public class PerfilMascota {
 	private Text esterilizado;
 
 	@FXML
-	private LineChart<?, ?> temperaturaDiaria;
+	private LineChart<String, Double> temperaturaDiaria;
+
+	@FXML
+	private LineChart<String, Integer> pulsacionesDiaria;
 
 	private static Mascota mascota;
 	public static void setMascota(Mascota m) {
@@ -72,6 +75,12 @@ public class PerfilMascota {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+
+		DatoPulsaciones pulsaciones = new DatoPulsaciones(mascota);
+		pulsaciones.fillGraph(pulsacionesDiaria);
+
+		DatoTemperaturas temperaturas = new DatoTemperaturas(mascota);
+		temperaturas.fillGraph(temperaturaDiaria);
 	}
 
 	public void HandleDone(MouseEvent event) throws Exception {

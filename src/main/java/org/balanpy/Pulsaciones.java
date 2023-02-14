@@ -2,12 +2,10 @@ package org.balanpy;
 
 import java.net.MalformedURLException;
 import java.nio.file.Path;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 import javafx.fxml.FXML;
 import javafx.scene.chart.LineChart;
-import javafx.scene.chart.XYChart;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -54,20 +52,7 @@ public class Pulsaciones {
 		}
 
 		DatoPulsaciones pulsaciones = new DatoPulsaciones(mascotas.get(id));
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
-		XYChart.Series<String, Integer> series = new XYChart.Series<>();
-		ArrayList<DatoGenerico> datos = pulsaciones.getDatos();
-
-		pulsacionesChart.getData().clear();
-
-		for (DatoGenerico pulsacion : datos.subList(datos.size() - 40, datos.size())) {
-			series.getData()
-			.add(new XYChart.Data<String, Integer>(pulsacion.getFecha().format(formatter),
-					pulsacion.getDato()));
-		}
-
-		series.setName("Pulsaciones en PPM.");
-		pulsacionesChart.getData().add(series);
+		pulsaciones.fillGraph(pulsacionesChart);
 	}
 
 	public void initialize() throws MalformedURLException {
