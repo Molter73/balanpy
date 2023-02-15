@@ -62,10 +62,10 @@ public class PerfilMascota {
 		raza.setText(mascota.getRaza());
 		sexo.setText(mascota.getSexo());
 
-		if (mascota.getPathEsterilización() == "") {
-			esterilizado.setText("No");
-		} else {
+		if (mascota.getEsterilizado()) {
 			esterilizado.setText("Si");
+		} else {
+			esterilizado.setText("No");
 		}
 
 		try {

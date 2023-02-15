@@ -8,6 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class MascotaImpl implements Mascota {
@@ -46,17 +47,7 @@ public class MascotaImpl implements Mascota {
 
 	private String nombre = "";
 
-	@JsonProperty(value = "archivo_pedigree")
-	private String pathPedigree = "";
-
-	@JsonProperty(value = "archivo_dni")
-	private String pathDNI = "";
-
-	@JsonProperty(value = "archivo_esterilizacion")
-	private String pathEsterilizacion = "";
-
-	@JsonProperty(value = "temperaturas")
-	private String pathTemperaturas = "";
+	private Boolean esterilizado = false;
 
 	private ArrayList<String> alergias = new ArrayList<>();
 
@@ -75,7 +66,7 @@ public class MascotaImpl implements Mascota {
 
 	// -----------------------------------------------------------------------------
 
-	private MascotaImpl() {
+	public MascotaImpl() {
 
 	}
 
@@ -127,23 +118,8 @@ public class MascotaImpl implements Mascota {
 	}
 
 	@Override
-	public String getPathPedigree() {
-		return pathPedigree;
-	}
-
-	@Override
-	public String getPathDNI() {
-		return pathDNI;
-	}
-
-	@Override
-	public String getPathEsterilización() {
-		return pathEsterilizacion;
-	}
-
-	@Override
-	public String getPathTemperaturas() {
-		return pathTemperaturas;
+	public Boolean getEsterilizado() {
+		return esterilizado;
 	}
 
 	@Override
@@ -162,6 +138,7 @@ public class MascotaImpl implements Mascota {
 	}
 
 	@Override
+	@JsonIgnore
 	public Integer getEdad() {
 		DateTimeFormatter df = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 		LocalDate now = LocalDate.now();
@@ -224,27 +201,8 @@ public class MascotaImpl implements Mascota {
 	}
 
 	@Override
-	public void setPathPedigree(String pathPedigree) {
-		// TODO: Validar que el fichero existe
-		this.pathPedigree = pathPedigree;
-	}
-
-	@Override
-	public void setPathDNI(String pathDNI) {
-		// TODO: Validar que el fichero existe
-		this.pathDNI = pathDNI;
-	}
-
-	@Override
-	public void setPathEsterilizacion(String pathEsterilizacion) {
-		// TODO: Validar que el fichero existe
-		this.pathEsterilizacion = pathEsterilizacion;
-	}
-
-	@Override
-	public void setPathTemperaturas(String pathTemperaturas) {
-		// TODO: Validar que el fichero existe
-		this.pathTemperaturas = pathTemperaturas;
+	public void setEsterilizado(Boolean e) {
+		esterilizado = e;
 	}
 
 	@Override
