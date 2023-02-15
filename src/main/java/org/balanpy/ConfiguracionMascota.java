@@ -18,7 +18,6 @@ import java.util.UUID;
 
 import com.fasterxml.jackson.core.exc.StreamWriteException;
 import com.fasterxml.jackson.databind.DatabindException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -150,9 +149,7 @@ public class ConfiguracionMascota implements Initializable{
 
 		ArrayList<MascotaImpl> mascotas = Mascotas.getInstance();
 		mascotas.add((MascotaImpl) mascota);
-
-		ObjectMapper om = new ObjectMapper();
-		om.writeValue(Configuracion.getMascotasPath().toFile(), mascotas);
+		Mascotas.save();
 
 		Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		BalanpyScreen.back(stage, SCREEN);
