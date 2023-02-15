@@ -1,17 +1,21 @@
 package org.balanpy;
 
+import java.io.IOException;
 import java.net.MalformedURLException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.chart.LineChart;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 public class PerfilMascota {
+	private static final String SCREEN = "/PerfilMascota.fxml";
 	@FXML
 	private Text color;
 
@@ -83,10 +87,10 @@ public class PerfilMascota {
 		temperaturas.fillGraph(temperaturaDiaria);
 	}
 
-	public void HandleDone(MouseEvent event) throws Exception {
-
-		System.out.println("Está funcionando amigo");
-
+	public void configurar(ActionEvent event) throws IOException {
+		ConfiguracionMascota.setMascota(mascota);
+		Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+		BalanpyScreen.loadScene(stage, "/ConfiguracionMascota.fxml", SCREEN);
 	}
 
 }
