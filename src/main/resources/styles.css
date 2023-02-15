@@ -37,6 +37,13 @@
 	-fx-text-fill:white;
 }
 
+.texto_h5 {
+	-fx-font-family: 'Poppins', sans-serif;
+	-fx-font-weight:bold;
+	-fx-font-size:14px;
+	-fx-text-fill:black;
+}
+
 .elegir_mascota{
 	-fx-border-color: black;
 	-fx-border-insets: 5;
