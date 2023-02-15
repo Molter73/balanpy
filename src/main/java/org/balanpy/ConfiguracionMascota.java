@@ -105,6 +105,14 @@ public class ConfiguracionMascota implements Initializable{
 		}
 	}
 
+	private ArrayList<String> sanitizedList(TextArea text) {
+		String[] array = text.getText().split(System.lineSeparator());
+		ArrayList<String> list = new ArrayList<String>(Arrays.asList(array));
+		list.removeAll(Arrays.asList("", null));
+
+		return list;
+	}
+
 	public void save(ActionEvent event) throws StreamWriteException, DatabindException, IOException {
 		Mascota mascota = new MascotaImpl();
 		UUID uuid = UUID.randomUUID();
@@ -119,16 +127,8 @@ public class ConfiguracionMascota implements Initializable{
 		mascota.setEsterilizado(esterilizada.getValue() == "Si");
 		mascota.setGrupoSanguineo(sanguineo.getValue());
 		mascota.setFechaNacimiento(nacimiento.getValue().format(df));
-
-		String[] alergiasList = alergias.getText().split(System.lineSeparator());
-		ArrayList<String> alergiasArrayList = new ArrayList<String>(Arrays.asList(alergiasList));
-		alergiasArrayList.removeAll(Arrays.asList("", null));
-		mascota.setAlergias(alergiasArrayList);
-
-		String[] enfermedadesList = enfermedades.getText().split(System.lineSeparator());
-		ArrayList<String> enfermedadesArrayList = new ArrayList<String>(Arrays.asList(enfermedadesList));
-		enfermedadesArrayList.removeAll(Arrays.asList("", null));
-		mascota.setEnfermedades(enfermedadesArrayList);
+		mascota.setAlergias(sanitizedList(alergias));
+		mascota.setEnfermedades(sanitizedList(enfermedades));
 
 		Map<String, String> vacunas = new HashMap<>();
 		vacunas.put("primovacunacion", primovacunacion.getValue().format(df));
