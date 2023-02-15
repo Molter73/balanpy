@@ -24,4 +24,8 @@ public class Configuracion {
 	public static Path getMascotaPulsaciones(Mascota mascota) {
 		return Paths.get(getRootDir(), mascota.getUUID().toString(), "pulsaciones.json");
 	}
+
+	public static Path getMascotaTemperaturas(Mascota mascota) {
+		return Paths.get(getRootDir(), mascota.getUUID().toString(), "temperaturas.json");
+	}
 }

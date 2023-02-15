@@ -11,8 +11,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 
-public class Pulsaciones {
-	private static final String SCREEN = "/Pulsaciones.fxml";
+public class Temperaturas {
+	private static final String SCREEN = "/Temperaturas.fxml";
 	ArrayList<MascotaImpl> mascotas;
 
 	@FXML
@@ -34,9 +34,9 @@ public class Pulsaciones {
 	private Label petName2;
 
 	@FXML
-	private LineChart<String, Integer> pulsacionesChart;
+	private LineChart<String, Double> temperaturasChart;
 
-	public Pulsaciones() {
+	public Temperaturas() {
 		mascotas = Mascotas.getInstance();
 	}
 
@@ -51,8 +51,8 @@ public class Pulsaciones {
 			return;
 		}
 
-		DatoPulsaciones pulsaciones = new DatoPulsaciones(mascotas.get(id));
-		pulsaciones.fillGraph(pulsacionesChart);
+		DatoTemperaturas temperaturas = new DatoTemperaturas(mascotas.get(id));
+		temperaturas.fillGraph(temperaturasChart);
 	}
 
 	public void initialize() throws MalformedURLException {

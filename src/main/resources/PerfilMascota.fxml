@@ -121,15 +121,15 @@
                 <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <LineChart fx:id="temperaturaDiaria" styleClass="texto_parrafo" title="Temperatura Diaria">
+                  <LineChart fx:id="temperaturaDiaria" animated="false" styleClass="texto_parrafo" title="Temperatura Diaria">
                     <xAxis>
                       <CategoryAxis side="BOTTOM" />
                     </xAxis>
                     <yAxis>
-                      <NumberAxis minorTickCount="10" tickLabelGap="5.0" upperBound="40.0" />
+                      <NumberAxis autoRanging="false" lowerBound="30.0" minorTickCount="10" tickLabelGap="5.0" upperBound="45.0" />
                     </yAxis>
                   </LineChart>
-                  <LineChart fx:id="pulsaciones" styleClass="texto_parrafo" title="Pulsaciones" GridPane.columnIndex="1">
+                  <LineChart fx:id="pulsacionesDiaria" animated="false" styleClass="texto_parrafo" title="Pulsaciones" GridPane.columnIndex="1">
                     <xAxis>
                       <CategoryAxis side="BOTTOM" />
                     </xAxis>
