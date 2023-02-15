@@ -14,109 +14,105 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
+
 
 <BorderPane stylesheets="@styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.balanpy.Temperaturas">
    <center>
-      <VBox alignment="CENTER">
+      <VBox alignment="TOP_CENTER">
          <children>
-            <VBox alignment="CENTER">
+            <GridPane hgap="20.0" maxWidth="1.7976931348623157E308" prefHeight="200.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
                <children>
-                  <GridPane maxHeight="1.7976931348623157E308" maxWidth="-Infinity" prefHeight="200.0" prefWidth="550.0">
-                     <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                     </columnConstraints>
-                     <rowConstraints>
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                     </rowConstraints>
+                  <VBox alignment="TOP_CENTER" onMouseClicked="#selectProfile0" styleClass="recuadro_texto">
                      <children>
-                        <VBox alignment="TOP_CENTER" onMouseClicked="#selectProfile0" styleClass="usuario">
-                           <children>
-                              <ImageView fx:id="petImage0" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@añadir-usuario-balanpy.png" />
-                                 </image>
-                              </ImageView>
-                              <Label fx:id="petName0" text="Añadir Mascota" textAlignment="CENTER">
-                                 <font>
-                                    <Font name="Poppins Bold" size="16.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </VBox>
-                        <VBox alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" onMouseClicked="#selectProfile1" prefHeight="200.0" prefWidth="100.0" styleClass="usuario" GridPane.columnIndex="1">
-                           <children>
-                              <ImageView fx:id="petImage1" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@añadir-usuario-balanpy.png" />
-                                 </image>
-                              </ImageView>
-                              <Label fx:id="petName1" text="Añadir Mascota" textAlignment="CENTER">
-                                 <font>
-                                    <Font name="Poppins Bold" size="16.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </VBox>
-                        <VBox alignment="TOP_CENTER" layoutX="194.0" layoutY="10.0" onMouseClicked="#selectProfile2" prefHeight="200.0" prefWidth="100.0" styleClass="usuario" GridPane.columnIndex="2">
-                           <children>
-                              <ImageView fx:id="petImage2" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@añadir-usuario-balanpy.png" />
-                                 </image>
-                              </ImageView>
-                              <Label fx:id="petName2" text="Añadir Mascota" textAlignment="CENTER">
-                                 <font>
-                                    <Font name="Poppins Bold" size="16.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </VBox>
+                        <ImageView fx:id="petImage0" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" styleClass="imagen_mascotas">
+                           <image>
+                              <Image url="@añadir-usuario-balanpy.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="petName0" styleClass="texto_h3" text="Añadir Mascota">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </Label>
                      </children>
-                  </GridPane>
-                  <Label text="Gráfico Temperaturas Generales">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Label>
-                  <Separator prefHeight="0.0" prefWidth="100.0">
-                     <VBox.margin>
-                        <Insets bottom="10.0" />
-                     </VBox.margin>
-                     <padding>
-                        <Insets top="10.0" />
-                     </padding>
-                  </Separator>
-                  <LineChart fx:id="temperaturasGenerales" prefHeight="212.0">
-                    <xAxis>
-                      <CategoryAxis side="BOTTOM" />
-                    </xAxis>
-                    <yAxis>
-                      <NumberAxis side="LEFT" upperBound="40.0" />
-                    </yAxis>
-                     <padding>
-                        <Insets left="20.0" right="20.0" />
-                     </padding>
-                  </LineChart>
-                  <Button maxWidth="250.0" mnemonicParsing="false" onAction="#descargaDocumento" prefHeight="50.0" styleClass="boton_personalizado" text="DESCARGA DOCUMENTO PDF">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                     <VBox.margin>
-                        <Insets bottom="30.0" left="40.0" right="40.0" top="10.0" />
-                     </VBox.margin>
-                  </Button>
+                  </VBox>
+                  <VBox alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" onMouseClicked="#selectProfile1" prefHeight="200.0" prefWidth="100.0" styleClass="recuadro_texto" GridPane.columnIndex="1">
+                     <children>
+                        <ImageView fx:id="petImage1" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" styleClass="imagen_mascotas">
+                           <image>
+                              <Image url="@añadir-usuario-balanpy.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="petName1" styleClass="texto_h3" text="Añadir Mascota">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox alignment="TOP_CENTER" layoutX="194.0" layoutY="10.0" onMouseClicked="#selectProfile2" prefHeight="200.0" prefWidth="100.0" styleClass="recuadro_texto" GridPane.columnIndex="2">
+                     <children>
+                        <ImageView fx:id="petImage2" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" styleClass="imagen_mascotas">
+                           <image>
+                              <Image url="@añadir-usuario-balanpy.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="petName2" styleClass="texto_h3" text="Añadir Mascota">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                  </VBox>
                </children>
-            </VBox>
+               <VBox.margin>
+                  <Insets top="30.0" />
+               </VBox.margin>
+            </GridPane>
+            <Label styleClass="texto_h2" text="Temperaturas">
+               <VBox.margin>
+                  <Insets top="30.0" />
+               </VBox.margin>
+            </Label>
+            <Separator prefHeight="0.0" prefWidth="100.0">
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="5.0" top="5.0" />
+               </padding>
+            </Separator>
+            <LineChart fx:id="temperaturasGenerales" prefHeight="250.0" styleClass="texto_parrafo">
+              <xAxis>
+                <CategoryAxis side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis side="LEFT" upperBound="40.0" />
+              </yAxis>
+            </LineChart>
+            <Button mnemonicParsing="false" onAction="#descargaDocumento" styleClass="boton_grande" text="DESCARGA DOCUMENTO PDF">
+               <VBox.margin>
+                  <Insets bottom="30.0" top="10.0" />
+               </VBox.margin>
+            </Button>
          </children>
+         <padding>
+            <Insets left="25.0" right="25.0" />
+         </padding>
       </VBox>
    </center>
-   <bottom>
-      <fx:include source="BarraTareas.fxml" />
-   </bottom>
    <top>
       <fx:include source="BarraSuperior.fxml" />
    </top>
+   <bottom>
+      <fx:include source="BarraTareas.fxml" />
+   </bottom>
 </BorderPane>
