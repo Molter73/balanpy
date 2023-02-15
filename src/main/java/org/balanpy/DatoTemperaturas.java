@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.List;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -56,7 +57,14 @@ public class DatoTemperaturas {
 
 		chart.getData().clear();
 
-		for (DatoGenerico temperatura : datos.subList(datos.size() - 40, datos.size())) {
+		List<DatoGenerico> displayable;
+		if (datos.size() > 40) {
+			displayable = datos.subList(datos.size() - 40, datos.size());
+		} else {
+			displayable = datos;
+		}
+
+		for (DatoGenerico temperatura : displayable) {
 			series.getData().add(new XYChart.Data<String, Double>(temperatura.getFecha().format(formatter),
 					temperatura.getDato() / 10.0));
 		}
