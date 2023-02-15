@@ -43,6 +43,17 @@ public class EditarPerfilUsuario {
 	public void initialize() {
 		sexo.getItems().add("Masculino");
 		sexo.getItems().add("Femenino");
+
+		if (!usuario.isValid()) {
+			return;
+		}
+		nombre.setText(usuario.getNombre());
+		dni.setText(usuario.getDNI());
+		email.setText(usuario.getEmail());
+		sexo.setValue(usuario.getSexo());
+		edad.setText(usuario.getEdad().toString());
+		telefono.setText(usuario.getTelefono());
+		direccion.setText(usuario.getDireccion());
 	}
 
 	public void guardar(ActionEvent event) throws StreamReadException, DatabindException, IOException {

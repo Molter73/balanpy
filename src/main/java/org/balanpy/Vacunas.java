@@ -42,9 +42,9 @@ public class Vacunas {
 	}
 
 	public void selectProfile(int id) throws Exception {
-
-		registroVacunas.setText(vacunasToString(mascotas.get(id)));
-
+		if (mascotas.size() > id) {
+			registroVacunas.setText(vacunasToString(mascotas.get(id)));
+		}
 	}
 
 	public void selectProfile0(MouseEvent event) throws Exception {
