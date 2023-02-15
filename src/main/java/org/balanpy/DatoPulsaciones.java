@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.List;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -51,7 +52,15 @@ public class DatoPulsaciones {
 
 		chart.getData().clear();
 
-		for (DatoGenerico pulsacion : datos.subList(datos.size() - 40, datos.size())) {
+		List<DatoGenerico> displayable;
+		if (datos.size() > 40) {
+			displayable = datos.subList(datos.size() - 40, datos.size());
+		} else {
+			displayable = datos;
+		}
+
+		for (DatoGenerico pulsacion : displayable)
+		{
 			series.getData().add(
 					new XYChart.Data<String, Integer>(pulsacion.getFecha().format(formatter), pulsacion.getDato()));
 		}
