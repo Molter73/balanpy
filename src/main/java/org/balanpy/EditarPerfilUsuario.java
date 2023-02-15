@@ -1,6 +1,8 @@
 package org.balanpy;
 
+import java.io.File;
 import java.io.IOException;
+import java.nio.file.Paths;
 
 import com.fasterxml.jackson.core.exc.StreamReadException;
 import com.fasterxml.jackson.databind.DatabindException;
@@ -70,7 +72,25 @@ public class EditarPerfilUsuario {
 	}
 
 	public void delete(ActionEvent event) throws Exception {
+		for (Mascota mascota: Mascotas.getInstance()) {
+			File profilePic = Configuracion.getMascotaProfilePic(mascota).toFile();
+			profilePic.delete();
+
+			File temperaturas = Configuracion.getMascotaTemperaturas(mascota).toFile();
+			temperaturas.delete();
+
+			File pulsaciones = Configuracion.getMascotaPulsaciones(mascota).toFile();
+			pulsaciones.delete();
+
+			File m = Paths.get(Configuracion.getRootDir(), mascota.getUUID().toString()).toFile();
+			m.delete();
+		}
+
+		File mascotas = Configuracion.getMascotasPath().toFile();
+		mascotas.delete();
+
 		UsuarioImpl.deleteUser();
+
 		Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		BalanpyScreen.loadScene(stage, "/PantallaInicio.fxml", SCREEN);
 	}
