@@ -8,6 +8,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -130,10 +131,26 @@ public class ConfiguracionMascota implements Initializable{
 		mascota.setEnfermedades(sanitizedList(enfermedades));
 
 		Map<String, String> vacunas = new HashMap<>();
-		vacunas.put("primovacunacion", primovacunacion.getValue().format(df));
-		vacunas.put("polivalente", polivalente.getValue().format(df));
-		vacunas.put("polivalente+", refuerzoPolivalente.getValue().format(df));
-		vacunas.put("rabia", rabia.getValue().format(df));
+
+		LocalDate pv = primovacunacion.getValue();
+		if (pv != null) {
+			vacunas.put("primovacunacion", pv.format(df));
+		}
+
+		LocalDate pl = polivalente.getValue();
+		if (pl != null) {
+			vacunas.put("polivalente", pl.format(df));
+		}
+
+		LocalDate rp = refuerzoPolivalente.getValue();
+		if (rp != null) {
+			vacunas.put("polivalente+", rp.format(df));
+		}
+
+		LocalDate ra = rabia.getValue();
+		if (ra != null) {
+			vacunas.put("rabia", ra.format(df));
+		}
 		mascota.setVacunas(vacunas);
 
 		Path mascotaDir = Paths.get(Configuracion.getRootDir(), uuid.toString());

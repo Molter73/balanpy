@@ -74,12 +74,12 @@
                   </GridPane>
                   <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3">
                      <children>
-                        <Button fx:id="configuracionMascota" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#HandleDone" styleClass="boton_mediano" text="CONFIGURAR">
+                        <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#HandleDone" styleClass="boton_mediano" text="CONFIGURAR">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Button>
-                        <Button fx:id="configuracionMascota1" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#HandleDone" styleClass="boton_mediano" text="VINCULAR">
+                        <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#HandleDone" styleClass="boton_mediano" text="VINCULAR">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -87,7 +87,7 @@
                               <Insets top="10.0" />
                            </VBox.margin>
                         </Button>
-                        <Button fx:id="configuracionMascota11" layoutX="10.0" layoutY="100.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#HandleDone" styleClass="boton_eliminar" text="DESVINCULAR">
+                        <Button layoutX="10.0" layoutY="100.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#HandleDone" styleClass="boton_eliminar" text="DESVINCULAR">
                            <font>
                               <Font size="14.0" />
                            </font>
