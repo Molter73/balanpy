@@ -26,13 +26,7 @@ public interface Mascota {
 
 	public String getNombre();
 
-	public String getPathPedigree();
-
-	public String getPathDNI();
-
-	public String getPathEsterilización();
-
-	public String getPathTemperaturas();
+	public Boolean getEsterilizado();
 
 	public Integer getEdad();
 
@@ -56,13 +50,7 @@ public interface Mascota {
 
 	public void setNombre(String nombre);
 
-	public void setPathPedigree(String pathPedigree);
-
-	public void setPathDNI(String pathDNI);
-
-	public void setPathEsterilizacion(String pathEsterilizacion);
-
-	public void setPathTemperaturas(String pathTemperaturas);
+	public void setEsterilizado(Boolean esterilizado);
 
 	// ********************** Alergias *****************************
 

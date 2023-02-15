@@ -44,9 +44,13 @@ public class PortadaAplicacion {
 	}
 
 	private void setProfile(ImageView imageView, Label label, Mascota mascota) throws MalformedURLException {
-		Path imagePath = Paths.get(Configuracion.getRootDir(), mascota.getUUID().toString(), "profile.png");
 		label.setText(mascota.getNombre());
-		imageView.setImage(new Image(imagePath.toUri().toURL().toExternalForm()));
+		try {
+			Path imagePath = Paths.get(Configuracion.getRootDir(), mascota.getUUID().toString(), "profile.png");
+			imageView.setImage(new Image(imagePath.toUri().toURL().toExternalForm()));
+		} catch (RuntimeException e) {
+			System.out.println("Failed to get profile pic. " + e.getMessage());
+		}
 	}
 
 	public void initialize() throws MalformedURLException {

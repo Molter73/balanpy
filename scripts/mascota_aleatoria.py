@@ -120,6 +120,7 @@ def get_mascota() -> dict:
         'vacunas': get_vaccines(dob),
         'enfermedades': [],
         'higiene': get_hygiene(),
+        'esterilizado': bool(random.getrandbits(1)),
     }
 
 
