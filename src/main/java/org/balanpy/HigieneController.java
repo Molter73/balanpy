@@ -1,14 +1,10 @@
 package org.balanpy;
 
-import java.io.IOException;
 import java.net.MalformedURLException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Map;
-
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -62,25 +58,13 @@ public class HigieneController {
 	private TextArea ultimaDesp;
 
 	public HigieneController() {
-
-		try {
-			ObjectMapper om = new ObjectMapper();
-
-			mascotas = om.readValue(MASCOTAS_PATH.toFile(), new TypeReference<ArrayList<MascotaImpl>>() {
-
-			});
-
-		} catch (IOException e) {
-
-			System.out.println("Failed to load pet data. " + e.getMessage());
-
-			mascotas = new ArrayList<MascotaImpl>();
-
-		}
-
+		mascotas = Mascotas.getInstance();
 	}
 
 	public void selectProfile(int id) throws Exception {
+		if (mascotas.size() <= id) {
+			return;
+		}
 
 		Mascota mascota = mascotas.get(id);
 

@@ -74,12 +74,12 @@
                   </GridPane>
                   <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3">
                      <children>
-                        <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#HandleDone" styleClass="boton_mediano" text="CONFIGURAR">
+                        <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#configurar" styleClass="boton_mediano" text="CONFIGURAR">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Button>
-                        <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#HandleDone" styleClass="boton_mediano" text="VINCULAR">
+                        <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="boton_mediano" text="VINCULAR">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -87,7 +87,7 @@
                               <Insets top="10.0" />
                            </VBox.margin>
                         </Button>
-                        <Button layoutX="10.0" layoutY="100.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#HandleDone" styleClass="boton_eliminar" text="DESVINCULAR">
+                        <Button layoutX="10.0" layoutY="100.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="boton_eliminar" text="DESVINCULAR">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -145,7 +145,7 @@
                   <Insets top="20.0" />
                </VBox.margin>
             </GridPane>
-            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#HandleDone" styleClass="boton_grande" text="HISTORIAL MÉDICO">
+            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="boton_grande" text="HISTORIAL MÉDICO">
                <font>
                   <Font size="14.0" />
                </font>
@@ -164,12 +164,12 @@
                <children>
                   <VBox alignment="TOP_CENTER">
                      <children>
-                        <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#HandleDone" styleClass="boton_mediano" text="SEGURO MASCOTA">
+                        <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="boton_mediano" text="SEGURO MASCOTA">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Button>
-                        <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#HandleDone" styleClass="boton_mediano" text="PEDIGREE">
+                        <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="boton_mediano" text="PEDIGREE">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -177,7 +177,7 @@
                               <Insets bottom="10.0" top="10.0" />
                            </VBox.margin>
                         </Button>
-                        <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#HandleDone" styleClass="boton_mediano" text="ESTERILIZADO">
+                        <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="boton_mediano" text="ESTERILIZADO">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -186,12 +186,12 @@
                   </VBox>
                   <VBox alignment="TOP_CENTER" GridPane.columnIndex="1">
                      <children>
-                        <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#HandleDone" styleClass="boton_mediano" text="DNI MASCOTA">
+                        <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="boton_mediano" text="DNI MASCOTA">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Button>
-                        <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#HandleDone" styleClass="boton_mediano" text="Nº CHIP">
+                        <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="boton_mediano" text="Nº CHIP">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -199,7 +199,7 @@
                               <Insets bottom="10.0" top="10.0" />
                            </VBox.margin>
                         </Button>
-                        <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#HandleDone" styleClass="boton_mediano" text="ARCHIVO PPP">
+                        <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="boton_mediano" text="ARCHIVO PPP">
                            <font>
                               <Font size="14.0" />
                            </font>

@@ -59,7 +59,7 @@
                   </VBox>
                   <VBox alignment="TOP_CENTER" GridPane.columnIndex="2">
                      <children>
-                        <Button alignment="TOP_CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefWidth="205.0" styleClass="boton_eliminar" text="ELIMINAR PERFIL">
+                        <Button alignment="TOP_CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#delete" prefWidth="205.0" styleClass="boton_eliminar" text="ELIMINAR PERFIL">
                            <VBox.margin>
                               <Insets bottom="10.0" />
                            </VBox.margin>

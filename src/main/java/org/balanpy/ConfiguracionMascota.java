@@ -36,6 +36,7 @@ import javafx.stage.Stage;
 
 public class ConfiguracionMascota implements Initializable{
 	private static final String SCREEN = "/ConfiguracionMascota.fxml";
+	private static Mascota selectedPet = null;
 
 	@FXML
 	TextField nombreMascota;
@@ -82,16 +83,85 @@ public class ConfiguracionMascota implements Initializable{
 
 	File profilePic;
 
+	public static void setMascota(Mascota m) {
+		selectedPet = m;
+	}
+
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		//ChoiceBox
 		sexoMascota.getItems().addAll(sexo);
 		esterilizada.getItems().addAll(estrl);
 		sanguineo.getItems().addAll(gsanguineo);
+
+		if (selectedPet == null) {
+			return;
+		}
+
+		nombreMascota.setText(selectedPet.getNombre());
+		color.setText(selectedPet.getColor());
+		raza.setText(selectedPet.getRaza());
+		chip.setText(selectedPet.getChip());
+		sexoMascota.setValue(selectedPet.getSexo());
+
+		if (selectedPet.getEsterilizado()) {
+			esterilizada.setValue("Si");
+		} else {
+			esterilizada.setValue("No");
+		}
+
+		sanguineo.setValue(selectedPet.getGrupoSanguineo());
+
+		DateTimeFormatter df = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		nacimiento.setValue(LocalDate.parse(selectedPet.getFechaNacimiento(), df));
+
+		String tmp = "";
+		for (String alergia : selectedPet.getAlergias()) {
+			tmp += alergia + "\n";
+		}
+		alergias.setText(tmp);
+
+		tmp = "";
+		for (String enfermedad : selectedPet.getEnfermedades()) {
+			tmp += enfermedad + "\n";
+		}
+		enfermedades.setText(tmp);
+
+		tmp = selectedPet.getVacuna().get("primovacunacion");
+		if (tmp != null) {
+			primovacunacion.setValue(LocalDate.parse(tmp, df));
+		}
+
+		tmp = selectedPet.getVacuna().get("polivalente");
+		if (tmp != null) {
+			polivalente.setValue(LocalDate.parse(tmp, df));
+		}
+
+		tmp = selectedPet.getVacuna().get("polivalente+");
+		if (tmp != null) {
+			refuerzoPolivalente.setValue(LocalDate.parse(tmp, df));
+		}
+
+		tmp = selectedPet.getVacuna().get("rabia");
+		if (tmp != null) {
+			rabia.setValue(LocalDate.parse(tmp, df));
+		}
+
+		File profilePic = Configuracion.getMascotaProfilePic(selectedPet).toFile();
+		if (profilePic.isFile()) {
+			try {
+				Image image = new Image(profilePic.toURI().toURL().toExternalForm());
+				subirMascota.setImage(image);
+			} catch (MalformedURLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 	}
 
 	public void back(ActionEvent event) throws IOException {
 		Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+		selectedPet = null;
 		BalanpyScreen.back(stage, SCREEN);
 	}
 
@@ -113,12 +183,35 @@ public class ConfiguracionMascota implements Initializable{
 		return list;
 	}
 
+	public void delete(ActionEvent event) throws StreamWriteException, DatabindException, IOException {
+		File profilePic = Configuracion.getMascotaProfilePic(selectedPet).toFile();
+		profilePic.delete();
+
+		File temperaturas = Configuracion.getMascotaTemperaturas(selectedPet).toFile();
+		temperaturas.delete();
+
+		File pulsaciones = Configuracion.getMascotaPulsaciones(selectedPet).toFile();
+		pulsaciones.delete();
+
+		File m = Paths.get(Configuracion.getRootDir(), selectedPet.getUUID().toString()).toFile();
+		m.delete();
+
+		ArrayList<MascotaImpl> mascotas = Mascotas.getInstance();
+
+		mascotas.remove(mascotas.indexOf(selectedPet));
+
+		Mascotas.save();
+
+		Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+		selectedPet = null;
+		BalanpyScreen.loadScene(stage, "/PortadaAplicacion.fxml", SCREEN);
+	}
+
 	public void save(ActionEvent event) throws StreamWriteException, DatabindException, IOException {
-		Mascota mascota = new MascotaImpl();
+		MascotaImpl mascota = new MascotaImpl();
 		UUID uuid = UUID.randomUUID();
 		DateTimeFormatter df = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
-		mascota.setUUID(uuid);
 		mascota.setNombre(nombreMascota.getText());
 		mascota.setColor(color.getText());
 		mascota.setRaza(raza.getText());
@@ -153,21 +246,33 @@ public class ConfiguracionMascota implements Initializable{
 		}
 		mascota.setVacunas(vacunas);
 
-		Path mascotaDir = Paths.get(Configuracion.getRootDir(), uuid.toString());
-		Files.createDirectory(mascotaDir);
+		ArrayList<MascotaImpl> mascotas = Mascotas.getInstance();
+		if (selectedPet == null) {
+			mascota.setUUID(uuid);
+			mascotas.add(mascota);
 
-		Files.write(Configuracion.getMascotaPulsaciones(mascota), "[]".getBytes());
-		Files.write(Configuracion.getMascotaTemperaturas(mascota), "[]".getBytes());
+			Path mascotaDir = Paths.get(Configuracion.getRootDir(), uuid.toString());
+			Files.createDirectory(mascotaDir);
+
+			Files.write(Configuracion.getMascotaPulsaciones(mascota), "[]".getBytes());
+			Files.write(Configuracion.getMascotaTemperaturas(mascota), "[]".getBytes());
+		} else {
+			int index = mascotas.indexOf(selectedPet);
+			mascota.setUUID(selectedPet.getUUID());
+			mascotas.remove(index);
+			mascotas.add(index, mascota);
+
+			PerfilMascota.setMascota(mascota);
+		}
 
 		if (profilePic != null) {
 			Files.copy(profilePic.toPath(), Configuracion.getMascotaProfilePic(mascota),
 					StandardCopyOption.REPLACE_EXISTING);
 		}
 
-		ArrayList<MascotaImpl> mascotas = Mascotas.getInstance();
-		mascotas.add((MascotaImpl) mascota);
 		Mascotas.save();
 
+		selectedPet = null;
 		Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		BalanpyScreen.back(stage, SCREEN);
 	}
