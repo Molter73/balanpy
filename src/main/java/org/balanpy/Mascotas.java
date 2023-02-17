@@ -1,5 +1,6 @@
 package org.balanpy;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -39,5 +40,43 @@ public class Mascotas {
 			mascotas = new ArrayList<MascotaImpl>();
 		}
 		return mascotas;
+	}
+
+	public static void delete(Mascota mascota) throws StreamWriteException, DatabindException, IOException {
+		File profilePic = Configuracion.getMascotaProfilePic(mascota).toFile();
+		profilePic.delete();
+
+		File temperaturas = Configuracion.getMascotaTemperaturas(mascota).toFile();
+		temperaturas.delete();
+
+		File pulsaciones = Configuracion.getMascotaPulsaciones(mascota).toFile();
+		pulsaciones.delete();
+
+		File m = Paths.get(Configuracion.getRootDir(), mascota.getUUID().toString()).toFile();
+		m.delete();
+
+		mascotas.remove(mascotas.indexOf(mascota));
+
+		save();
+	}
+
+	public static void deleteAll() {
+		for (Mascota mascota : mascotas) {
+			File profilePic = Configuracion.getMascotaProfilePic(mascota).toFile();
+			profilePic.delete();
+
+			File temperaturas = Configuracion.getMascotaTemperaturas(mascota).toFile();
+			temperaturas.delete();
+
+			File pulsaciones = Configuracion.getMascotaPulsaciones(mascota).toFile();
+			pulsaciones.delete();
+
+			File m = Paths.get(Configuracion.getRootDir(), mascota.getUUID().toString()).toFile();
+			m.delete();
+		}
+		File config = Configuracion.getMascotasPath().toFile();
+		config.delete();
+
+		mascotas = null;
 	}
 }
