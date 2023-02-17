@@ -184,23 +184,7 @@ public class ConfiguracionMascota implements Initializable{
 	}
 
 	public void delete(ActionEvent event) throws StreamWriteException, DatabindException, IOException {
-		File profilePic = Configuracion.getMascotaProfilePic(selectedPet).toFile();
-		profilePic.delete();
-
-		File temperaturas = Configuracion.getMascotaTemperaturas(selectedPet).toFile();
-		temperaturas.delete();
-
-		File pulsaciones = Configuracion.getMascotaPulsaciones(selectedPet).toFile();
-		pulsaciones.delete();
-
-		File m = Paths.get(Configuracion.getRootDir(), selectedPet.getUUID().toString()).toFile();
-		m.delete();
-
-		ArrayList<MascotaImpl> mascotas = Mascotas.getInstance();
-
-		mascotas.remove(mascotas.indexOf(selectedPet));
-
-		Mascotas.save();
+		Mascotas.delete(selectedPet);
 
 		Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		selectedPet = null;
